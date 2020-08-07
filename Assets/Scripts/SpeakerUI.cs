@@ -43,4 +43,18 @@ public class SpeakerUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void SetLeft()
+    {
+        portrait.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(-260, 50);
+    }
+
+    public void SetRight()
+    {
+        portrait.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(260, 50);
+    }
+    public void SetCenter()
+    {
+        portrait.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(0, 50);
+    }
 }

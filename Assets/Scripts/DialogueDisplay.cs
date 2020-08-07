@@ -5,23 +5,18 @@ using UnityEngine;
 
 public class DialogueDisplay : MonoBehaviour
 {
-    //TODO: rewrite for any amount of conversation members
     public Conversation conversation;
 
-    public GameObject speakerLeft;
-    public GameObject speakerRight;
+    public GameObject speaker;
 
-    private SpeakerUI speakerUILeft;
-    private SpeakerUI speakerUIRight;
+    private SpeakerUI speakerUI;
 
     private int activeLineIndex = 0;
     private void Start()
     {
-        speakerUILeft = speakerLeft.GetComponent<SpeakerUI>();
-        speakerUIRight = speakerRight.GetComponent<SpeakerUI>();
+        speakerUI = speaker.GetComponent<SpeakerUI>();
 
-        speakerUILeft.Speaker = conversation.speakerLeft;
-        speakerUIRight.Speaker = conversation.speakerRight;
+        speakerUI.Speaker = conversation.lines[activeLineIndex].character;
     }
 
     private void Update()
@@ -41,8 +36,7 @@ public class DialogueDisplay : MonoBehaviour
         }
         else
         {
-            speakerUILeft.Hide();
-            speakerUIRight.Hide();
+            speakerUI.Hide();
             activeLineIndex = 0;
         }
     }
@@ -52,20 +46,28 @@ public class DialogueDisplay : MonoBehaviour
         Line line = conversation.lines[activeLineIndex];
         Character character = line.character;
 
-        if (speakerUILeft.SpeakerIs(character))
-        {
-            SetDialogue(speakerUILeft, speakerUIRight, line.text);
-        }
-        else
-        {
-            SetDialogue(speakerUIRight, speakerUILeft, line.text);
-        }
+        SetDialogue(speakerUI, character, line.text, line.position);
     }
 
-    private void SetDialogue(SpeakerUI activeSpeakerUI, SpeakerUI inactiveSpeakerUI, string text)
+    private void SetDialogue(SpeakerUI activeSpeakerUI, Character character, string text, Position position)
     {
         activeSpeakerUI.Dialogue = text;
+        activeSpeakerUI.Speaker = character;
+        switch (position)
+        {
+            case Position.LEFT:
+                activeSpeakerUI.SetLeft();
+                break;
+            case Position.RIGHT:
+                activeSpeakerUI.SetRight();
+                break;
+            case Position.CENTER:
+                activeSpeakerUI.SetCenter();
+                break;
+            default:
+                activeSpeakerUI.SetLeft();
+                break;
+        }
         activeSpeakerUI.Show();
-        inactiveSpeakerUI.Hide();
     }
 }

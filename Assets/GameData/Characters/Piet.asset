@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e255d40a0e55c84f8db29951502ff4f, type: 3}
   m_Name: Piet
   m_EditorClassIdentifier: 
-  FullName: 
+  FullName: Piet
   portrait: {fileID: 0}
