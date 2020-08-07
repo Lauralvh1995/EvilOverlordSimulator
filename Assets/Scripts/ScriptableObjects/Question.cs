@@ -5,4 +5,6 @@ using UnityEngine;
 public class Question : ScriptableObject
 {
     List<Conversation> options;
+
+    //show list of conversation names
 }

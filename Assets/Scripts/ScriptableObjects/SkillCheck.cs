@@ -10,12 +10,14 @@ public enum Skill
     Morale,
     Flair
 }
+[CreateAssetMenu(fileName = "New Skill Check", menuName = "Skill Check")]
 public class SkillCheck : ScriptableObject
 {
     public string checkName;
     public Player player;
     public Skill skill;
     public int target;
+
 
     public bool Pass()
     {

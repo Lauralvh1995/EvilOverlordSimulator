@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+[CreateAssetMenu(fileName = "New Player", menuName = "Player")]
+public class Player : ScriptableObject
 {
     [SerializeField]
     int Wealth;
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     int Flair;
 
-    Character character;
+    public Character character;
 
     public int GetWealth()
     {

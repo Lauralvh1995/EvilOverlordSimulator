@@ -16,16 +16,16 @@ public class DialogueDisplay : MonoBehaviour
     {
         speakerUI = speaker.GetComponent<SpeakerUI>();
 
-        speakerUI.Speaker = conversation.lines[activeLineIndex].character;
-
-
+        if(conversation.lines.Length > 0)
+            speakerUI.Speaker = conversation.lines[activeLineIndex].character;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AdvanceConversation();
+            if(conversation != null)
+                AdvanceConversation();
         }
     }
 
@@ -38,24 +38,32 @@ public class DialogueDisplay : MonoBehaviour
         }
         else
         {
+            speakerUI.Hide();
+            activeLineIndex = 0;
             //do check if there is one
             if (conversation.check)
             {
                 if (conversation.check.Pass())
                 {
                     //play pass convo
-                    if(conversation.passConvo != null)
+                    if (conversation.passConvo != null)
                         conversation = conversation.passConvo;
                 }
                 else
                 {
                     //play fail convo
-                    if(conversation.failConvo != null)
+                    if (conversation.failConvo != null)
                         conversation = conversation.failConvo;
                 }
             }
-            speakerUI.Hide();
-            activeLineIndex = 0;
+            else if (conversation.passConvo != null)
+            {
+                conversation = conversation.passConvo;
+            }
+            else
+            {
+                conversation = null;
+            }
         }
     }
 
