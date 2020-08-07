@@ -46,24 +46,17 @@ public class DialogueDisplay : MonoBehaviour
                 if (conversation.check.Pass())
                 {
                     //play pass convo
-                    if (conversation.passConvo != null)
-                        conversation = conversation.passConvo;
+                    if (conversation.check.passConvo != null)
+                        conversation = conversation.check.passConvo;
                 }
                 else
                 {
                     //play fail convo
-                    if (conversation.failConvo != null)
-                        conversation = conversation.failConvo;
+                    if (conversation.check.failConvo != null)
+                        conversation = conversation.check.failConvo;
                 }
             }
-            else if (conversation.passConvo != null)
-            {
-                conversation = conversation.passConvo;
-            }
-            else
-            {
-                conversation = null;
-            }
+            
         }
     }
 

@@ -23,6 +23,4 @@ public class Conversation : ScriptableObject
     public Line[] lines;
 
     public SkillCheck check;
-    public Conversation passConvo;
-    public Conversation failConvo;
 }

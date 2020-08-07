@@ -18,6 +18,8 @@ public class SkillCheck : ScriptableObject
     public Skill skill;
     public int target;
 
+    public Conversation passConvo;
+    public Conversation failConvo;
 
     public bool Pass()
     {

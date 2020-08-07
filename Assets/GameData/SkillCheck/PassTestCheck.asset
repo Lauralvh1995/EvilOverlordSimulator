@@ -16,3 +16,5 @@ MonoBehaviour:
   player: {fileID: 11400000, guid: 372c3f9544fdc3b47adc782c9adc0978, type: 2}
   skill: 0
   target: 1
+  passConvo: {fileID: 11400000, guid: cdaefca1ab5a6434291e5e5d08b9daf7, type: 2}
+  failConvo: {fileID: 11400000, guid: c2402ed05e36cad4a83f47ed04229274, type: 2}
