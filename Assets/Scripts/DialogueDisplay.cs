@@ -17,6 +17,8 @@ public class DialogueDisplay : MonoBehaviour
         speakerUI = speaker.GetComponent<SpeakerUI>();
 
         speakerUI.Speaker = conversation.lines[activeLineIndex].character;
+
+
     }
 
     private void Update()
@@ -36,6 +38,22 @@ public class DialogueDisplay : MonoBehaviour
         }
         else
         {
+            //do check if there is one
+            if (conversation.check)
+            {
+                if (conversation.check.Pass())
+                {
+                    //play pass convo
+                    if(conversation.passConvo != null)
+                        conversation = conversation.passConvo;
+                }
+                else
+                {
+                    //play fail convo
+                    if(conversation.failConvo != null)
+                        conversation = conversation.failConvo;
+                }
+            }
             speakerUI.Hide();
             activeLineIndex = 0;
         }
@@ -45,7 +63,6 @@ public class DialogueDisplay : MonoBehaviour
     {
         Line line = conversation.lines[activeLineIndex];
         Character character = line.character;
-
         SetDialogue(speakerUI, character, line.text, line.position);
     }
 

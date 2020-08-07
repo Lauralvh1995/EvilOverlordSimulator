@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Player : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField]
     int Wealth;
@@ -16,6 +16,32 @@ public abstract class Player : MonoBehaviour
     int Morale;
     [SerializeField]
     int Flair;
-    
+
+    Character character;
+
+    public int GetWealth()
+    {
+        return Wealth;
+    }
+    public int GetFood()
+    {
+        return Food;
+    }
+    public int GetPowerProjection()
+    {
+        return PowerProjection;
+    }
+    public int GetStability()
+    {
+        return Stability;
+    }
+    public int GetMorale()
+    {
+        return Morale;
+    }
+    public int GetFlair()
+    {
+        return Flair;
+    }
 
 }
