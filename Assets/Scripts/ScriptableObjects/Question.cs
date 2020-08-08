@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct Choice
+{
+    [TextArea(2, 5)]
+    public string text;
+    public Conversation conversation;
+}
+[CreateAssetMenu(fileName = "New Question", menuName = "Question")]
 public class Question : ScriptableObject
 {
-    List<Conversation> options;
-    Conversation selectedConvo;
-
-
-
-    //show list of conversation names
-    //build UI element for each option
-    //play selected conversation
+    [TextArea(2, 5)]
+    public string questionText;
+    public List<Choice> choices;
 }
