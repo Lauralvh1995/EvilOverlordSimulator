@@ -6,11 +6,22 @@ public enum Position{
     RIGHT,
     CENTER
 }
+public enum Emote
+{
+    NEUTRAL,
+    HAPPY,
+    UNHAPPY,
+    ANGRY,
+    SAD,
+    CONFUSED,
+    SILLY
+}
 [System.Serializable]
 public struct Line
 {
     public Character character;
     public Position position;
+    public Emote emote;
     [TextArea(2, 5)]
     public string text;
 

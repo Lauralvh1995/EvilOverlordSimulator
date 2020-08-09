@@ -19,6 +19,11 @@ public class SpeakerUI : MonoBehaviour
         }
     }
 
+    public void SetPortrait(Sprite sprite)
+    {
+        portrait.sprite = sprite;
+    }
+
     public string Dialogue
     {
         set { dialogue.text = value; }

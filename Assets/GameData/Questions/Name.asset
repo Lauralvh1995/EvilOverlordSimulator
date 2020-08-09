@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a50fe16f0901fd34da3113c7d7e4ac60, type: 3}
-  m_Name: Test
+  m_Name: Name
   m_EditorClassIdentifier: 
-  questionText: Test Question?
+  questionText: What is your name?
   choices:
-  - text: Option 1
-    conversation: {fileID: 11400000, guid: dd96d8bdccb487f4b8f150281cf05f0a, type: 2}
-  - text: Option 2
-    conversation: {fileID: 11400000, guid: ceb8b8edefcacd34ebe9157c0249271d, type: 2}
+  - text: 
+    conversation: {fileID: 0}
+  - text: 
+    conversation: {fileID: 0}

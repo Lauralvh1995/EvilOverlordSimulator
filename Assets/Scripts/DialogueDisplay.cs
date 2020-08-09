@@ -103,11 +103,11 @@ public class DialogueDisplay : MonoBehaviour
     {
         Line line = conversation.lines[activeLineIndex];
         Character character = line.character;
-        SetDialogue(speakerUI, character, line.text, line.position);
+        SetDialogue(speakerUI, character, line.text, line.position, line.emote);
         activeLineIndex++;
     }
 
-    private void SetDialogue(SpeakerUI activeSpeakerUI, Character character, string text, Position position)
+    private void SetDialogue(SpeakerUI activeSpeakerUI, Character character, string text, Position position, Emote emote)
     {
         activeSpeakerUI.Speaker = character;
         switch (position)
@@ -123,6 +123,30 @@ public class DialogueDisplay : MonoBehaviour
                 break;
             default:
                 activeSpeakerUI.SetLeft();
+                break;
+        }
+        switch (emote)
+        {
+            case Emote.ANGRY:
+                activeSpeakerUI.SetPortrait(character.angryPortrait);
+                break;
+            case Emote.CONFUSED:
+                activeSpeakerUI.SetPortrait(character.confusedPortrait);
+                break;
+            case Emote.HAPPY:
+                activeSpeakerUI.SetPortrait(character.happyPortrait);
+                break;
+            case Emote.UNHAPPY:
+                activeSpeakerUI.SetPortrait(character.unhappyPortrait);
+                break;
+            case Emote.SAD:
+                activeSpeakerUI.SetPortrait(character.sadPortrait);
+                break;
+            case Emote.SILLY:
+                activeSpeakerUI.SetPortrait(character.sillyPortrait);
+                break;
+            default:
+                activeSpeakerUI.SetPortrait(character.portrait);
                 break;
         }
         activeSpeakerUI.Show();

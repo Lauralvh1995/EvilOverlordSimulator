@@ -6,17 +6,17 @@ using UnityEngine;
 public class Player : ScriptableObject
 {
     [SerializeField]
-    int Wealth;
+    int Wealth = 1;
     [SerializeField]
-    int Food;
+    int Food = 1;
     [SerializeField]
-    int PowerProjection;
+    int PowerProjection = 1;
     [SerializeField]
-    int Stability;
+    int Stability = 1;
     [SerializeField]
-    int Morale;
+    int Morale = 1;
     [SerializeField]
-    int Flair;
+    int Flair = 1;
 
     public Character character;
 

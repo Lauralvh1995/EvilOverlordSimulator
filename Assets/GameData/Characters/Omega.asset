@@ -10,7 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e255d40a0e55c84f8db29951502ff4f, type: 3}
-  m_Name: Piet
+  m_Name: Omega
   m_EditorClassIdentifier: 
-  FullName: Piet
+  FullName: Omega Weapon
   portrait: {fileID: 0}
+  angryPortrait: {fileID: 0}
+  happyPortrait: {fileID: 0}
+  unhappyPortrait: {fileID: 0}
+  sadPortrait: {fileID: 0}
+  confusedPortrait: {fileID: 0}
+  sillyPortrait: {fileID: 0}
