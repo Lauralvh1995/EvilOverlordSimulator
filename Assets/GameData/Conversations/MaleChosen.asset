@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
-  m_Name: MaleChosen 1
+  m_Name: MaleChosen
   m_EditorClassIdentifier: 
   conversationName: Hello Uther
   lines:
@@ -25,7 +25,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 1
     emote: 0
-    text: Anyway, I have finished the letter.
+    text: Of course.
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 1
     emote: 0

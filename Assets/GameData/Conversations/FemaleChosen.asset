@@ -25,7 +25,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 1
     emote: 0
-    text: Anyway, I have finished the letter.
+    text: Of course.
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 1
     emote: 0

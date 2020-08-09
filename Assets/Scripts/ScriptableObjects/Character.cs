@@ -13,5 +13,4 @@ public class Character : ScriptableObject
     public Sprite sadPortrait;
     public Sprite confusedPortrait;
     public Sprite sillyPortrait;
-
 }
