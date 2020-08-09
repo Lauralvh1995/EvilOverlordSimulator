@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerObject : MonoBehaviour
 {
     public Player player;
+
+    public GameObject dialogueHolder;
+    public Conversation defaultConvo;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +23,18 @@ public class PlayerObject : MonoBehaviour
     void SetFemalePlayerName()
     {
         player.character.FullName = "Bethori";
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            player.character.FullName = "??????";
+            MaleNameEvent.OnMaleNameSet -= SetMalePlayerName;
+            FemaleNameEvent.OnFemaleNameSet -= SetFemalePlayerName;
+
+            dialogueHolder.GetComponent<DialogueDisplay>().conversation = defaultConvo;
+        }
     }
 }

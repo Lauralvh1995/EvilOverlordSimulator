@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationName: Intro
   lines:
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 2
+    emote: 0
+    text: Victory at last!
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 2
     emote: 0
