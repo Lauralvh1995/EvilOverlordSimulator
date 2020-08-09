@@ -38,5 +38,6 @@ public class ChoiceController : MonoBehaviour
     public void MakeChoice()
     {
         conversationChangeEvent.Invoke(choice.conversation);
+        choice.storyEvent.DoSomething();
     }
 }
