@@ -20,6 +20,7 @@ public class DialogueDisplay : MonoBehaviour
 
     private int activeLineIndex = 0;
     private bool conversationStarted = false;
+    private bool inQuestion = false;
 
     public void ChangeConversation(Conversation nextConversation)
     {
@@ -34,7 +35,7 @@ public class DialogueDisplay : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !inQuestion)
         {
             if (conversation != null)
                 AdvanceLine();
@@ -90,6 +91,7 @@ public class DialogueDisplay : MonoBehaviour
         //do check if there is a question and NO skill check
         else if (conversation.question && !conversation.check)
         {
+            inQuestion = true;
             questionEvent.Invoke(conversation.question);
         }
         else
@@ -97,6 +99,11 @@ public class DialogueDisplay : MonoBehaviour
             EndConversation();
         }
 
+    }
+
+    public void ExitQuestion()
+    {
+        inQuestion = false;
     }
 
     private void DisplayLine()
