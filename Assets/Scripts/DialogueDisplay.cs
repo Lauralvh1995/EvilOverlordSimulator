@@ -49,12 +49,16 @@ public class DialogueDisplay : MonoBehaviour
         speakerUI.Hide();
     }
 
+    public bool HasStartedConversation()
+    {
+        return conversationStarted;
+    }
+
     private void Initialize()
     {
         conversationStarted = true;
         activeLineIndex = 0;
         speakerUI.Speaker = conversation.lines[activeLineIndex].character;
-
     }
     private void AdvanceLine()
     {
