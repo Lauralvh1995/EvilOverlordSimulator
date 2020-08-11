@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpeakerUI : MonoBehaviour
+public class SpeakerUIController : MonoBehaviour
 {
     public Image portrait;
     public Text speakerName;

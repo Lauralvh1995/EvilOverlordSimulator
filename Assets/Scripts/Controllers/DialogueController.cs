@@ -8,7 +8,7 @@ using UnityEngine.Events;
 [System.Serializable]
 public class QuestionEvent : UnityEvent<Question> { }
 
-public class DialogueDisplay : MonoBehaviour
+public class DialogueController : MonoBehaviour
 {
     public Conversation conversation;
     public QuestionEvent questionEvent;
@@ -16,7 +16,7 @@ public class DialogueDisplay : MonoBehaviour
     public GameObject speaker;
     public GameObject question;
 
-    private SpeakerUI speakerUI;
+    private SpeakerUIController speakerUI;
 
     private int activeLineIndex = 0;
     private bool conversationStarted = false;
@@ -30,7 +30,7 @@ public class DialogueDisplay : MonoBehaviour
     }
     private void Start()
     {
-        speakerUI = speaker.GetComponent<SpeakerUI>();
+        speakerUI = speaker.GetComponent<SpeakerUIController>();
     }
 
     private void Update()
@@ -118,7 +118,7 @@ public class DialogueDisplay : MonoBehaviour
         activeLineIndex++;
     }
 
-    private void SetDialogue(SpeakerUI activeSpeakerUI, Character character, string text, Position position, Emote emote)
+    private void SetDialogue(SpeakerUIController activeSpeakerUI, Character character, string text, Position position, Emote emote)
     {
         activeSpeakerUI.Speaker = character;
         switch (position)
@@ -166,7 +166,7 @@ public class DialogueDisplay : MonoBehaviour
         StartCoroutine(EffectTypewriter(text, activeSpeakerUI));
 
     }
-    private IEnumerator EffectTypewriter(string text, SpeakerUI controller)
+    private IEnumerator EffectTypewriter(string text, SpeakerUIController controller)
     {
         foreach (char character in text.ToCharArray())
         {

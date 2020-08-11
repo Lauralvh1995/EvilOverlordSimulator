@@ -10,8 +10,11 @@ public class PlayerObject : MonoBehaviour
 {
     public Player player;
 
-    public DialogueDisplay dialogueHolder;
-    public GameObject HUD;
+    public DialogueController dialogueHolder;
+    public HUDController HUD;
+    public CameraController cameraController;
+    public Selector selector;
+
     public Conversation defaultConvo;
 
     // Start is called before the first frame update
@@ -43,11 +46,15 @@ public class PlayerObject : MonoBehaviour
 
         if (dialogueHolder.HasStartedConversation())
         {
-            HUD.gameObject.SetActive(false);
+            HUD.EnableHUD(false);
+            cameraController.EnableMovement(false);
+            selector.setAllowed(false);
         }
         else
         {
-            HUD.gameObject.SetActive(true);
+            HUD.EnableHUD(true);
+            selector.setAllowed(true);
+            cameraController.EnableMovement(true);
             MaleNameEvent.OnMaleNameSet -= SetMalePlayerName;
             FemaleNameEvent.OnFemaleNameSet -= SetFemalePlayerName;
         }

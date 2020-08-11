@@ -110,3 +110,6 @@ MonoBehaviour:
   x: 0
   y: 0
   size: 1
+  building:
+    serializedVersion: 2
+    m_Bits: 512

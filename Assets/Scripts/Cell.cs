@@ -7,17 +7,24 @@ public class Cell : MonoBehaviour
     public int x, y;
     public int size;
 
+    public LayerMask buildingLayer;
+
     bool occupied;
 
-    // Start is called before the first frame update
-    void Start()
+    public void CheckOccupied()
     {
-        
+        if (Physics.Raycast(transform.position, Vector3.up, 1f, buildingLayer))
+        {
+            occupied = true;
+        }
+        else
+        {
+            occupied = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool isOccupied()
     {
-        
+        return occupied;
     }
 }
