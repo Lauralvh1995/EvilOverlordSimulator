@@ -7,13 +7,14 @@ public class Cell : MonoBehaviour
     public int x, y;
     public int size;
 
-    public LayerMask buildingLayer;
-
+    [SerializeField]
+    BuildingObject content;
+    [SerializeField]
     bool occupied;
 
     public void CheckOccupied()
     {
-        if (Physics.Raycast(transform.position, Vector3.up, 1f, buildingLayer))
+        if (content != null)
         {
             occupied = true;
         }
@@ -26,5 +27,15 @@ public class Cell : MonoBehaviour
     public bool isOccupied()
     {
         return occupied;
+    }
+
+    public BuildingObject GetContent()
+    {
+        return content;
+    }
+
+    public void SetStatusOfBuilding(bool status)
+    {
+        content.SetActive(status);
     }
 }
