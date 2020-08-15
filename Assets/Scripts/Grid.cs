@@ -21,7 +21,7 @@ public class Grid : MonoBehaviour
         foreach (Cell cell in cells)
         {
             cell.CheckOccupied();
-            CheckIfBuildingInCellShouldBeActive(cell);
+            //CheckIfBuildingInCellShouldBeActive(cell);
         }
     }
 

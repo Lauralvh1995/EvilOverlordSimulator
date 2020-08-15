@@ -17,17 +17,19 @@ public class PlayerObject : MonoBehaviour
 
     public Conversation defaultConvo;
 
-    [SerializeField] private StoryEvent maleNameEvent;
-    [SerializeField] private StoryEvent femaleNameEvent;
+    [SerializeField] private Event maleNameEvent;
+    [SerializeField] private Event femaleNameEvent;
 
     void SetMalePlayerName()
     {
         player.character.FullName = "Uther";
+        UnityEngine.Debug.Log("Set player name to: " + player.character.FullName);
     }
 
     void SetFemalePlayerName()
     {
         player.character.FullName = "Bethori";
+        UnityEngine.Debug.Log("Set player name to: " + player.character.FullName);
     }
 
     private void Update()
