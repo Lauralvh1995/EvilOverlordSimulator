@@ -17,12 +17,8 @@ public class PlayerObject : MonoBehaviour
 
     public Conversation defaultConvo;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        MaleNameEvent.OnMaleNameSet += SetMalePlayerName;
-        FemaleNameEvent.OnFemaleNameSet += SetFemalePlayerName;
-    }
+    [SerializeField] private StoryEvent maleNameEvent;
+    [SerializeField] private StoryEvent femaleNameEvent;
 
     void SetMalePlayerName()
     {
@@ -39,8 +35,8 @@ public class PlayerObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             player.character.FullName = "??????";
-            MaleNameEvent.OnMaleNameSet += SetMalePlayerName;
-            FemaleNameEvent.OnFemaleNameSet += SetFemalePlayerName;
+            femaleNameEvent.AddListener(SetFemalePlayerName);
+            maleNameEvent.AddListener(SetMalePlayerName);
             dialogueHolder.conversation = defaultConvo;
         }
 
@@ -55,8 +51,8 @@ public class PlayerObject : MonoBehaviour
             HUD.EnableHUD(true);
             selector.setAllowed(true);
             cameraController.EnableMovement(true);
-            MaleNameEvent.OnMaleNameSet -= SetMalePlayerName;
-            FemaleNameEvent.OnFemaleNameSet -= SetFemalePlayerName;
+            femaleNameEvent.RemoveListener(SetFemalePlayerName);
+            maleNameEvent.RemoveListener(SetMalePlayerName);
         }
     }
 }
