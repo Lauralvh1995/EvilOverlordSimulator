@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "New Event", menuName = "Event")]
+[CreateAssetMenu(fileName = "New Event", menuName = "Generic Event")]
 public class Event : ScriptableObject
 {
     public UnityEvent OnTrigger;

@@ -20,6 +20,17 @@ public class PlayerObject : MonoBehaviour
     [SerializeField] private Event maleNameEvent;
     [SerializeField] private Event femaleNameEvent;
 
+    private void OnEnable()
+    {
+        femaleNameEvent.AddListener(SetFemalePlayerName);
+        maleNameEvent.AddListener(SetMalePlayerName);
+    }
+    private void OnDisable()
+    {
+        femaleNameEvent.RemoveListener(SetFemalePlayerName);
+        maleNameEvent.RemoveListener(SetMalePlayerName);
+    }
+
     void SetMalePlayerName()
     {
         player.character.FullName = "Uther";
@@ -37,8 +48,6 @@ public class PlayerObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             player.character.FullName = "??????";
-            femaleNameEvent.AddListener(SetFemalePlayerName);
-            maleNameEvent.AddListener(SetMalePlayerName);
             dialogueHolder.conversation = defaultConvo;
         }
 
@@ -53,8 +62,6 @@ public class PlayerObject : MonoBehaviour
             HUD.EnableHUD(true);
             selector.setAllowed(true);
             cameraController.EnableMovement(true);
-            femaleNameEvent.RemoveListener(SetFemalePlayerName);
-            maleNameEvent.RemoveListener(SetMalePlayerName);
         }
     }
 }
