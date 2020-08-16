@@ -43,7 +43,6 @@ public class Selector : MonoBehaviour
         if (hovered.GetComponent<Cell>() != selected || selected == null)
         {
             selected = hovered.GetComponent<Cell>();
-            selected.BuildObject();
             selected.GetContent().SetBuildingType(Building.HOUSE);
         }
         else

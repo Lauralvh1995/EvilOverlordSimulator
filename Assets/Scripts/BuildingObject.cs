@@ -24,15 +24,6 @@ public class BuildingObject : MonoBehaviour
 
     [SerializeField]
     private bool active;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(content != Building.EMPTY)
-        {
-            physicalObject.gameObject.SetActive(true);
-        }
-        BuildingIsBuilt.Invoke();
-    }
 
     // Update is called once per frame
     void Update()
@@ -51,6 +42,7 @@ public class BuildingObject : MonoBehaviour
         if (content != Building.EMPTY)
         {
             physicalObject.gameObject.SetActive(true);
+            BuildingIsBuilt.Invoke();
         }
         else
         {

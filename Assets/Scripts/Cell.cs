@@ -13,6 +13,10 @@ public class Cell : MonoBehaviour
     BuildingObject building;
     [SerializeField]
     bool occupied;
+    private void Start()
+    {
+        BuildObject();
+    }
 
     public void CheckOccupied()
     {
@@ -24,10 +28,9 @@ public class Cell : MonoBehaviour
         {
             occupied = false;
         }
-        Debug.Log(occupied);
     }
 
-    public bool isOccupied()
+    public bool IsOccupied()
     {
         return occupied;
     }
