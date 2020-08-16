@@ -8,6 +8,8 @@ public class Selector : MonoBehaviour
     public Cell hover;
     public Cell selected;
 
+    public LayerMask field;
+
     bool allowedToSelect;
 
     private void Update()
@@ -17,7 +19,7 @@ public class Selector : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
 
-            if (Physics.Raycast(ray, out hitInfo))
+            if (Physics.Raycast(ray, out hitInfo, 100f, field))
             {
                 hover = hitInfo.transform.GetComponent<Cell>();
             }
@@ -41,6 +43,8 @@ public class Selector : MonoBehaviour
         if (hovered.GetComponent<Cell>() != selected || selected == null)
         {
             selected = hovered.GetComponent<Cell>();
+            selected.BuildObject();
+            selected.GetContent().SetBuildingType(Building.HOUSE);
         }
         else
         {

@@ -7,14 +7,16 @@ public class Cell : MonoBehaviour
     public int x, y;
     public int size;
 
+    public Transform buildingPrefab;
+
     [SerializeField]
-    BuildingObject content;
+    BuildingObject building;
     [SerializeField]
     bool occupied;
 
     public void CheckOccupied()
     {
-        if (content != null)
+        if (!building.content.Equals(Building.EMPTY))
         {
             occupied = true;
         }
@@ -22,6 +24,7 @@ public class Cell : MonoBehaviour
         {
             occupied = false;
         }
+        Debug.Log(occupied);
     }
 
     public bool isOccupied()
@@ -31,11 +34,20 @@ public class Cell : MonoBehaviour
 
     public BuildingObject GetContent()
     {
-        return content;
+        return building;
     }
 
     public void SetStatusOfBuilding(bool status)
     {
-        content.SetActive(status);
+        building.SetActive(status);
+    }
+
+    public void BuildObject()
+    {
+        //instantiate building object prefab here
+        building = Instantiate(buildingPrefab.GetComponent<BuildingObject>());
+        building.transform.SetParent(transform);
+        building.transform.localPosition = Vector3.zero;
+        building.name = string.Format("Building {0}x{1}", x, y);
     }
 }

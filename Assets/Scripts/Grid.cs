@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Grid : MonoBehaviour
 {
@@ -10,6 +11,18 @@ public class Grid : MonoBehaviour
 
     private Cell[,] cells;
     public Cell cellPrefab;
+
+    [SerializeField]
+    Event buildingAppears;
+
+    private void OnEnable()
+    {
+        buildingAppears.AddListener(CheckCellStatus);
+    }
+    private void OnDisable()
+    {
+        buildingAppears.RemoveListener(CheckCellStatus);
+    }
 
     private void Awake()
     {
@@ -36,7 +49,7 @@ public class Grid : MonoBehaviour
             {
                 Cell newTile = Instantiate(cellPrefab);
                 newTile.transform.SetParent(transform);
-                newTile.transform.localPosition = new Vector3(xOffset, 0, yOffset);
+                newTile.transform.localPosition = new Vector3(xOffset, 0.001f, yOffset);
                 newTile.name = string.Format("Cell {0}x{1}", x, y);
 
                 cells[x, y] = newTile;
@@ -105,28 +118,28 @@ public class Grid : MonoBehaviour
             foreach (Cell i in buildingCluster.ToList())
             {
                 newlyAdded = false;
-                if (i.y < height - 1 && (cells[i.x, i.y + 1].GetContent().content is Road || cells[i.x, i.y + 1].GetContent().content is Base))
+                if (i.y < height - 1 && (cells[i.x, i.y + 1].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                 {
                     if (roadCluster.Add(cells[i.x, i.y + 1]))
                     {
                         newlyAdded = true;
                     }
                 }
-                if (i.y > 0 && (cells[i.x, i.y - 1].GetContent().content is Road || cells[i.x, i.y + 1].GetContent().content is Base))
+                if (i.y > 0 && (cells[i.x, i.y - 1].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                 {
                     if (roadCluster.Add(cells[i.x, i.y - 1]))
                     {
                         newlyAdded = true;
                     }
                 }
-                if (i.x < width - 1 && (cells[i.x + 1, i.y].GetContent().content is Road || cells[i.x, i.y + 1].GetContent().content is Base))
+                if (i.x < width - 1 && (cells[i.x + 1, i.y].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                 {
                     if (roadCluster.Add(cells[i.x + 1, i.y]))
                     {
                         newlyAdded = true;
                     }
                 }
-                if (i.x > 0 && (cells[i.x - 1, i.y].GetContent().content is Road || cells[i.x, i.y + 1].GetContent().content is Base))
+                if (i.x > 0 && (cells[i.x - 1, i.y].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                 {
                     if (roadCluster.Add(cells[i.x - 1, i.y]))
                     {
@@ -140,7 +153,7 @@ public class Grid : MonoBehaviour
         {
             foreach (Cell a in roadCluster)
             {
-                if (a.GetContent().content is Base)
+                if (a.GetContent().content == Building.BASE)
                 {
                     Debug.Log("Found a Base");
                     foreach (Cell d in buildingCluster)
@@ -157,28 +170,28 @@ public class Grid : MonoBehaviour
                 foreach (Cell i in roadCluster.ToList())
                 {
                     newlyAdded = false;
-                    if (i.y < height - 1 && (cells[i.x, i.y + 1].GetContent().content is Road || cells[i.x, i.y + 1].GetContent().content is Base))
+                    if (i.y < height - 1 && (cells[i.x, i.y + 1].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                     {
                         if (roadCluster.Add(cells[i.x, i.y + 1]))
                         {
                             newlyAdded = true;
                         }
                     }
-                    if (i.y > 0 && (cells[i.x, i.y - 1].GetContent().content is Road || cells[i.x, i.y + 1].GetContent().content is Base))
+                    if (i.y > 0 && (cells[i.x, i.y - 1].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                     {
                         if (roadCluster.Add(cells[i.x, i.y - 1]))
                         {
                             newlyAdded = true;
                         }
                     }
-                    if (i.x < width - 1 && (cells[i.x + 1, i.y].GetContent().content is Road || cells[i.x, i.y + 1].GetContent().content is Base))
+                    if (i.x < width - 1 && (cells[i.x + 1, i.y].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                     {
                         if (roadCluster.Add(cells[i.x + 1, i.y]))
                         {
                             newlyAdded = true;
                         }
                     }
-                    if (i.x > 0 && (cells[i.x - 1, i.y].GetContent().content is Road || cells[i.x, i.y + 1].GetContent().content is Base))
+                    if (i.x > 0 && (cells[i.x - 1, i.y].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                     {
                         if (roadCluster.Add(cells[i.x - 1, i.y]))
                         {
@@ -189,7 +202,7 @@ public class Grid : MonoBehaviour
             }
             foreach (Cell a in roadCluster)
             {
-                if (a.GetContent().content is Base)
+                if (a.GetContent().content == Building.BASE)
                 {
                     Debug.Log("Found a Base");
                     foreach (Cell d in buildingCluster)

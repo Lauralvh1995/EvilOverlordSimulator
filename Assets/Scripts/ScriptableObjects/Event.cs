@@ -11,7 +11,7 @@ public class Event : ScriptableObject
 
     public void Invoke()
     {
-        OnTrigger.Invoke();
+        OnTrigger?.Invoke();
     }
 
     public void AddListener(UnityAction action)
