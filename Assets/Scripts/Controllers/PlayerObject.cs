@@ -55,12 +55,12 @@ public class PlayerObject : MonoBehaviour
         {
             HUD.EnableHUD(false);
             cameraController.EnableMovement(false);
-            selector.setAllowed(false);
+            selector.SetAllowed(false);
         }
         else
         {
             HUD.EnableHUD(true);
-            selector.setAllowed(true);
+            selector.SetAllowed(true);
             cameraController.EnableMovement(true);
         }
     }

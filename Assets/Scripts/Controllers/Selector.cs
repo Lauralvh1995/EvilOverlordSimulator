@@ -52,7 +52,7 @@ public class Selector : MonoBehaviour
 
     }
 
-    public void setAllowed(bool status)
+    public void SetAllowed(bool status)
     {
         allowedToSelect = status;
     }

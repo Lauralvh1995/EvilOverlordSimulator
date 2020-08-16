@@ -34,7 +34,7 @@ public class Grid : MonoBehaviour
         foreach (Cell cell in cells)
         {
             cell.CheckOccupied();
-            //CheckIfBuildingInCellShouldBeActive(cell);
+            CheckIfBuildingInCellShouldBeActive(cell);
         }
     }
 
@@ -75,99 +75,49 @@ public class Grid : MonoBehaviour
         //keep checking road until Base is encountered
         buildingCluster.Add(c);
         //making the Building Cluster
-        while (newlyAdded)
+        if (!b.Equals(Building.EMPTY))
         {
-            foreach (Cell i in buildingCluster.ToList())
+            while (newlyAdded)
             {
-                newlyAdded = false;
-                if (i.y < height - 1 && cells[i.x, i.y + 1].GetContent().content == b)
+                foreach (Cell i in buildingCluster.ToList())
                 {
-                    if (buildingCluster.Add(cells[i.x, i.y + 1]))
+                    newlyAdded = false;
+                    if (i.y < height - 1 && cells[i.x, i.y + 1].GetContent().content == b)
                     {
-                        newlyAdded = true;
+                        if (buildingCluster.Add(cells[i.x, i.y + 1]))
+                        {
+                            newlyAdded = true;
+                        }
                     }
-                }
-                if (i.y > 0 && cells[i.x, i.y - 1].GetContent().content == b)
-                {
-                    if (buildingCluster.Add(cells[i.x, i.y - 1]))
+                    if (i.y > 0 && cells[i.x, i.y - 1].GetContent().content == b)
                     {
-                        newlyAdded = true;
+                        if (buildingCluster.Add(cells[i.x, i.y - 1]))
+                        {
+                            newlyAdded = true;
+                        }
                     }
-                }
-                if (i.x < width - 1 && cells[i.x + 1, i.y].GetContent().content == b)
-                {
-                    if (buildingCluster.Add(cells[i.x + 1, i.y]))
+                    if (i.x < width - 1 && cells[i.x + 1, i.y].GetContent().content == b)
                     {
-                        newlyAdded = true;
+                        if (buildingCluster.Add(cells[i.x + 1, i.y]))
+                        {
+                            newlyAdded = true;
+                        }
                     }
-                }
-                if (i.x > 0 && cells[i.x - 1, i.y].GetContent().content == b)
-                {
-                    if (buildingCluster.Add(cells[i.x - 1, i.y]))
+                    if (i.x > 0 && cells[i.x - 1, i.y].GetContent().content == b)
                     {
-                        newlyAdded = true;
+                        if (buildingCluster.Add(cells[i.x - 1, i.y]))
+                        {
+                            newlyAdded = true;
+                        }
                     }
                 }
             }
-        }
-        Debug.Log("This cluster is "+buildingCluster.Count+ " cells big");
-        //checking for road starts
-        newlyAdded = true;
-        while (newlyAdded)
-        {
-            foreach (Cell i in buildingCluster.ToList())
-            {
-                newlyAdded = false;
-                if (i.y < height - 1 && (cells[i.x, i.y + 1].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
-                {
-                    if (roadCluster.Add(cells[i.x, i.y + 1]))
-                    {
-                        newlyAdded = true;
-                    }
-                }
-                if (i.y > 0 && (cells[i.x, i.y - 1].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
-                {
-                    if (roadCluster.Add(cells[i.x, i.y - 1]))
-                    {
-                        newlyAdded = true;
-                    }
-                }
-                if (i.x < width - 1 && (cells[i.x + 1, i.y].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
-                {
-                    if (roadCluster.Add(cells[i.x + 1, i.y]))
-                    {
-                        newlyAdded = true;
-                    }
-                }
-                if (i.x > 0 && (cells[i.x - 1, i.y].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
-                {
-                    if (roadCluster.Add(cells[i.x - 1, i.y]))
-                    {
-                        newlyAdded = true;
-                    }
-                }
-            }
-        }
-        
-        if (roadCluster.Count > 0)
-        {
-            foreach (Cell a in roadCluster)
-            {
-                if (a.GetContent().content == Building.BASE)
-                {
-                    Debug.Log("Found a Base");
-                    foreach (Cell d in buildingCluster)
-                    {
-                        d.SetStatusOfBuilding(true);
-                    }
-                    return;
-                }
-            }
-            //checking for roads
+            Debug.Log("This cluster is " + buildingCluster.Count + " cells big");
+            //checking for road starts
             newlyAdded = true;
             while (newlyAdded)
             {
-                foreach (Cell i in roadCluster.ToList())
+                foreach (Cell i in buildingCluster.ToList())
                 {
                     newlyAdded = false;
                     if (i.y < height - 1 && (cells[i.x, i.y + 1].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
@@ -200,20 +150,72 @@ public class Grid : MonoBehaviour
                     }
                 }
             }
-            foreach (Cell a in roadCluster)
+
+            if (roadCluster.Count > 0)
             {
-                if (a.GetContent().content == Building.BASE)
+                foreach (Cell a in roadCluster)
                 {
-                    Debug.Log("Found a Base");
-                    foreach (Cell d in buildingCluster)
+                    if (a.GetContent().content == Building.BASE)
                     {
-                        d.SetStatusOfBuilding(true);
+                        Debug.Log("Found a Base");
+                        foreach (Cell d in buildingCluster)
+                        {
+                            d.SetStatusOfBuilding(true);
+                        }
+                        return;
                     }
-                    return;
+                }
+                //checking for roads
+                newlyAdded = true;
+                while (newlyAdded)
+                {
+                    foreach (Cell i in roadCluster.ToList())
+                    {
+                        newlyAdded = false;
+                        if (i.y < height - 1 && (cells[i.x, i.y + 1].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
+                        {
+                            if (roadCluster.Add(cells[i.x, i.y + 1]))
+                            {
+                                newlyAdded = true;
+                            }
+                        }
+                        if (i.y > 0 && (cells[i.x, i.y - 1].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
+                        {
+                            if (roadCluster.Add(cells[i.x, i.y - 1]))
+                            {
+                                newlyAdded = true;
+                            }
+                        }
+                        if (i.x < width - 1 && (cells[i.x + 1, i.y].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
+                        {
+                            if (roadCluster.Add(cells[i.x + 1, i.y]))
+                            {
+                                newlyAdded = true;
+                            }
+                        }
+                        if (i.x > 0 && (cells[i.x - 1, i.y].GetContent().content == Building.ROAD || cells[i.x, i.y + 1].GetContent().content == Building.BASE))
+                        {
+                            if (roadCluster.Add(cells[i.x - 1, i.y]))
+                            {
+                                newlyAdded = true;
+                            }
+                        }
+                    }
+                }
+                foreach (Cell a in roadCluster)
+                {
+                    if (a.GetContent().content == Building.BASE)
+                    {
+                        Debug.Log("Found a Base");
+                        foreach (Cell d in buildingCluster)
+                        {
+                            d.SetStatusOfBuilding(true);
+                        }
+                        return;
+                    }
                 }
             }
         }
-        
     }
 }
 
