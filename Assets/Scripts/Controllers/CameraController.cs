@@ -50,12 +50,12 @@ public class CameraController : MonoBehaviour
                 }
             }
 
-            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+            if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
             {
                 if (mainCamera.orthographicSize < maxZoom)
                     mainCamera.orthographicSize++;
             }
-            if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
             {
                 if (mainCamera.orthographicSize > minZoom)
                     mainCamera.orthographicSize--;

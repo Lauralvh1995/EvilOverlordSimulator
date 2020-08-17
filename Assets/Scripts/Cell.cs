@@ -13,7 +13,7 @@ public class Cell : MonoBehaviour
     BuildingObject building;
     [SerializeField]
     bool occupied;
-    private void Start()
+    private void Awake()
     {
         BuildObject();
     }
@@ -52,5 +52,15 @@ public class Cell : MonoBehaviour
         building.transform.SetParent(transform);
         building.transform.localPosition = Vector3.zero;
         building.name = string.Format("Building {0}x{1}", x, y);
+    }
+
+    public void Build(Building type)
+    {
+        building.SetBuildingType(type);
+    }
+
+    public bool IsBase()
+    {
+        return building.content == Building.BASE;
     }
 }

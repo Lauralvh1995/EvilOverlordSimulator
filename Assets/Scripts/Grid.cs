@@ -60,6 +60,16 @@ public class Grid : MonoBehaviour
             }
             xOffset += cellPrefab.size;
         }
+        //Initializing the Base
+        cells[12, 12].Build(Building.BASE);
+        cells[11, 11].Build(Building.BASE);
+        cells[13, 13].Build(Building.BASE);
+        cells[12, 13].Build(Building.BASE);
+        cells[12, 11].Build(Building.BASE);
+        cells[11, 12].Build(Building.BASE);
+        cells[11, 13].Build(Building.BASE);
+        cells[13, 12].Build(Building.BASE);
+        cells[13, 11].Build(Building.BASE);
     }
 
     public void CheckIfBuildingInCellShouldBeActive(Cell c)
@@ -157,7 +167,6 @@ public class Grid : MonoBehaviour
                 {
                     if (a.GetContent().content == Building.BASE)
                     {
-                        Debug.Log("Found a Base");
                         foreach (Cell d in buildingCluster)
                         {
                             d.SetStatusOfBuilding(true);
@@ -206,7 +215,6 @@ public class Grid : MonoBehaviour
                 {
                     if (a.GetContent().content == Building.BASE)
                     {
-                        Debug.Log("Found a Base");
                         foreach (Cell d in buildingCluster)
                         {
                             d.SetStatusOfBuilding(true);
