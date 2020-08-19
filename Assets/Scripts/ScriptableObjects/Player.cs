@@ -21,9 +21,9 @@ public class Player : ScriptableObject
     int Flair = 1;
 
     [SerializeField]
-    int Gold;
+    int Gold = 5;
     [SerializeField]
-    int Minions;
+    List<Minion> Minions;
 
     public Character character;
 

@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum Building
 {
@@ -14,7 +16,7 @@ public enum Building
     FARM,
     STATUE
 }
-
+[RequireComponent(typeof(NavMeshObstacle))]
 public class BuildingObject : MonoBehaviour
 {
     public Building content;
@@ -25,6 +27,14 @@ public class BuildingObject : MonoBehaviour
 
     [SerializeField]
     private bool active;
+
+    [SerializeField]
+    private NavMeshObstacle obstacle;
+
+    private void Start()
+    {
+        obstacle = GetComponent<NavMeshObstacle>();
+    }
 
     public void SetActive(bool status)
     {
@@ -73,5 +83,14 @@ public class BuildingObject : MonoBehaviour
             physicalObject.gameObject.SetActive(false);
         }
         BuildingIsBuilt.Invoke();
+
+        if(content == Building.ROAD || content == Building.EMPTY)
+        {
+            obstacle.enabled = false;
+        }
+        else
+        {
+            obstacle.enabled = true;
+        }
     }
 }

@@ -122,7 +122,6 @@ public class Grid : MonoBehaviour
                     }
                 }
             }
-            Debug.Log("This cluster is " + buildingCluster.Count + " cells big");
             //checking for road starts
             newlyAdded = true;
             while (newlyAdded)
