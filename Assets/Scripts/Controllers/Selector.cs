@@ -13,7 +13,7 @@ public class Selector : MonoBehaviour
 
     public Building buildMode;
 
-    bool allowedToSelect;
+    bool allowedToSelect = true;
 
     private void Update()
     {

@@ -26,12 +26,6 @@ public class BuildingObject : MonoBehaviour
     [SerializeField]
     private bool active;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetActive(bool status)
     {
         active = status;
@@ -54,7 +48,7 @@ public class BuildingObject : MonoBehaviour
                     rend.material.SetColor("_BaseColor", Color.magenta);
                     break;
                 case Building.ROAD:
-                    rend.material.SetColor("_BaseColor", Color.black);
+                    rend.material.SetColor("_BaseColor", Color.white);
                     break;
                 case Building.FARM:
                     rend.material.SetColor("_BaseColor", Color.green);
@@ -72,11 +66,12 @@ public class BuildingObject : MonoBehaviour
                     rend.material.SetColor("_BaseColor", Color.grey);
                     break;
             }
-            BuildingIsBuilt.Invoke();
+            
         }
         else
         {
             physicalObject.gameObject.SetActive(false);
         }
+        BuildingIsBuilt.Invoke();
     }
 }

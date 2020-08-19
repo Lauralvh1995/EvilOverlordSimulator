@@ -24,7 +24,6 @@ public struct Line
     public Emote emote;
     [TextArea(2, 5)]
     public string text;
-
 }
 [CreateAssetMenu(fileName = "New Conversation", menuName = "Conversation")]
 public class Conversation : ScriptableObject
@@ -35,4 +34,5 @@ public class Conversation : ScriptableObject
 
     public SkillCheck check;
     public Question question;
+    public Event storyEvent;
 }

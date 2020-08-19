@@ -18,4 +18,7 @@ MonoBehaviour:
   Stability: 1
   Morale: 1
   Flair: 1
+  Gold: 0
+  Minions: 0
   character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+  DayTick: {fileID: 11400000, guid: 31cc663ddec8acd469cb8b23c58f1eb4, type: 2}

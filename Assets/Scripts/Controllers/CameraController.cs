@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     public int minZoom = 1;
     public int maxZoom = 6;
 
-    private bool isAllowedToMove = false;
+    private bool isAllowedToMove = true;
     private void Update()
     {
         if (isAllowedToMove)

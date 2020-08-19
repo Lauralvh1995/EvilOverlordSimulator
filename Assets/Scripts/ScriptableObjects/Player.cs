@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,7 +20,23 @@ public class Player : ScriptableObject
     [SerializeField]
     int Flair = 1;
 
+    [SerializeField]
+    int Gold;
+    [SerializeField]
+    int Minions;
+
     public Character character;
+
+    [SerializeField]
+    Event DayTick;
+    private void OnEnable()
+    {
+        DayTick.AddListener(AddGold);
+    }
+    private void OnDisable()
+    {
+        DayTick.RemoveListener(AddGold);
+    }
 
     public int GetWealth()
     {
@@ -46,4 +63,9 @@ public class Player : ScriptableObject
         return Flair;
     }
 
+    void AddGold()
+    {
+        Gold += Wealth;
+        Debug.Log("Current Gold: " + Gold);
+    }
 }

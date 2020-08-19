@@ -22,6 +22,11 @@ public class DialogueController : MonoBehaviour
     private bool conversationStarted = false;
     private bool inQuestion = false;
 
+    [SerializeField]
+    Event DialogueStarted;
+    [SerializeField]
+    Event DialogueEnded;
+
     public void ChangeConversation(Conversation nextConversation)
     {
         conversationStarted = false;
@@ -46,6 +51,7 @@ public class DialogueController : MonoBehaviour
     {
         conversation = null;
         conversationStarted = false;
+        DialogueEnded.Invoke();
         speakerUI.Hide();
     }
 
@@ -57,6 +63,7 @@ public class DialogueController : MonoBehaviour
     private void Initialize()
     {
         conversationStarted = true;
+        DialogueStarted.Invoke();
         activeLineIndex = 0;
         speakerUI.Speaker = conversation.lines[activeLineIndex].character;
     }

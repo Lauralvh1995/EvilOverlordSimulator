@@ -19,16 +19,24 @@ public class PlayerObject : MonoBehaviour
 
     [SerializeField] private Event maleNameEvent;
     [SerializeField] private Event femaleNameEvent;
+    [SerializeField]
+    Event DialogueStarted;
+    [SerializeField]
+    Event DialogueEnded;
 
     private void OnEnable()
     {
         femaleNameEvent.AddListener(SetFemalePlayerName);
         maleNameEvent.AddListener(SetMalePlayerName);
+        DialogueStarted.AddListener(OnDialogueStarted);
+        DialogueEnded.AddListener(OnDialogueEnded);
     }
     private void OnDisable()
     {
         femaleNameEvent.RemoveListener(SetFemalePlayerName);
         maleNameEvent.RemoveListener(SetMalePlayerName);
+        DialogueStarted.RemoveListener(OnDialogueStarted);
+        DialogueEnded.RemoveListener(OnDialogueEnded);
     }
 
     void SetMalePlayerName()
@@ -50,18 +58,18 @@ public class PlayerObject : MonoBehaviour
             player.character.FullName = "??????";
             dialogueHolder.conversation = defaultConvo;
         }
+    }
 
-        if (dialogueHolder.HasStartedConversation())
-        {
-            HUD.EnableHUD(false);
-            cameraController.EnableMovement(false);
-            selector.SetAllowed(false);
-        }
-        else
-        {
-            HUD.EnableHUD(true);
-            selector.SetAllowed(true);
-            cameraController.EnableMovement(true);
-        }
+    void OnDialogueStarted()
+    {
+         HUD.EnableHUD(false);
+         cameraController.EnableMovement(false);
+         selector.SetAllowed(false);        
+    }
+    void OnDialogueEnded()
+    {
+        HUD.EnableHUD(true);
+        selector.SetAllowed(true);
+        cameraController.EnableMovement(true);
     }
 }

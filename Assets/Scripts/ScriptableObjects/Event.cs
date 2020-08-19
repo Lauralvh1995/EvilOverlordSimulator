@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,10 +7,9 @@ using UnityEngine.Events;
 public class Event : ScriptableObject
 {
     public UnityEvent OnTrigger;
-
     public void Invoke()
     {
-        OnTrigger?.Invoke();
+        OnTrigger.Invoke();
     }
 
     public void AddListener(UnityAction action)
@@ -20,7 +18,7 @@ public class Event : ScriptableObject
         Debug.Log("Added " + action.ToString() + " as listener");
     }
 
-    public void RemoveListener(UnityAction action)
+    public  void RemoveListener(UnityAction action)
     {
         OnTrigger.RemoveListener(action);
         Debug.Log("Removed " + action.ToString() + " as listener");

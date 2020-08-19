@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class HUDController : MonoBehaviour
 {
-    public GameObject SideBar;
-    public GameObject BottomBar;
+    public List<GameObject> HUDElements;
     
     public void EnableHUD(bool status)
     {
-        SideBar.SetActive(status);
-        BottomBar.SetActive(status);
+        foreach(GameObject o in HUDElements)
+        {
+            o.SetActive(status);
+        }
     }
 }

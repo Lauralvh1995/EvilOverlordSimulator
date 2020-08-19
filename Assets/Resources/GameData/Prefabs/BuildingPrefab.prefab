@@ -139,5 +139,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: 0
   physicalObject: {fileID: 170221258688173181}
-  BuildingIsBuilt: {fileID: 11400000, guid: 523c992054a14c4478a83f0750edf9db, type: 2}
+  BuildingIsBuilt: {fileID: 11400000, guid: 52adb5f538d3ebe47aaba62c032f84f9, type: 2}
   active: 0

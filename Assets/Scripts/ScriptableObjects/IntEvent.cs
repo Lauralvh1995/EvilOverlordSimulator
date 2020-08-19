@@ -4,23 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "New Event", menuName = "String Event")]
-public class StringEvent : Event<string>
+[CreateAssetMenu(fileName = "New Event", menuName = "Int Event")]
+public class IntEvent : Event<int>
 {
-    public UnityEvent<string> OnTrigger;
+    public UnityEvent<int> OnTrigger;
 
-    public override void Invoke(string s)
+    public override void Invoke(int i)
     {
-        OnTrigger.Invoke(s);
+        OnTrigger.Invoke(i);
     }
 
-    public override void AddListener(UnityAction<string> action)
+    public override void AddListener(UnityAction<int> action)
     {
         OnTrigger.AddListener(action);
         Debug.Log("Added " + action.ToString() + " as listener");
     }
 
-    public override void RemoveListener(UnityAction<string> action)
+    public override void RemoveListener(UnityAction<int> action)
     {
         OnTrigger.RemoveListener(action);
         Debug.Log("Removed " + action.ToString() + " as listener");
