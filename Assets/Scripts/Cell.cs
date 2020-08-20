@@ -10,6 +10,9 @@ public class Cell : MonoBehaviour
     public Transform buildingPrefab;
 
     [SerializeField]
+    Minion minion;
+
+    [SerializeField]
     BuildingObject building;
     [SerializeField]
     bool occupied;

@@ -14,6 +14,7 @@ public class PlayerObject : MonoBehaviour
     public HUDController HUD;
     public CameraController cameraController;
     public Selector selector;
+    public GameClock gameClock;
 
     public Conversation defaultConvo;
 
@@ -23,6 +24,12 @@ public class PlayerObject : MonoBehaviour
     Event DialogueStarted;
     [SerializeField]
     Event DialogueEnded;
+
+    private void Start()
+    {
+        selector = GetComponent<Selector>();
+        gameClock = GetComponent<GameClock>();
+    }
 
     private void OnEnable()
     {
@@ -62,14 +69,16 @@ public class PlayerObject : MonoBehaviour
 
     void OnDialogueStarted()
     {
-         HUD.EnableHUD(false);
-         cameraController.EnableMovement(false);
-         selector.SetAllowed(false);        
+        HUD.EnableHUD(false);
+        cameraController.EnableMovement(false);
+        selector.SetAllowed(false);
+        gameClock.Pause(true);
     }
     void OnDialogueEnded()
     {
         HUD.EnableHUD(true);
         selector.SetAllowed(true);
         cameraController.EnableMovement(true);
+        gameClock.Pause(false);
     }
 }

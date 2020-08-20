@@ -16,6 +16,8 @@ public class GameClock : MonoBehaviour
 
     private int day;
     private float timer = 0f;
+
+    private bool paused;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,8 @@ public class GameClock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        if(!paused)
+            timer += Time.deltaTime;
 
         if(timer > dayLengthRealTime)
         {
@@ -46,5 +49,10 @@ public class GameClock : MonoBehaviour
             Debug.Log("A Month has passed");
             day = 0;
         }
+    }
+
+    public void Pause(bool status)
+    {
+        paused = status;
     }
 }
