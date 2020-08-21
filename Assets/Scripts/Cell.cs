@@ -21,6 +21,11 @@ public class Cell : MonoBehaviour
         BuildObject();
     }
 
+    public BuildingObject GetBuilding()
+    {
+        return building;
+    }
+
     public void CheckOccupied()
     {
         if (!building.content.Equals(Building.EMPTY))
@@ -65,5 +70,10 @@ public class Cell : MonoBehaviour
     public bool IsBase()
     {
         return building.content == Building.BASE;
+    }
+
+    public bool IsActive()
+    {
+        return building.IsActive();
     }
 }

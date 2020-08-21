@@ -41,6 +41,11 @@ public class BuildingObject : MonoBehaviour
         active = status;
     }
 
+    public bool IsActive()
+    {
+        return active;
+    }
+
     public void SetBuildingType(Building building)
     {
         content = building;

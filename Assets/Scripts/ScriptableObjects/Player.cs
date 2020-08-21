@@ -62,6 +62,36 @@ public class Player : ScriptableObject
     {
         return Flair;
     }
+    public int GetGold()
+    {
+        return Gold;
+    }
+    public int GetMinionCount()
+    {
+        return Minions.Count;
+    }
+
+    public void SetStats(int _wealth, int _morale, int _food, int _flair, int _stability, int _powerProjection)
+    {
+        Wealth = _wealth;
+        Morale = _morale;
+        Food = _food;
+        Flair = _flair;
+        Stability = _stability;
+        PowerProjection = _powerProjection;
+    }
+
+    public void Reset()
+    {
+        character.FullName = "??????";
+        Wealth = 1;
+        Food = 1;
+        PowerProjection = 1;
+        Stability = 1;
+        Morale = 1;
+        Flair = 1;
+        Gold = 5;
+    }
 
     void AddGold()
     {
