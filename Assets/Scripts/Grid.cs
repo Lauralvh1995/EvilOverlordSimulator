@@ -74,6 +74,7 @@ public class Grid : MonoBehaviour
         Cells[13, 11].Build(Building.BASE);
     }
 
+    //TODO: DIT KAN EFFICIENTER
     public void CheckIfBuildingInCellShouldBeActive(Cell c)
     {
         bool newlyAdded = true;
