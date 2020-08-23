@@ -17,12 +17,10 @@ public class StringEvent : Event<string>
     public override void AddListener(UnityAction<string> action)
     {
         OnTrigger.AddListener(action);
-        Debug.Log("Added " + action.ToString() + " as listener");
     }
 
     public override void RemoveListener(UnityAction<string> action)
     {
         OnTrigger.RemoveListener(action);
-        Debug.Log("Removed " + action.ToString() + " as listener");
     }
 }

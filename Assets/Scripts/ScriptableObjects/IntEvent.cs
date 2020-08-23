@@ -17,12 +17,10 @@ public class IntEvent : Event<int>
     public override void AddListener(UnityAction<int> action)
     {
         OnTrigger.AddListener(action);
-        Debug.Log("Added " + action.ToString() + " as listener");
     }
 
     public override void RemoveListener(UnityAction<int> action)
     {
         OnTrigger.RemoveListener(action);
-        Debug.Log("Removed " + action.ToString() + " as listener");
     }
 }

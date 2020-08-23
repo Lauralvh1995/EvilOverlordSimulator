@@ -74,7 +74,6 @@ public class Grid : MonoBehaviour
         Cells[13, 11].Build(Building.BASE);
     }
 
-    //TODO: DIT KAN EFFICIENTER
     public void CheckIfBuildingInCellShouldBeActive(Cell c)
     {
         bool newlyAdded = true;
@@ -88,7 +87,7 @@ public class Grid : MonoBehaviour
         //keep checking road until Base is encountered
         roadCluster.Add(c);
         //making the Building Cluster
-        if (!b.Equals(Building.EMPTY))
+        if (!b.Equals(Building.EMPTY) && !b.Equals(Building.ROAD) && !b.Equals(Building.BASE))
         {
             newlyAdded = true;
             while (newlyAdded)
@@ -134,9 +133,9 @@ public class Grid : MonoBehaviour
                     break;
                 }
             }
+            c.SetStatusOfBuilding(baseFound);
+            Debug.Log("Buiding active: " + baseFound);
         }
-        c.SetStatusOfBuilding(baseFound);
-        Debug.Log("Buiding active: " + baseFound);
     }
 }
 

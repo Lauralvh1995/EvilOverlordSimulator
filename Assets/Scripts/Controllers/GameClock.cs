@@ -33,17 +33,22 @@ public class GameClock : MonoBehaviour
         if(timer > dayLengthRealTime)
         {
             timer = 0f;
-            day++;
-            Debug.Log("Day: " + day);
-            dayTick.Invoke();
+            AdvanceDay();
         }
+        
+    }
+    void AdvanceDay()
+    {
+        day++;
+        Debug.Log("Day: " + day);
+        dayTick.Invoke();
         if (day % 7 == 0 && day != 0)
         {
             weekTick.Invoke();
             Debug.Log("A week has passed");
         }
 
-        if(day % 28 == 0 && day != 0)
+        if (day % 28 == 0 && day != 0)
         {
             monthTick.Invoke();
             Debug.Log("A Month has passed");

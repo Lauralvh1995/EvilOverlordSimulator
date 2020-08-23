@@ -3,7 +3,9 @@ guid: 4403d1de1c7b4144d8e64350c2d890b1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+  - DayTick: {fileID: 11400000, guid: 31cc663ddec8acd469cb8b23c58f1eb4, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

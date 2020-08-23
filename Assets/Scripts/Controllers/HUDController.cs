@@ -19,6 +19,15 @@ public class HUDController : MonoBehaviour
     public Text goldText;
     public Text minionText;
 
+    public Button mineButton;
+    public Button farmButton;
+    public Button houseButton;
+    public Button statueButton;
+    public Button courtButton;
+    public Button towerButton;
+    public Button roadButton;
+    public Button emptyButton;
+
     [SerializeField]
     Event UpdateStats;
 
@@ -49,4 +58,6 @@ public class HUDController : MonoBehaviour
         goldText.text = player.GetGold().ToString();
         minionText.text = player.GetMinionCount().ToString();
     }
+
+
 }
