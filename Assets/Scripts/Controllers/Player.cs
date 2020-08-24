@@ -121,6 +121,11 @@ public class Player : MonoBehaviour
             Reset();
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         switch (buildMode)
         {
             case Building.EMPTY:
