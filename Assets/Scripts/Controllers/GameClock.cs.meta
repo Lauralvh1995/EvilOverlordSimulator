@@ -3,7 +3,10 @@ guid: 98ad24fb08b48df4cb5d2825e1fe7869
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dayTick: {fileID: 11400000, guid: 31cc663ddec8acd469cb8b23c58f1eb4, type: 2}
+  - weekTick: {fileID: 11400000, guid: a8a81ea1d9b231c47bfba5934b6acaf8, type: 2}
+  - monthTick: {fileID: 11400000, guid: 596cc6526dc3dda488a50aad5c7a64b5, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

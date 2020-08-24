@@ -23,7 +23,7 @@ public class BuildingObject : MonoBehaviour
     public Transform physicalObject;
 
     [SerializeField]
-    Event BuildingIsBuilt;
+    IntEvent BuildingIsBuilt;
 
     [SerializeField]
     private bool active;
@@ -49,6 +49,7 @@ public class BuildingObject : MonoBehaviour
     public void SetBuildingType(Building building)
     {
         content = building;
+        int buildCost = 0;
         if (content != Building.EMPTY)
         {
             physicalObject.gameObject.SetActive(true);
@@ -61,35 +62,41 @@ public class BuildingObject : MonoBehaviour
                     break;
                 case Building.HOUSE:
                     rend.material.SetColor("_BaseColor", Color.magenta);
+                    buildCost = 3;
                     break;
                 case Building.ROAD:
                     rend.material.SetColor("_BaseColor", Color.white);
+                    buildCost = 1;
                     break;
                 case Building.FARM:
                     rend.material.SetColor("_BaseColor", Color.green);
+                    buildCost = 2;
                     break;
                 case Building.MINE:
                     rend.material.SetColor("_BaseColor", Color.yellow);
+                    buildCost = 2;
                     break;
                 case Building.STATUE:
                     rend.material.SetColor("_BaseColor", Color.blue);
+                    buildCost = 4;
                     break;
                 case Building.COURTHOUSE:
                     rend.material.SetColor("_BaseColor", Color.red);
+                    buildCost = 4;
                     break;
                 case Building.TOWER:
                     rend.material.SetColor("_BaseColor", Color.grey);
+                    buildCost = 4;
                     break;
             }
-            
         }
         else
         {
             physicalObject.gameObject.SetActive(false);
+            buildCost = -1;
         }
-        BuildingIsBuilt.Invoke();
 
-        if(content == Building.ROAD || content == Building.EMPTY)
+        if (content == Building.ROAD || content == Building.EMPTY)
         {
             obstacle.enabled = false;
         }
@@ -97,6 +104,7 @@ public class BuildingObject : MonoBehaviour
         {
             obstacle.enabled = true;
         }
+        BuildingIsBuilt?.Invoke(buildCost);
     }
 
     private void OnMouseOver()

@@ -14,7 +14,7 @@ public class Grid : MonoBehaviour
     public Cell cellPrefab;
 
     [SerializeField]
-    Event buildingAppears;
+    IntEvent buildingAppears;
 
     private void OnEnable()
     {
@@ -31,7 +31,7 @@ public class Grid : MonoBehaviour
         Initialize();
     }
 
-    public void CheckCellStatus()
+    public void CheckCellStatus(int value)
     {
         foreach (Cell cell in Cells)
         {

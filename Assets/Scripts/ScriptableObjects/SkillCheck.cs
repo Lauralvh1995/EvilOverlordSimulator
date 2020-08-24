@@ -28,44 +28,44 @@ public class SkillCheck : ScriptableObject
         switch (skill)
         {
             case Skill.Wealth:
-                if(PlayerObject.GetWealth() >= target)
+                if(Player.GetWealth() >= target)
                 {
-                    Debug.Log("Actual Value of "+ skill.ToString() +": " + PlayerObject.GetWealth());
+                    Debug.Log("Actual Value of "+ skill.ToString() +": " + Player.GetWealth());
                     return true;
                 }
                 break;
             case Skill.Food:
-                if (PlayerObject.GetFood() >= target)
+                if (Player.GetFood() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetFood());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + Player.GetFood());
                     return true;
                 }
                 break;
             case Skill.PowerProjection:
-                if (PlayerObject.GetPowerProjection() >= target)
+                if (Player.GetPowerProjection() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetPowerProjection());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + Player.GetPowerProjection());
                     return true;
                 }
                 break;
             case Skill.Stability:
-                if (PlayerObject.GetStability() >= target)
+                if (Player.GetStability() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetStability());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + Player.GetStability());
                     return true;
                 }
                 break;
             case Skill.Morale:
-                if (PlayerObject.GetMorale() >= target)
+                if (Player.GetMorale() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetMorale());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + Player.GetMorale());
                     return true;
                 }
                 break;
             case Skill.Flair:
-                if (PlayerObject.GetFlair() >= target)
+                if (Player.GetFlair() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetFlair());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + Player.GetFlair());
                     return true;
                 }
                 break;

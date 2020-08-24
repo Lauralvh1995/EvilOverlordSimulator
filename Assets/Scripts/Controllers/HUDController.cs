@@ -27,23 +27,6 @@ public class HUDController : MonoBehaviour
     public Button roadButton;
     public Button emptyButton;
 
-    [SerializeField]
-    Event UpdateStats;
-
-    private void Start()
-    {
-        UpdateTexts();
-    }
-
-    private void OnEnable()
-    {
-        UpdateStats.AddListener(UpdateTexts);
-    }
-    private void OnDisable()
-    {
-        UpdateStats.RemoveListener(UpdateTexts);
-    }
-
     public void EnableHUD(bool status)
     {
         foreach (GameObject o in HUDElements)
@@ -52,16 +35,14 @@ public class HUDController : MonoBehaviour
         }
     }
 
-    void UpdateTexts() {
-        wealthText.text = PlayerObject.GetWealth().ToString();
-        foodText.text = PlayerObject.GetFood().ToString();
-        stabilityText.text = PlayerObject.GetStability().ToString();
-        powerProjectionText.text = PlayerObject.GetPowerProjection().ToString();
-        moraleText.text = PlayerObject.GetMorale().ToString();
-        flairText.text = PlayerObject.GetFlair().ToString();
-        goldText.text = PlayerObject.GetGold().ToString();
-        minionText.text = PlayerObject.GetMinionCount().ToString();
+    public void UpdateTexts() {
+        wealthText.text = Player.GetWealth().ToString();
+        foodText.text = Player.GetFood().ToString();
+        stabilityText.text = Player.GetStability().ToString();
+        powerProjectionText.text = Player.GetPowerProjection().ToString();
+        moraleText.text = Player.GetMorale().ToString();
+        flairText.text = Player.GetFlair().ToString();
+        goldText.text = Player.GetGold().ToString();
+        minionText.text = Player.GetMinionCount().ToString();
     }
-
-
 }

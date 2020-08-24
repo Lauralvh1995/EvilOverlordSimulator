@@ -6,9 +6,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
-public class PlayerObject : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public static PlayerObject instance;
+    public static Player instance;
 
     [SerializeField]
     int Wealth = 1;
@@ -48,20 +48,19 @@ public class PlayerObject : MonoBehaviour
     [SerializeField]
     Event DialogueEnded;
     [SerializeField]
-    Event BuildingBuilt;
+    IntEvent BuildingBuilt;
     [SerializeField]
     Event MinionRecruited;
     [SerializeField]
-    Event UpdateStatsForHUD;
-    [SerializeField]
     Event DayTick;
-
-    private void Start()
+    private void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
         selector = GetComponent<Selector>();
         gameClock = GetComponent<GameClock>();
-        UpdateStatsForHUD.Invoke();
     }
 
     private void OnEnable()
@@ -70,10 +69,10 @@ public class PlayerObject : MonoBehaviour
         maleNameEvent.AddListener(SetMalePlayerName);
         DialogueStarted.AddListener(OnDialogueStarted);
         DialogueEnded.AddListener(OnDialogueEnded);
-        BuildingBuilt.AddListener(UpdateStats);
+        BuildingBuilt.AddListener(RemoveGold);
         MinionRecruited.AddListener(UpdateStats);
         DayTick.AddListener(AddGold);
-        DayTick.AddListener(UpdateStats);
+        //DayTick.AddListener(UpdateStats);
     }
     private void OnDisable()
     {
@@ -81,10 +80,10 @@ public class PlayerObject : MonoBehaviour
         maleNameEvent.RemoveListener(SetMalePlayerName);
         DialogueStarted.RemoveListener(OnDialogueStarted);
         DialogueEnded.RemoveListener(OnDialogueEnded);
-        BuildingBuilt.RemoveListener(UpdateStats);
+        BuildingBuilt.RemoveListener(RemoveGold);
         MinionRecruited.RemoveListener(UpdateStats);
         DayTick.RemoveListener(AddGold);
-        DayTick.RemoveListener(UpdateStats);
+        //DayTick.RemoveListener(UpdateStats);
 
     }
 
@@ -104,21 +103,39 @@ public class PlayerObject : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            character.FullName = "??????";
-            Wealth = 1;
-            Food = 1;
-            PowerProjection = 1;
-            Stability = 1;
-            Morale = 1;
-            Flair = 1;
-            Gold = 5;
-            dialogueHolder.conversation = defaultConvo;
+            Reset();
         }
+    }
+    private void Reset()
+    {
+        character.FullName = "??????";
+        Wealth = 1;
+        Food = 1;
+        PowerProjection = 1;
+        Stability = 1;
+        Morale = 1;
+        Flair = 1;
+        Gold = 5;
+        dialogueHolder.conversation = defaultConvo;
     }
     void AddGold()
     {
         Gold += Wealth;
         UnityEngine.Debug.Log("Current Gold: " + Gold);
+        HUD.UpdateTexts();
+    }
+
+    void AddGold(int value)
+    {
+        Gold += value;
+        UnityEngine.Debug.Log("Current Gold: " + Gold);
+        HUD.UpdateTexts();
+    }
+    void RemoveGold(int value)
+    {
+        Gold -= value;
+        UnityEngine.Debug.Log("Current Gold: " + Gold);
+        HUD.UpdateTexts();
     }
 
     void OnDialogueStarted()
@@ -179,7 +196,7 @@ public class PlayerObject : MonoBehaviour
         Stability = tempStability;
         PowerProjection = tempPP;
 
-        UpdateStatsForHUD.Invoke();
+        HUD.UpdateTexts();
     }
 
     public static int GetWealth()

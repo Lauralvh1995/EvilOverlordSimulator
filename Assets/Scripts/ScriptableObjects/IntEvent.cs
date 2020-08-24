@@ -4,10 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+public class MyIntEvent : UnityEvent<int>
+{
+
+}
 [CreateAssetMenu(fileName = "New Event", menuName = "Int Event")]
 public class IntEvent : Event<int>
 {
-    public UnityEvent<int> OnTrigger;
+    public MyIntEvent OnTrigger = new MyIntEvent();
 
     public override void Invoke(int i)
     {
