@@ -23,7 +23,9 @@ public class BuildingObject : MonoBehaviour
     public Transform physicalObject;
 
     [SerializeField]
-    IntEvent BuildingIsBuilt;
+    IntEvent RemoveGoldFromPlayer;
+    [SerializeField]
+    Event BuildingIsBuilt;
 
     [SerializeField]
     private bool active;
@@ -62,38 +64,38 @@ public class BuildingObject : MonoBehaviour
                     break;
                 case Building.HOUSE:
                     rend.material.SetColor("_BaseColor", Color.magenta);
-                    buildCost = 3;
+                    buildCost = Player.instance.houseCost;
                     break;
                 case Building.ROAD:
                     rend.material.SetColor("_BaseColor", Color.white);
-                    buildCost = 1;
+                    buildCost = Player.instance.roadCost;
                     break;
                 case Building.FARM:
                     rend.material.SetColor("_BaseColor", Color.green);
-                    buildCost = 2;
+                    buildCost = Player.instance.farmCost;
                     break;
                 case Building.MINE:
                     rend.material.SetColor("_BaseColor", Color.yellow);
-                    buildCost = 2;
+                    buildCost = Player.instance.mineCost;
                     break;
                 case Building.STATUE:
                     rend.material.SetColor("_BaseColor", Color.blue);
-                    buildCost = 4;
+                    buildCost = Player.instance.statueCost;
                     break;
                 case Building.COURTHOUSE:
                     rend.material.SetColor("_BaseColor", Color.red);
-                    buildCost = 4;
+                    buildCost = Player.instance.courtCost;
                     break;
                 case Building.TOWER:
                     rend.material.SetColor("_BaseColor", Color.grey);
-                    buildCost = 4;
+                    buildCost = Player.instance.towerCost;
                     break;
             }
         }
         else
         {
             physicalObject.gameObject.SetActive(false);
-            buildCost = -1;
+            buildCost = Player.instance.emptyCost;
         }
 
         if (content == Building.ROAD || content == Building.EMPTY)
@@ -104,7 +106,8 @@ public class BuildingObject : MonoBehaviour
         {
             obstacle.enabled = true;
         }
-        BuildingIsBuilt?.Invoke(buildCost);
+        RemoveGoldFromPlayer?.Invoke(buildCost);
+        BuildingIsBuilt.Invoke();
     }
 
     private void OnMouseOver()

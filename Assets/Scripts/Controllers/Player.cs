@@ -48,11 +48,26 @@ public class Player : MonoBehaviour
     [SerializeField]
     Event DialogueEnded;
     [SerializeField]
-    IntEvent BuildingBuilt;
+    IntEvent SubtractGoldCost;
+    [SerializeField]
+    Event BuildingAppears;
     [SerializeField]
     Event MinionRecruited;
     [SerializeField]
     Event DayTick;
+
+    public int emptyCost = -1;
+    public int roadCost = 1;
+    public int houseCost = 2;
+    public int mineCost = 3;
+    public int farmCost = 3;
+    public int towerCost = 4;
+    public int statueCost = 4;
+    public int courtCost = 4;
+
+    private bool allowedToBuildCurrentBuilding = false;
+
+    public Building buildMode;
     private void Awake()
     {
         instance = this;
@@ -69,10 +84,10 @@ public class Player : MonoBehaviour
         maleNameEvent.AddListener(SetMalePlayerName);
         DialogueStarted.AddListener(OnDialogueStarted);
         DialogueEnded.AddListener(OnDialogueEnded);
-        BuildingBuilt.AddListener(RemoveGold);
+        BuildingAppears.AddListener(UpdateStats);
+        SubtractGoldCost.AddListener(RemoveGold);
         MinionRecruited.AddListener(UpdateStats);
         DayTick.AddListener(AddGold);
-        //DayTick.AddListener(UpdateStats);
     }
     private void OnDisable()
     {
@@ -80,10 +95,10 @@ public class Player : MonoBehaviour
         maleNameEvent.RemoveListener(SetMalePlayerName);
         DialogueStarted.RemoveListener(OnDialogueStarted);
         DialogueEnded.RemoveListener(OnDialogueEnded);
-        BuildingBuilt.RemoveListener(RemoveGold);
+        BuildingAppears.RemoveListener(UpdateStats);
+        SubtractGoldCost.RemoveListener(RemoveGold);
         MinionRecruited.RemoveListener(UpdateStats);
         DayTick.RemoveListener(AddGold);
-        //DayTick.RemoveListener(UpdateStats);
 
     }
 
@@ -105,6 +120,34 @@ public class Player : MonoBehaviour
         {
             Reset();
         }
+
+        switch (buildMode)
+        {
+            case Building.EMPTY:
+                allowedToBuildCurrentBuilding = true;
+                break;
+            case Building.ROAD:
+                allowedToBuildCurrentBuilding = Gold >= roadCost;
+                break;
+            case Building.HOUSE:
+                allowedToBuildCurrentBuilding = Gold >= houseCost;
+                break;
+            case Building.MINE:
+                allowedToBuildCurrentBuilding = Gold >= mineCost;
+                break;
+            case Building.FARM:
+                allowedToBuildCurrentBuilding = Gold >= farmCost;
+                break;
+            case Building.TOWER:
+                allowedToBuildCurrentBuilding = Gold >= towerCost;
+                break;
+            case Building.COURTHOUSE:
+                allowedToBuildCurrentBuilding = Gold >= courtCost;
+                break;
+            case Building.STATUE:
+                allowedToBuildCurrentBuilding = Gold >= statueCost;
+                break;
+        }
     }
     private void Reset()
     {
@@ -122,20 +165,20 @@ public class Player : MonoBehaviour
     {
         Gold += Wealth;
         UnityEngine.Debug.Log("Current Gold: " + Gold);
-        HUD.UpdateTexts();
+        UpdateStats();
     }
 
     void AddGold(int value)
     {
         Gold += value;
         UnityEngine.Debug.Log("Current Gold: " + Gold);
-        HUD.UpdateTexts();
+        UpdateStats();
     }
     void RemoveGold(int value)
     {
         Gold -= value;
+        UpdateStats();
         UnityEngine.Debug.Log("Current Gold: " + Gold);
-        HUD.UpdateTexts();
     }
 
     void OnDialogueStarted()
@@ -195,7 +238,7 @@ public class Player : MonoBehaviour
         Flair = tempFlair;
         Stability = tempStability;
         PowerProjection = tempPP;
-
+        HUD.UpdateButtons();
         HUD.UpdateTexts();
     }
 
@@ -230,5 +273,48 @@ public class Player : MonoBehaviour
     public static int GetMinionCount()
     {
         return instance.Minions.Count;
+    }
+
+    public void SetBuildMode(Building mode)
+    {
+        buildMode = mode;
+    }
+
+    public void SetBuildModeToEmpty()
+    {
+        SetBuildMode(Building.EMPTY);
+    }
+    public void SetBuildModeToHouse()
+    {
+        SetBuildMode(Building.HOUSE);
+    }
+    public void SetBuildModeToRoad()
+    {
+        SetBuildMode(Building.ROAD);
+    }
+    public void SetBuildModeToFarm()
+    {
+        SetBuildMode(Building.FARM);
+    }
+    public void SetBuildModeToTower()
+    {
+        SetBuildMode(Building.TOWER);
+    }
+    public void SetBuildModeToStatue()
+    {
+        SetBuildMode(Building.STATUE);
+    }
+    public void SetBuildModeToCourtHouse()
+    {
+        SetBuildMode(Building.COURTHOUSE);
+    }
+    public void SetBuildModeToMine()
+    {
+        SetBuildMode(Building.MINE);
+    }
+
+    public bool IsAllowedToBuild()
+    {
+        return allowedToBuildCurrentBuilding;
     }
 }

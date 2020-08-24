@@ -11,8 +11,6 @@ public class Selector : MonoBehaviour
 
     public LayerMask field;
 
-    public Building buildMode;
-
     bool allowedToSelect = true;
 
     private void Update()
@@ -48,8 +46,11 @@ public class Selector : MonoBehaviour
         if (hovered.GetComponent<Cell>() != selected || selected == null)
         {
             selected = hovered;
-            if(!selected.IsBase() && (!selected.IsOccupied() || buildMode == Building.EMPTY))
-                selected.Build(buildMode);
+            if(!selected.IsBase() && (!selected.IsOccupied() || Player.instance.buildMode == Building.EMPTY))
+            {
+                if(Player.instance.IsAllowedToBuild())
+                    selected.Build(Player.instance.buildMode);
+            }
         }
         else
         {
@@ -61,43 +62,5 @@ public class Selector : MonoBehaviour
     public void SetAllowed(bool status)
     {
         allowedToSelect = status;
-    }
-
-    public void SetBuildMode(Building mode)
-    {
-        buildMode = mode;
-    }
-
-    public void SetBuildModeToEmpty()
-    {
-        SetBuildMode(Building.EMPTY);
-    }
-    public void SetBuildModeToHouse()
-    {
-        SetBuildMode(Building.HOUSE);
-    }
-    public void SetBuildModeToRoad()
-    {
-        SetBuildMode(Building.ROAD);
-    }
-    public void SetBuildModeToFarm()
-    {
-        SetBuildMode(Building.FARM);
-    }
-    public void SetBuildModeToTower()
-    {
-        SetBuildMode(Building.TOWER);
-    }
-    public void SetBuildModeToStatue()
-    {
-        SetBuildMode(Building.STATUE);
-    }
-    public void SetBuildModeToCourtHouse()
-    {
-        SetBuildMode(Building.COURTHOUSE);
-    }
-    public void SetBuildModeToMine()
-    {
-        SetBuildMode(Building.MINE);
     }
 }

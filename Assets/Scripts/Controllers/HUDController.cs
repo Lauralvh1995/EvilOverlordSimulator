@@ -45,4 +45,64 @@ public class HUDController : MonoBehaviour
         goldText.text = Player.GetGold().ToString();
         minionText.text = Player.GetMinionCount().ToString();
     }
+
+    public void UpdateButtons()
+    {
+        if(Player.GetGold() >= Player.instance.roadCost)
+        {
+            roadButton.interactable = true;
+        }
+        else
+        {
+            roadButton.interactable = false;
+        }
+        if (Player.GetGold() >= Player.instance.houseCost)
+        {
+            houseButton.interactable = true;
+        }
+        else
+        {
+            houseButton.interactable = false;
+        }
+        if (Player.GetGold() >= Player.instance.mineCost)
+        {
+            mineButton.interactable = true;
+        }
+        else
+        {
+            mineButton.interactable = false;
+        }
+        if (Player.GetGold() >= Player.instance.farmCost)
+        {
+            farmButton.interactable = true;
+        }
+        else
+        {
+            farmButton.interactable = false;
+        }
+        if (Player.GetGold() >= Player.instance.towerCost)
+        {
+            towerButton.interactable = true;
+        }
+        else
+        {
+            towerButton.interactable = false;
+        }
+        if (Player.GetGold() >= Player.instance.courtCost)
+        {
+            courtButton.interactable = true;
+        }
+        else
+        {
+            courtButton.interactable = false;
+        }
+        if (Player.GetGold() >= Player.instance.statueCost)
+        {
+            statueButton.interactable = true;
+        }
+        else
+        {
+            statueButton.interactable = false;
+        }
+    }
 }

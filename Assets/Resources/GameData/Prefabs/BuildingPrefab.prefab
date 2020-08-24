@@ -140,7 +140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: 0
   physicalObject: {fileID: 170221258688173181}
-  BuildingIsBuilt: {fileID: 11400000, guid: f4842636ff1bc4245a0f2d480a9c733c, type: 2}
+  RemoveGoldFromPlayer: {fileID: 11400000, guid: f4842636ff1bc4245a0f2d480a9c733c,
+    type: 2}
+  BuildingIsBuilt: {fileID: 11400000, guid: 52adb5f538d3ebe47aaba62c032f84f9, type: 2}
   active: 0
   obstacle: {fileID: 8026633989867666070}
 --- !u!208 &8026633989867666070

@@ -14,7 +14,7 @@ public class Grid : MonoBehaviour
     public Cell cellPrefab;
 
     [SerializeField]
-    IntEvent buildingAppears;
+    Event buildingAppears;
 
     private void OnEnable()
     {
@@ -31,7 +31,7 @@ public class Grid : MonoBehaviour
         Initialize();
     }
 
-    public void CheckCellStatus(int value)
+    public void CheckCellStatus()
     {
         foreach (Cell cell in Cells)
         {
@@ -76,7 +76,6 @@ public class Grid : MonoBehaviour
 
     public void CheckIfBuildingInCellShouldBeActive(Cell c)
     {
-        bool newlyAdded = true;
         bool baseFound = false;
         HashSet<Cell> roadCluster = new HashSet<Cell>();
         Building b = c.GetContent().content;
@@ -89,7 +88,7 @@ public class Grid : MonoBehaviour
         //making the Building Cluster
         if (!b.Equals(Building.EMPTY) && !b.Equals(Building.ROAD) && !b.Equals(Building.BASE))
         {
-            newlyAdded = true;
+            bool newlyAdded = true;
             while (newlyAdded)
             {
                 foreach (Cell i in roadCluster.ToList())
