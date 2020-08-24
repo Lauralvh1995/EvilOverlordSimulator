@@ -160,13 +160,6 @@ public class Player : MonoBehaviour
     private void Reset()
     {
         character.FullName = "??????";
-        Wealth = 1;
-        Food = 1;
-        PowerProjection = 1;
-        Stability = 1;
-        Morale = 1;
-        Flair = 1;
-        Gold = 5;
         dialogueHolder.conversation = defaultConvo;
     }
     void AddGold()
