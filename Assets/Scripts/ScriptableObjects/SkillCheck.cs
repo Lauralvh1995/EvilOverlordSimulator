@@ -16,7 +16,6 @@ public enum Skill
 public class SkillCheck : ScriptableObject
 {
     public string checkName;
-    public Player player;
     public Skill skill;
     public int target;
 
@@ -29,44 +28,44 @@ public class SkillCheck : ScriptableObject
         switch (skill)
         {
             case Skill.Wealth:
-                if(player.GetWealth() >= target)
+                if(PlayerObject.GetWealth() >= target)
                 {
-                    Debug.Log("Actual Value of "+ skill.ToString() +": " + player.GetWealth());
+                    Debug.Log("Actual Value of "+ skill.ToString() +": " + PlayerObject.GetWealth());
                     return true;
                 }
                 break;
             case Skill.Food:
-                if (player.GetFood() >= target)
+                if (PlayerObject.GetFood() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + player.GetFood());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetFood());
                     return true;
                 }
                 break;
             case Skill.PowerProjection:
-                if (player.GetPowerProjection() >= target)
+                if (PlayerObject.GetPowerProjection() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + player.GetPowerProjection());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetPowerProjection());
                     return true;
                 }
                 break;
             case Skill.Stability:
-                if (player.GetStability() >= target)
+                if (PlayerObject.GetStability() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + player.GetStability());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetStability());
                     return true;
                 }
                 break;
             case Skill.Morale:
-                if (player.GetMorale() >= target)
+                if (PlayerObject.GetMorale() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + player.GetMorale());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetMorale());
                     return true;
                 }
                 break;
             case Skill.Flair:
-                if (player.GetFlair() >= target)
+                if (PlayerObject.GetFlair() >= target)
                 {
-                    Debug.Log("Actual Value of " + skill.ToString() + ": " + player.GetFlair());
+                    Debug.Log("Actual Value of " + skill.ToString() + ": " + PlayerObject.GetFlair());
                     return true;
                 }
                 break;

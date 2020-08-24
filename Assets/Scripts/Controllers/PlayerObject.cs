@@ -8,7 +8,25 @@ using UnityEngine.Events;
 [Serializable]
 public class PlayerObject : MonoBehaviour
 {
-    public Player player;
+    public static PlayerObject instance;
+
+    [SerializeField]
+    int Wealth = 1;
+    [SerializeField]
+    int Food = 1;
+    [SerializeField]
+    int PowerProjection = 1;
+    [SerializeField]
+    int Stability = 1;
+    [SerializeField]
+    int Morale = 1;
+    [SerializeField]
+    int Flair = 1;
+
+    [SerializeField]
+    int Gold = 5;
+    [SerializeField]
+    List<Minion> Minions;
 
     public DialogueController dialogueHolder;
     public HUDController HUD;
@@ -18,6 +36,8 @@ public class PlayerObject : MonoBehaviour
     public Grid grid;
 
     public Conversation defaultConvo;
+
+    public Character character;
 
     [SerializeField] 
     Event maleNameEvent;
@@ -38,6 +58,7 @@ public class PlayerObject : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         selector = GetComponent<Selector>();
         gameClock = GetComponent<GameClock>();
         UpdateStatsForHUD.Invoke();
@@ -51,6 +72,7 @@ public class PlayerObject : MonoBehaviour
         DialogueEnded.AddListener(OnDialogueEnded);
         BuildingBuilt.AddListener(UpdateStats);
         MinionRecruited.AddListener(UpdateStats);
+        DayTick.AddListener(AddGold);
         DayTick.AddListener(UpdateStats);
     }
     private void OnDisable()
@@ -61,28 +83,42 @@ public class PlayerObject : MonoBehaviour
         DialogueEnded.RemoveListener(OnDialogueEnded);
         BuildingBuilt.RemoveListener(UpdateStats);
         MinionRecruited.RemoveListener(UpdateStats);
+        DayTick.RemoveListener(AddGold);
         DayTick.RemoveListener(UpdateStats);
+
     }
 
     void SetMalePlayerName()
     {
-        player.character.FullName = "Uther";
-        UnityEngine.Debug.Log("Set player name to: " + player.character.FullName);
+        character.FullName = "Uther";
+        UnityEngine.Debug.Log("Set player name to: " + character.FullName);
     }
 
     void SetFemalePlayerName()
     {
-        player.character.FullName = "Bethori";
-        UnityEngine.Debug.Log("Set player name to: " + player.character.FullName);
+        character.FullName = "Bethori";
+        UnityEngine.Debug.Log("Set player name to: " + character.FullName);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            player.Reset();
+            character.FullName = "??????";
+            Wealth = 1;
+            Food = 1;
+            PowerProjection = 1;
+            Stability = 1;
+            Morale = 1;
+            Flair = 1;
+            Gold = 5;
             dialogueHolder.conversation = defaultConvo;
         }
+    }
+    void AddGold()
+    {
+        Gold += Wealth;
+        UnityEngine.Debug.Log("Current Gold: " + Gold);
     }
 
     void OnDialogueStarted()
@@ -136,8 +172,46 @@ public class PlayerObject : MonoBehaviour
                 }
             }
         }
-        player.SetStats(tempWealth, tempMorale, tempFood, tempFlair, tempStability, tempPP);
+        Wealth = tempWealth;
+        Morale = tempMorale;
+        Food = tempFood;
+        Flair = tempFlair;
+        Stability = tempStability;
+        PowerProjection = tempPP;
 
         UpdateStatsForHUD.Invoke();
+    }
+
+    public static int GetWealth()
+    {
+        return instance.Wealth;
+    }
+    public static int GetFood()
+    {
+        return instance.Food;
+    }
+    public static int GetPowerProjection()
+    {
+        return instance.PowerProjection;
+    }
+    public static int GetStability()
+    {
+        return instance.Stability;
+    }
+    public static int GetMorale()
+    {
+        return instance.Morale;
+    }
+    public static int GetFlair()
+    {
+        return instance.Flair;
+    }
+    public static int GetGold()
+    {
+        return instance.Gold;
+    }
+    public static int GetMinionCount()
+    {
+        return instance.Minions.Count;
     }
 }

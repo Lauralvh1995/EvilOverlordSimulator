@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class HUDController : MonoBehaviour
 {
     public List<GameObject> HUDElements;
-    public Player player;
 
     public Text wealthText;
     public Text foodText;
@@ -31,6 +30,11 @@ public class HUDController : MonoBehaviour
     [SerializeField]
     Event UpdateStats;
 
+    private void Start()
+    {
+        UpdateTexts();
+    }
+
     private void OnEnable()
     {
         UpdateStats.AddListener(UpdateTexts);
@@ -49,14 +53,14 @@ public class HUDController : MonoBehaviour
     }
 
     void UpdateTexts() {
-        wealthText.text = player.GetWealth().ToString();
-        foodText.text = player.GetFood().ToString();
-        stabilityText.text = player.GetStability().ToString();
-        powerProjectionText.text = player.GetPowerProjection().ToString();
-        moraleText.text = player.GetMorale().ToString();
-        flairText.text = player.GetFlair().ToString();
-        goldText.text = player.GetGold().ToString();
-        minionText.text = player.GetMinionCount().ToString();
+        wealthText.text = PlayerObject.GetWealth().ToString();
+        foodText.text = PlayerObject.GetFood().ToString();
+        stabilityText.text = PlayerObject.GetStability().ToString();
+        powerProjectionText.text = PlayerObject.GetPowerProjection().ToString();
+        moraleText.text = PlayerObject.GetMorale().ToString();
+        flairText.text = PlayerObject.GetFlair().ToString();
+        goldText.text = PlayerObject.GetGold().ToString();
+        minionText.text = PlayerObject.GetMinionCount().ToString();
     }
 
 
