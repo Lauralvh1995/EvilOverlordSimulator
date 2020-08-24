@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     Event DayTick;
 
+
     public int emptyCost = -1;
     public int roadCost = 1;
     public int houseCost = 2;
@@ -76,6 +77,8 @@ public class Player : MonoBehaviour
     {
         selector = GetComponent<Selector>();
         gameClock = GetComponent<GameClock>();
+        dialogueHolder.conversation = defaultConvo;
+        dialogueHolder.AdvanceLine();
     }
 
     private void OnEnable()

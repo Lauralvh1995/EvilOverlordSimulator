@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public enum Position{
     LEFT,
     RIGHT,
@@ -35,4 +37,5 @@ public class Conversation : ScriptableObject
     public SkillCheck check;
     public Question question;
     public Event storyEvent;
+    public Sprite background;
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.UI;
 
 [System.Serializable]
 public class QuestionEvent : UnityEvent<Question> { }
@@ -15,8 +15,10 @@ public class DialogueController : MonoBehaviour
 
     public GameObject speaker;
     public GameObject question;
+    public Image background;
 
     private SpeakerUIController speakerUI;
+
 
     private int activeLineIndex = 0;
     private bool conversationStarted = false;
@@ -33,14 +35,14 @@ public class DialogueController : MonoBehaviour
         conversation = nextConversation;
         AdvanceLine();
     }
-    private void Start()
+    private void Awake()
     {
         speakerUI = speaker.GetComponent<SpeakerUIController>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !inQuestion)
+        if (Input.GetMouseButtonDown(0) && !inQuestion)
         {
             if (conversation != null)
                 AdvanceLine();
@@ -51,6 +53,7 @@ public class DialogueController : MonoBehaviour
     {
         conversation = null;
         conversationStarted = false;
+        background.gameObject.SetActive(false);
         DialogueEnded.Invoke();
         speakerUI.Hide();
     }
@@ -65,16 +68,28 @@ public class DialogueController : MonoBehaviour
         conversationStarted = true;
         DialogueStarted.Invoke();
         activeLineIndex = 0;
+        if(conversation.background != null)
+            background.sprite = conversation.background;
+        background.gameObject.SetActive(true);
         speakerUI.Speaker = conversation.lines[activeLineIndex].character;
     }
-    private void AdvanceLine()
+    public void AdvanceLine()
     {
-        if (conversation == null) return;
-        if (!conversationStarted) Initialize();
+        if (conversation == null) 
+        { 
+            return; 
+        }
+        if (!conversationStarted) 
+        { 
+            Initialize(); 
+        }
         if (activeLineIndex < conversation.lines.Length)
-            DisplayLine();
+        { 
+            DisplayLine(); }
         else
+        {
             AdvanceConversation();
+        }
     }
 
     void AdvanceConversation()
