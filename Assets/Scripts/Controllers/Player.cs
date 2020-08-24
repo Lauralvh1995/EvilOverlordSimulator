@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     IntEvent SubtractGoldCost;
     [SerializeField]
-    Event BuildingAppears;
+    Event UIUpdate;
     [SerializeField]
     Event MinionRecruited;
     [SerializeField]
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
         maleNameEvent.AddListener(SetMalePlayerName);
         DialogueStarted.AddListener(OnDialogueStarted);
         DialogueEnded.AddListener(OnDialogueEnded);
-        BuildingAppears.AddListener(UpdateStats);
+        UIUpdate.AddListener(UpdateStats);
         SubtractGoldCost.AddListener(RemoveGold);
         MinionRecruited.AddListener(UpdateStats);
         DayTick.AddListener(AddGold);
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         maleNameEvent.RemoveListener(SetMalePlayerName);
         DialogueStarted.RemoveListener(OnDialogueStarted);
         DialogueEnded.RemoveListener(OnDialogueEnded);
-        BuildingAppears.RemoveListener(UpdateStats);
+        UIUpdate.RemoveListener(UpdateStats);
         SubtractGoldCost.RemoveListener(RemoveGold);
         MinionRecruited.RemoveListener(UpdateStats);
         DayTick.RemoveListener(AddGold);
@@ -164,21 +164,18 @@ public class Player : MonoBehaviour
     void AddGold()
     {
         Gold += Wealth;
-        UnityEngine.Debug.Log("Current Gold: " + Gold);
         UpdateStats();
     }
 
     void AddGold(int value)
     {
         Gold += value;
-        UnityEngine.Debug.Log("Current Gold: " + Gold);
         UpdateStats();
     }
     void RemoveGold(int value)
     {
         Gold -= value;
         UpdateStats();
-        UnityEngine.Debug.Log("Current Gold: " + Gold);
     }
 
     void OnDialogueStarted()
@@ -198,6 +195,7 @@ public class Player : MonoBehaviour
 
     void UpdateStats()
     {
+        UnityEngine.Debug.Log("Updating stats");
         int tempWealth = 1;
         int tempFood = 1;
         int tempPP = 1;

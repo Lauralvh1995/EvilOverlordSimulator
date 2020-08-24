@@ -106,7 +106,7 @@ public class BuildingObject : MonoBehaviour
         {
             obstacle.enabled = true;
         }
-        RemoveGoldFromPlayer?.Invoke(buildCost);
+        RemoveGoldFromPlayer.Invoke(buildCost);
         BuildingIsBuilt.Invoke();
     }
 

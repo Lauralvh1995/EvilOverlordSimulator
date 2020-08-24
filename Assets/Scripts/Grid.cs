@@ -16,6 +16,9 @@ public class Grid : MonoBehaviour
     [SerializeField]
     Event buildingAppears;
 
+    [SerializeField]
+    Event UIUpdate;
+
     private void OnEnable()
     {
         buildingAppears.AddListener(CheckCellStatus);
@@ -33,11 +36,13 @@ public class Grid : MonoBehaviour
 
     public void CheckCellStatus()
     {
+        Debug.Log("Checking Cell Status");
         foreach (Cell cell in Cells)
         {
             cell.CheckOccupied();
             CheckIfBuildingInCellShouldBeActive(cell);
         }
+        UIUpdate.Invoke();
     }
 
     public void Initialize()
@@ -76,7 +81,7 @@ public class Grid : MonoBehaviour
 
     public void CheckIfBuildingInCellShouldBeActive(Cell c)
     {
-        bool baseFound = false;
+        //bool baseFound = false;
         HashSet<Cell> roadCluster = new HashSet<Cell>();
         Building b = c.GetContent().content;
         //add origin to set
@@ -96,6 +101,11 @@ public class Grid : MonoBehaviour
                     newlyAdded = false;
                     if (i.y < height - 1 && (Cells[i.x, i.y + 1].GetContent().content == Building.ROAD || Cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                     {
+                        if(Cells[i.x, i.y +1].GetContent().content == Building.BASE)
+                        {
+                            c.SetStatusOfBuilding(true);
+                            return;
+                        }
                         if (roadCluster.Add(Cells[i.x, i.y + 1]))
                         {
                             newlyAdded = true;
@@ -103,6 +113,11 @@ public class Grid : MonoBehaviour
                     }
                     if (i.y > 0 && (Cells[i.x, i.y - 1].GetContent().content == Building.ROAD || Cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                     {
+                        if (Cells[i.x, i.y - 1].GetContent().content == Building.BASE)
+                        {
+                            c.SetStatusOfBuilding(true);
+                            return;
+                        }
                         if (roadCluster.Add(Cells[i.x, i.y - 1]))
                         {
                             newlyAdded = true;
@@ -110,6 +125,11 @@ public class Grid : MonoBehaviour
                     }
                     if (i.x < width - 1 && (Cells[i.x + 1, i.y].GetContent().content == Building.ROAD || Cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                     {
+                        if (Cells[i.x + 1, i.y].GetContent().content == Building.BASE)
+                        {
+                            c.SetStatusOfBuilding(true);
+                            return;
+                        }
                         if (roadCluster.Add(Cells[i.x + 1, i.y]))
                         {
                             newlyAdded = true;
@@ -117,6 +137,11 @@ public class Grid : MonoBehaviour
                     }
                     if (i.x > 0 && (Cells[i.x - 1, i.y].GetContent().content == Building.ROAD || Cells[i.x, i.y + 1].GetContent().content == Building.BASE))
                     {
+                        if (Cells[i.x - 1, i.y].GetContent().content == Building.BASE)
+                        {
+                            c.SetStatusOfBuilding(true);
+                            return;
+                        }
                         if (roadCluster.Add(Cells[i.x - 1, i.y]))
                         {
                             newlyAdded = true;
@@ -124,16 +149,16 @@ public class Grid : MonoBehaviour
                     }
                 }
             }
-            foreach (Cell a in roadCluster)
-            {
-                if (a.GetContent().content == Building.BASE)
-                {
-                    baseFound = true;
-                    break;
-                }
-            }
-            c.SetStatusOfBuilding(baseFound);
-            Debug.Log("Buiding active: " + baseFound);
+            //foreach (Cell a in roadCluster)
+            //{
+            //    if (a.GetContent().content == Building.BASE)
+            //    {
+            //        baseFound = true;
+            //        break;
+            //    }
+            //}
+            //c.SetStatusOfBuilding(baseFound);
+            //Debug.Log("Buiding active: " + baseFound);
         }
     }
 }
