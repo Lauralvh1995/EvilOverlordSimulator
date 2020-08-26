@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     Event UIUpdate;
     [SerializeField]
-    Event MinionRecruited;
+    MinionEvent MinionRecruited;
     [SerializeField]
     Event DayTick;
 
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
         DialogueEnded.AddListener(OnDialogueEnded);
         UIUpdate.AddListener(UpdateStats);
         SubtractGoldCost.AddListener(RemoveGold);
-        MinionRecruited.AddListener(UpdateStats);
+        MinionRecruited.AddListener(AddMinionToList);
         DayTick.AddListener(AddGold);
     }
     private void OnDisable()
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
         DialogueEnded.RemoveListener(OnDialogueEnded);
         UIUpdate.RemoveListener(UpdateStats);
         SubtractGoldCost.RemoveListener(RemoveGold);
-        MinionRecruited.RemoveListener(UpdateStats);
+        MinionRecruited.RemoveListener(AddMinionToList);
         DayTick.RemoveListener(AddGold);
 
     }
@@ -330,5 +330,11 @@ public class Player : MonoBehaviour
     public bool IsAllowedToBuild()
     {
         return allowedToBuildCurrentBuilding;
+    }
+
+    void AddMinionToList(Minion minion)
+    {
+        Minions.Add(minion);
+        UpdateStats();
     }
 }

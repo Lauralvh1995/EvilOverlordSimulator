@@ -15,6 +15,9 @@ public class Selector : MonoBehaviour
 
     bool allowedToSelect = true;
 
+    public PopUp popup;
+    public BasePopUp basePopUp;
+
     private void Update()
     {
         if (allowedToSelect)
@@ -39,6 +42,8 @@ public class Selector : MonoBehaviour
                 else
                 {
                     selected = null;
+                    popup.Hide();
+                    basePopUp.Hide();
                 }
             }
         }
@@ -51,10 +56,30 @@ public class Selector : MonoBehaviour
             selected = hovered;
             if (Player.instance.buildMode == Building.NONE)
             {
-                //doe ding met popup
+                switch (hovered.GetBuilding().content)
+                {
+                    case Building.BASE:
+                        basePopUp.SetPopUpInfo(hovered.transform.position, "BASE", "Recruit Minions here");
+                        break;
+                    case Building.ROAD:
+                        break;
+                    case Building.EMPTY:
+                        break;
+                    default:
+                        {
+                            popup.SetPopUpInfo(hovered.transform.position,
+                            hovered.GetBuilding().content.ToString(),
+                            "Some text about this building",
+                            hovered.GetBuilding().IsActive(),
+                            hovered.GetMinion());
+                            break;
+                        }
+                }
             }
             else
             {
+                popup.Hide();
+                basePopUp.Hide();
                 if (!selected.IsBase() && (!selected.IsOccupied() || Player.instance.buildMode == Building.EMPTY))
                 {
                     if (Player.instance.buildMode == Building.EMPTY && !selected.IsOccupied())
@@ -69,6 +94,8 @@ public class Selector : MonoBehaviour
         else
         {
             selected = null;
+            popup.Hide();
+            basePopUp.Hide();
         }
 
     }

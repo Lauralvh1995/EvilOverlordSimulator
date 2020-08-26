@@ -25,7 +25,10 @@ public class Cell : MonoBehaviour
     {
         return building;
     }
-
+    public Minion GetMinion()
+    {
+        return minion;
+    }
     public void CheckOccupied()
     {
         if (building.content == Building.EMPTY || building.content == Building.NONE)

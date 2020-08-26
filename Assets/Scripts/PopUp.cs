@@ -1,18 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopUp : MonoBehaviour
 {
-    Transform cameraTransform;
+    [SerializeField]
+    private RectTransform rTransform;
+    [SerializeField]
+    private Text title;
+    [SerializeField]
+    private Text description;
+    [SerializeField]
+    private Text status;
+    [SerializeField]
+    private Image minionPortrait;
+    [SerializeField]
+    private Text minionName;
 
-    void Start()
+    public void SetPopUpInfo(Vector3 position, string buildingName, string buildingDescription, bool status, Minion minion)
     {
-        cameraTransform = Camera.main.transform;
+        rTransform.position = new Vector3(position.x, 1f, position.z);
+        title.text = buildingName;
+        description.text = buildingDescription;
+        if (status)
+        {
+            this.status.text = "Status: Active";
+        }
+        else
+        {
+            this.status.text = "Status: Inactive";
+        }
+        if (minion != null)
+        {
+            minionPortrait.sprite = minion.portrait;
+            minionName.text = minion.Name;
+            minionPortrait.enabled = true;
+            minionName.enabled = true;
+        }
+        else
+        {
+            minionPortrait.enabled = false;
+            minionName.enabled = false;
+        }
+
+        gameObject.SetActive(true);
     }
-
-    void Update()
+    public void Hide()
     {
-        transform.rotation = Quaternion.LookRotation(transform.position - cameraTransform.position);
+        gameObject.SetActive(false);
     }
 }

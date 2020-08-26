@@ -6,6 +6,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Minion : MonoBehaviour
 {
+    public string Name { get; set; }
+    public Sprite portrait;
     public int Loyalty { get; private set; }
     public int Happiness { get; private set; }
 
