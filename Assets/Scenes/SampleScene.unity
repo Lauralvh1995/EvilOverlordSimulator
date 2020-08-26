@@ -243,7 +243,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1297650283}
   cameraMoveSpeed: 5
   maxDistanceFromOrigin: 13
-  margin: 4
+  verticalMargin: 4
   minZoom: 1
   maxZoom: 6
 --- !u!1 &25918732
@@ -558,6 +558,7 @@ Transform:
   - {fileID: 1070840588}
   - {fileID: 623550635}
   - {fileID: 1512193838}
+  - {fileID: 1480990018}
   m_Father: {fileID: 2019306584}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -845,12 +846,6 @@ MonoBehaviour:
   dayTick: {fileID: 11400000, guid: 31cc663ddec8acd469cb8b23c58f1eb4, type: 2}
   weekTick: {fileID: 11400000, guid: a8a81ea1d9b231c47bfba5934b6acaf8, type: 2}
   monthTick: {fileID: 11400000, guid: 596cc6526dc3dda488a50aad5c7a64b5, type: 2}
---- !u!4 &136054896 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 2021315326}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &145134127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,7 +1293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: a123fc0ac58cb774e8592c925f167e7c, type: 2}
   m_StaticLightingSkyUniqueID: 1
-  m_SkySettings: {fileID: 858382564}
+  m_SkySettings: {fileID: 835722931}
   m_SkySettingsFromProfile: {fileID: -1658960478407648048, guid: a123fc0ac58cb774e8592c925f167e7c,
     type: 2}
 --- !u!4 &313761475
@@ -1760,36 +1755,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458852239}
   m_CullTransparentMesh: 0
---- !u!1001 &483026108
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &483026109 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 483026108}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &498606761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,36 +1947,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520100815}
   m_CullTransparentMesh: 0
---- !u!1001 &552054797
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &552054798 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 552054797}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &561138593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,36 +2203,6 @@ Transform:
   m_Father: {fileID: 322570337}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &617280670
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &617280671 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 617280670}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &623550634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,36 +2382,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683658325}
   m_CullTransparentMesh: 0
---- !u!1001 &687208317
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &687208318 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 687208317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697495031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,117 +2540,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727388946}
   m_CullTransparentMesh: 0
---- !u!1001 &737894280
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &737894281 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 737894280}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &852036251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 852036252}
-  - component: {fileID: 852036254}
-  - component: {fileID: 852036253}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &852036252
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852036251}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 683658326}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &852036253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852036251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Tower
-
-'
---- !u!222 &852036254
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852036251}
-  m_CullTransparentMesh: 0
---- !u!114 &858382564
+--- !u!114 &835722931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2876,6 +2641,86 @@ MonoBehaviour:
   rectLightShadow:
     m_OverrideState: 0
     m_Value: 0
+--- !u!1 &852036251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 852036252}
+  - component: {fileID: 852036254}
+  - component: {fileID: 852036253}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &852036252
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852036251}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 683658326}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &852036253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852036251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Tower
+
+'
+--- !u!222 &852036254
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852036251}
+  m_CullTransparentMesh: 0
 --- !u!1 &880972899
 GameObject:
   m_ObjectHideFlags: 0
@@ -3223,36 +3068,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961281877}
   m_CullTransparentMesh: 0
---- !u!1001 &997787305
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &997787306 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 997787305}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1015178661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3708,36 +3523,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278591389}
   m_CullTransparentMesh: 0
---- !u!1001 &1281724410
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &1281724411 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1281724410}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1297650280
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,36 +4263,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396785429}
   m_CullTransparentMesh: 0
---- !u!1001 &1425911218
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &1425911219 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1425911218}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1431243356
 GameObject:
   m_ObjectHideFlags: 0
@@ -4667,7 +4422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1480990018}
   m_Layer: 0
-  m_Name: Minions
+  m_Name: MinionSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4680,23 +4435,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480990017}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 136054896}
-  - {fileID: 617280671}
-  - {fileID: 1570558010}
-  - {fileID: 483026109}
-  - {fileID: 1425911219}
-  - {fileID: 1716739561}
-  - {fileID: 737894281}
-  - {fileID: 552054798}
-  - {fileID: 1281724411}
-  - {fileID: 687208318}
-  - {fileID: 997787306}
-  m_Father: {fileID: 2019306584}
-  m_RootOrder: 4
+  m_Children: []
+  m_Father: {fileID: 80900605}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1489240119
 GameObject:
@@ -5218,36 +4962,6 @@ LightProbeGroup:
   - {x: -0.68649423, y: 0.51661086, z: 2.327536}
   - {x: -0.8738291, y: 0.51661086, z: 2.5225298}
   m_Dering: 0
---- !u!1001 &1570558009
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &1570558010 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1570558009}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1595885729
 GameObject:
   m_ObjectHideFlags: 0
@@ -6048,36 +5762,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1716739560
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
---- !u!4 &1716739561 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1716739560}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1740917674
 GameObject:
   m_ObjectHideFlags: 0
@@ -7257,29 +6941,9 @@ Transform:
   - {fileID: 368601278}
   - {fileID: 120536654}
   - {fileID: 2051841372}
-  - {fileID: 1480990018}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2021315326
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1480990018}
-    m_Modifications:
-    - target: {fileID: 2804324483108819269, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Minion
-      objectReference: {fileID: 0}
-    - target: {fileID: 2804324483108819322, guid: 6aba4542076b91047b64536c0a877b4d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6aba4542076b91047b64536c0a877b4d, type: 3}
 --- !u!1 &2033318994
 GameObject:
   m_ObjectHideFlags: 0

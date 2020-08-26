@@ -8,11 +8,16 @@ public class CameraController : MonoBehaviour
     public float cameraMoveSpeed = 5f;
     public int maxDistanceFromOrigin = 25;
     public int margin = 4;
+    int horizontalMargin;
 
     public int minZoom = 1;
     public int maxZoom = 6;
 
     private bool isAllowedToMove = true;
+    private void Awake()
+    {
+        horizontalMargin = margin * 2;
+    }
     private void Update()
     {
         if (isAllowedToMove)
@@ -24,12 +29,12 @@ public class CameraController : MonoBehaviour
                 //Move your camera depending on the sign of mouse.Edge.x
                 if (mouseEdge.x < 0)
                 {
-                    if (transform.position.x > -maxDistanceFromOrigin + margin)
+                    if (transform.position.x > -maxDistanceFromOrigin + horizontalMargin)
                         transform.Translate(Vector3.left * Time.deltaTime * cameraMoveSpeed);
                 }
                 else
                 {
-                    if (transform.position.x < maxDistanceFromOrigin - margin)
+                    if (transform.position.x < maxDistanceFromOrigin - horizontalMargin)
                         transform.Translate(Vector3.right * Time.deltaTime * cameraMoveSpeed);
                 }
 
