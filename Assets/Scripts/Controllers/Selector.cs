@@ -9,6 +9,8 @@ public class Selector : MonoBehaviour
     public Cell hover;
     public Cell selected;
 
+    public Transform selectorGraphic;
+
     public LayerMask field;
 
     bool allowedToSelect = true;
@@ -23,6 +25,7 @@ public class Selector : MonoBehaviour
             if (Physics.Raycast(ray, out hitInfo, 100f, field))
             {
                 hover = hitInfo.transform.GetComponent<Cell>();
+                selectorGraphic.transform.position = new Vector3(hover.transform.position.x, 0f, hover.transform.position.z);
             }
 
             if (Input.GetMouseButtonDown(0))
