@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public enum Building
 {
+    NONE,
     EMPTY,
     BASE,
     ROAD,
@@ -50,54 +51,57 @@ public class BuildingObject : MonoBehaviour
 
     public void SetBuildingType(Building building)
     {
-        content = building;
         int buildCost = 0;
-        if (content != Building.EMPTY)
+        if (building != Building.NONE)
         {
-            physicalObject.gameObject.SetActive(true);
-            Renderer rend = physicalObject.GetComponent<Renderer>();
-            rend.material.shader = Shader.Find("HDRP/Lit");
-            switch (building)
+            content = building;
+
+            if (content != Building.EMPTY)
             {
-                case Building.BASE:
-                    rend.material.SetColor("_BaseColor", Color.cyan);
-                    break;
-                case Building.HOUSE:
-                    rend.material.SetColor("_BaseColor", Color.magenta);
-                    buildCost = Player.instance.houseCost;
-                    break;
-                case Building.ROAD:
-                    rend.material.SetColor("_BaseColor", Color.white);
-                    buildCost = Player.instance.roadCost;
-                    break;
-                case Building.FARM:
-                    rend.material.SetColor("_BaseColor", Color.green);
-                    buildCost = Player.instance.farmCost;
-                    break;
-                case Building.MINE:
-                    rend.material.SetColor("_BaseColor", Color.yellow);
-                    buildCost = Player.instance.mineCost;
-                    break;
-                case Building.STATUE:
-                    rend.material.SetColor("_BaseColor", Color.blue);
-                    buildCost = Player.instance.statueCost;
-                    break;
-                case Building.COURTHOUSE:
-                    rend.material.SetColor("_BaseColor", Color.red);
-                    buildCost = Player.instance.courtCost;
-                    break;
-                case Building.TOWER:
-                    rend.material.SetColor("_BaseColor", Color.grey);
-                    buildCost = Player.instance.towerCost;
-                    break;
+                physicalObject.gameObject.SetActive(true);
+                Renderer rend = physicalObject.GetComponent<Renderer>();
+                rend.material.shader = Shader.Find("HDRP/Lit");
+                switch (content)
+                {
+                    case Building.BASE:
+                        rend.material.SetColor("_BaseColor", Color.cyan);
+                        break;
+                    case Building.HOUSE:
+                        rend.material.SetColor("_BaseColor", Color.magenta);
+                        buildCost = Player.instance.houseCost;
+                        break;
+                    case Building.ROAD:
+                        rend.material.SetColor("_BaseColor", Color.white);
+                        buildCost = Player.instance.roadCost;
+                        break;
+                    case Building.FARM:
+                        rend.material.SetColor("_BaseColor", Color.green);
+                        buildCost = Player.instance.farmCost;
+                        break;
+                    case Building.MINE:
+                        rend.material.SetColor("_BaseColor", Color.yellow);
+                        buildCost = Player.instance.mineCost;
+                        break;
+                    case Building.STATUE:
+                        rend.material.SetColor("_BaseColor", Color.blue);
+                        buildCost = Player.instance.statueCost;
+                        break;
+                    case Building.COURTHOUSE:
+                        rend.material.SetColor("_BaseColor", Color.red);
+                        buildCost = Player.instance.courtCost;
+                        break;
+                    case Building.TOWER:
+                        rend.material.SetColor("_BaseColor", Color.grey);
+                        buildCost = Player.instance.towerCost;
+                        break;
+                }
+            }
+            else
+            {
+                physicalObject.gameObject.SetActive(false);
+                buildCost = Player.instance.emptyCost;
             }
         }
-        else
-        {
-            physicalObject.gameObject.SetActive(false);
-            buildCost = Player.instance.emptyCost;
-        }
-
         if (content == Building.ROAD || content == Building.EMPTY)
         {
             obstacle.enabled = false;

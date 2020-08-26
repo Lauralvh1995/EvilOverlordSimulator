@@ -28,13 +28,13 @@ public class Cell : MonoBehaviour
 
     public void CheckOccupied()
     {
-        if (!building.content.Equals(Building.EMPTY))
+        if (building.content == Building.EMPTY || building.content == Building.NONE)
         {
-            occupied = true;
+            occupied = false;
         }
         else
         {
-            occupied = false;
+            occupied = true;
         }
     }
 

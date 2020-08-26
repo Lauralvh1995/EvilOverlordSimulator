@@ -46,10 +46,21 @@ public class Selector : MonoBehaviour
         if (hovered.GetComponent<Cell>() != selected || selected == null)
         {
             selected = hovered;
-            if(!selected.IsBase() && (!selected.IsOccupied() || Player.instance.buildMode == Building.EMPTY))
+            if (Player.instance.buildMode == Building.NONE)
             {
-                if(Player.instance.IsAllowedToBuild())
-                    selected.Build(Player.instance.buildMode);
+                //doe ding met popup
+            }
+            else
+            {
+                if (!selected.IsBase() && (!selected.IsOccupied() || Player.instance.buildMode == Building.EMPTY))
+                {
+                    if (Player.instance.buildMode == Building.EMPTY && !selected.IsOccupied())
+                    {
+                        return;
+                    }
+                    if (Player.instance.IsAllowedToBuild())
+                        selected.Build(Player.instance.buildMode);
+                }
             }
         }
         else

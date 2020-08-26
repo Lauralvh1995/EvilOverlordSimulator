@@ -36,7 +36,6 @@ public class Grid : MonoBehaviour
 
     public void CheckCellStatus()
     {
-        Debug.Log("Checking Cell Status");
         foreach (Cell cell in Cells)
         {
             cell.CheckOccupied();
@@ -111,7 +110,7 @@ public class Grid : MonoBehaviour
                             newlyAdded = true;
                         }
                     }
-                    if (i.y > 0 && (Cells[i.x, i.y - 1].GetContent().content == Building.ROAD || Cells[i.x, i.y + 1].GetContent().content == Building.BASE))
+                    if (i.y > 0 && (Cells[i.x, i.y - 1].GetContent().content == Building.ROAD || Cells[i.x, i.y - 1].GetContent().content == Building.BASE))
                     {
                         if (Cells[i.x, i.y - 1].GetContent().content == Building.BASE)
                         {
@@ -123,7 +122,7 @@ public class Grid : MonoBehaviour
                             newlyAdded = true;
                         }
                     }
-                    if (i.x < width - 1 && (Cells[i.x + 1, i.y].GetContent().content == Building.ROAD || Cells[i.x, i.y + 1].GetContent().content == Building.BASE))
+                    if (i.x < width - 1 && (Cells[i.x + 1, i.y].GetContent().content == Building.ROAD || Cells[i.x + 1, i.y].GetContent().content == Building.BASE))
                     {
                         if (Cells[i.x + 1, i.y].GetContent().content == Building.BASE)
                         {
@@ -135,7 +134,7 @@ public class Grid : MonoBehaviour
                             newlyAdded = true;
                         }
                     }
-                    if (i.x > 0 && (Cells[i.x - 1, i.y].GetContent().content == Building.ROAD || Cells[i.x, i.y + 1].GetContent().content == Building.BASE))
+                    if (i.x > 0 && (Cells[i.x - 1, i.y].GetContent().content == Building.ROAD || Cells[i.x - 1, i.y].GetContent().content == Building.BASE))
                     {
                         if (Cells[i.x - 1, i.y].GetContent().content == Building.BASE)
                         {

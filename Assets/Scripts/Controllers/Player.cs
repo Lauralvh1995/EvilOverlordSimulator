@@ -155,6 +155,9 @@ public class Player : MonoBehaviour
             case Building.STATUE:
                 allowedToBuildCurrentBuilding = Gold >= statueCost;
                 break;
+            default:
+                allowedToBuildCurrentBuilding = false;
+                break;
         }
     }
     private void Reset()
@@ -196,7 +199,6 @@ public class Player : MonoBehaviour
 
     void UpdateStats()
     {
-        UnityEngine.Debug.Log("Updating stats");
         int tempWealth = 1;
         int tempFood = 1;
         int tempPP = 1;
@@ -282,34 +284,47 @@ public class Player : MonoBehaviour
     public void SetBuildModeToEmpty()
     {
         SetBuildMode(Building.EMPTY);
+        HUD.UpdateButtons();
     }
     public void SetBuildModeToHouse()
     {
         SetBuildMode(Building.HOUSE);
+        HUD.UpdateButtons();
     }
     public void SetBuildModeToRoad()
     {
         SetBuildMode(Building.ROAD);
+        HUD.UpdateButtons();
     }
     public void SetBuildModeToFarm()
     {
         SetBuildMode(Building.FARM);
+        HUD.UpdateButtons();
     }
     public void SetBuildModeToTower()
     {
         SetBuildMode(Building.TOWER);
+        HUD.UpdateButtons();
     }
     public void SetBuildModeToStatue()
     {
         SetBuildMode(Building.STATUE);
+        HUD.UpdateButtons();
     }
     public void SetBuildModeToCourtHouse()
     {
         SetBuildMode(Building.COURTHOUSE);
+        HUD.UpdateButtons();
     }
     public void SetBuildModeToMine()
     {
         SetBuildMode(Building.MINE);
+        HUD.UpdateButtons();
+    }
+    public void SetBuildModeToNone()
+    {
+        SetBuildMode(Building.NONE);
+        HUD.UpdateButtons();
     }
 
     public bool IsAllowedToBuild()

@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296238eed2cae5444b9cab33fd6e4e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: 0
+  content: 1
   physicalObject: {fileID: 170221258688173181}
   RemoveGoldFromPlayer: {fileID: 11400000, guid: f4842636ff1bc4245a0f2d480a9c733c,
     type: 2}
