@@ -17,7 +17,6 @@ public enum Building
     FARM,
     STATUE
 }
-[RequireComponent(typeof(NavMeshObstacle))]
 public class BuildingObject : MonoBehaviour
 {
     public Building content;
@@ -33,11 +32,6 @@ public class BuildingObject : MonoBehaviour
 
     [SerializeField]
     private NavMeshObstacle obstacle;
-
-    private void Start()
-    {
-        obstacle = GetComponent<NavMeshObstacle>();
-    }
 
     public void SetActive(bool status)
     {
@@ -102,13 +96,13 @@ public class BuildingObject : MonoBehaviour
                 buildCost = Player.instance.emptyCost;
             }
         }
-        if (content == Building.ROAD || content == Building.EMPTY)
+        if (content == Building.ROAD || content == Building.EMPTY || content == Building.NONE)
         {
-            obstacle.enabled = false;
+            obstacle.carving = false;
         }
         else
         {
-            obstacle.enabled = true;
+            obstacle.carving = true;
         }
         RemoveGoldFromPlayer.Invoke(buildCost);
         BuildingIsBuilt.Invoke();

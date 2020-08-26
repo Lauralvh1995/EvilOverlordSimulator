@@ -76,6 +76,7 @@ public class Grid : MonoBehaviour
         Cells[11, 13].Build(Building.BASE);
         Cells[13, 12].Build(Building.BASE);
         Cells[13, 11].Build(Building.BASE);
+        CheckCellStatus();
     }
 
     public void CheckIfBuildingInCellShouldBeActive(Cell c)
@@ -148,16 +149,6 @@ public class Grid : MonoBehaviour
                     }
                 }
             }
-            //foreach (Cell a in roadCluster)
-            //{
-            //    if (a.GetContent().content == Building.BASE)
-            //    {
-            //        baseFound = true;
-            //        break;
-            //    }
-            //}
-            //c.SetStatusOfBuilding(baseFound);
-            //Debug.Log("Buiding active: " + baseFound);
         }
     }
 }

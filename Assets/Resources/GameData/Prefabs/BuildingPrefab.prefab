@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7998496828160845303}
   - component: {fileID: 2656011927967368156}
   - component: {fileID: 5813119799234985047}
+  - component: {fileID: 4576873162019404299}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -93,6 +94,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &4576873162019404299
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4178759793563449148}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.35, y: 0.35, z: 0.35}
+  m_MoveThreshold: 0.01
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.05
 --- !u!1 &4316128575773656054
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +120,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4316128575773656052}
   - component: {fileID: 4316128575773656055}
-  - component: {fileID: 8026633989867666070}
   m_Layer: 0
   m_Name: BuildingPrefab
   m_TagString: Untagged
@@ -144,20 +160,4 @@ MonoBehaviour:
     type: 2}
   BuildingIsBuilt: {fileID: 11400000, guid: 52adb5f538d3ebe47aaba62c032f84f9, type: 2}
   active: 0
-  obstacle: {fileID: 8026633989867666070}
---- !u!208 &8026633989867666070
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4316128575773656054}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.4, y: 0.4, z: 0.4}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
-  m_TimeToStationary: 0.5
+  obstacle: {fileID: 4576873162019404299}
