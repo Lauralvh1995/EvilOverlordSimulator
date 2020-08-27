@@ -34,7 +34,7 @@ public class PopUp : MonoBehaviour
         if (minion != null)
         {
             minionPortrait.sprite = minion.portrait;
-            minionName.text = minion.Name;
+            minionName.text = minion.GetName();
             minionPortrait.enabled = true;
             minionName.enabled = true;
         }

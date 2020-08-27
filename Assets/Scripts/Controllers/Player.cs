@@ -39,9 +39,9 @@ public class Player : MonoBehaviour
 
     public Character character;
 
-    [SerializeField] 
+    [SerializeField]
     Event maleNameEvent;
-    [SerializeField] 
+    [SerializeField]
     Event femaleNameEvent;
     [SerializeField]
     Event DialogueStarted;
@@ -55,6 +55,10 @@ public class Player : MonoBehaviour
     MinionEvent MinionRecruited;
     [SerializeField]
     Event DayTick;
+    [SerializeField]
+    Event WeekTick;
+    [SerializeField]
+    IntEvent paidMinions;
 
 
     public int emptyCost = -1;
@@ -77,6 +81,7 @@ public class Player : MonoBehaviour
     {
         selector = GetComponent<Selector>();
         gameClock = GetComponent<GameClock>();
+        Minions = new List<Minion>();
         dialogueHolder.conversation = defaultConvo;
         dialogueHolder.AdvanceLine();
     }
@@ -91,6 +96,7 @@ public class Player : MonoBehaviour
         SubtractGoldCost.AddListener(RemoveGold);
         MinionRecruited.AddListener(AddMinionToList);
         DayTick.AddListener(AddGold);
+        WeekTick.AddListener(PayMinions);
     }
     private void OnDisable()
     {
@@ -102,7 +108,7 @@ public class Player : MonoBehaviour
         SubtractGoldCost.RemoveListener(RemoveGold);
         MinionRecruited.RemoveListener(AddMinionToList);
         DayTick.RemoveListener(AddGold);
-
+        WeekTick.RemoveListener(PayMinions);
     }
 
     void SetMalePlayerName()
@@ -117,6 +123,11 @@ public class Player : MonoBehaviour
         UnityEngine.Debug.Log("Set player name to: " + character.FullName);
     }
 
+    public List<Minion> GetMinions()
+    {
+        return Minions;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -128,7 +139,6 @@ public class Player : MonoBehaviour
         {
             Application.Quit();
         }
-
         switch (buildMode)
         {
             case Building.EMPTY:
@@ -155,7 +165,10 @@ public class Player : MonoBehaviour
             case Building.STATUE:
                 allowedToBuildCurrentBuilding = Gold >= statueCost;
                 break;
-            default:
+            case Building.BASE:
+                allowedToBuildCurrentBuilding = false;
+                break;
+            case Building.NONE:
                 allowedToBuildCurrentBuilding = false;
                 break;
         }
@@ -206,7 +219,7 @@ public class Player : MonoBehaviour
         int tempMorale = 1;
         int tempFlair = 1;
 
-        foreach(Cell c in grid.Cells)
+        foreach (Cell c in grid.Cells)
         {
             if (c.IsActive())
             {
@@ -336,5 +349,19 @@ public class Player : MonoBehaviour
     {
         Minions.Add(minion);
         UpdateStats();
+    }
+
+    void PayMinions()
+    {
+        if (Gold > Minions.Count)
+        {
+            Gold -= Minions.Count;
+            paidMinions.Invoke(1);
+        }
+        else
+        {
+            Gold = 0;
+            paidMinions.Invoke(0);
+        }
     }
 }

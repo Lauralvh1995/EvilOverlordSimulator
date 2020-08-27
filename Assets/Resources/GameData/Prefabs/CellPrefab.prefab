@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6982977106128246531}
   - component: {fileID: 1599880790157784325}
   - component: {fileID: 9018779890830683941}
+  - component: {fileID: -4864805123930673058}
   - component: {fileID: -3706146461501653190}
   m_Layer: 9
   m_Name: CellPrefab
@@ -51,6 +52,7 @@ MonoBehaviour:
   size: 1
   buildingPrefab: {fileID: 4316128575773656052, guid: 43be649a4d019c24a9aeb253dc9a7ffd,
     type: 3}
+  minion: {fileID: 0}
   building: {fileID: 0}
   occupied: 0
 --- !u!33 &1599880790157784325
@@ -100,6 +102,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &-4864805123930673058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034056085973911533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 1, z: 10}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!64 &-3706146461501653190
 MeshCollider:
   m_ObjectHideFlags: 0

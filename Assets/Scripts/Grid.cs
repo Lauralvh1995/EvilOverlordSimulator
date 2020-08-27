@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -40,8 +41,21 @@ public class Grid : MonoBehaviour
         {
             cell.CheckOccupied();
             CheckIfBuildingInCellShouldBeActive(cell);
+            CheckMinionOwnership(cell);
         }
         UIUpdate.Invoke();
+    }
+
+    private void CheckMinionOwnership(Cell cell)
+    {
+        cell.AssignMinion(null);
+        foreach(Minion m in Player.instance.GetMinions())
+        {
+            if(m.workplace == cell.GetBuilding() || m.house == cell.GetBuilding())
+            {
+                cell.AssignMinion(m);
+            }
+        }
     }
 
     public void Initialize()

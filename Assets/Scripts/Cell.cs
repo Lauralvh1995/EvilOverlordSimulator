@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -65,6 +66,11 @@ public class Cell : MonoBehaviour
         building.name = string.Format("Building {0}x{1}", x, y);
     }
 
+    public void AssignMinion(Minion newMinion)
+    {
+        minion = newMinion;
+    }
+
     public void Build(Building type)
     {
         building.SetBuildingType(type);
@@ -78,5 +84,28 @@ public class Cell : MonoBehaviour
     public bool IsActive()
     {
         return building.IsActive();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.ToString());
+        if (building.content == Building.BASE || building.content == Building.EMPTY || building.content == Building.ROAD)
+        {
+            return;
+        }
+
+        if (other.GetComponent<Minion>())
+        {
+            Minion newMinion = other.GetComponent<Minion>();
+            switch (building.content)
+            {
+                case Building.HOUSE:
+                    newMinion.house = building;
+                    break;
+                default:
+                    newMinion.workplace = building;
+                    break;
+            }
+        }
     }
 }

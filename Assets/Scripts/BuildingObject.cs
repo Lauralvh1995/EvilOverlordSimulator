@@ -107,18 +107,4 @@ public class BuildingObject : MonoBehaviour
         RemoveGoldFromPlayer.Invoke(buildCost);
         BuildingIsBuilt.Invoke();
     }
-
-    private void OnMouseOver()
-    {
-        //display tooltip
-        Debug.Log("Mouse is over me");
-        physicalObject.transform.localScale = new Vector3(0, 1f, 0);
-    }
-
-    private void OnMouseExit()
-    {
-        //stop displaying tooltip
-        Debug.Log("Mouse is no longer over me");
-        physicalObject.transform.localScale = new Vector3(0, 0.9f, 0);
-    }
 }

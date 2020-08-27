@@ -10,9 +10,7 @@ public class Selector : MonoBehaviour
     public Cell selected;
 
     public Transform selectorGraphic;
-
     public LayerMask field;
-
     bool allowedToSelect = true;
 
     public PopUp popup;
