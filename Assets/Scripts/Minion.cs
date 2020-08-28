@@ -9,6 +9,7 @@ public class Minion : MonoBehaviour
 {
     [SerializeField]
     string minionName = "Hank";
+    private MinionNameGenerator generator;
     public Sprite portrait;
 
     [Range(0, 1), SerializeField]
@@ -30,6 +31,11 @@ public class Minion : MonoBehaviour
 
     public BuildingObject house;
     public BuildingObject workplace;
+    private void Awake()
+    {
+        generator = new MinionNameGenerator();
+        minionName = generator.GenerateName();
+    }
 
     public float GetHappiness()
     {
@@ -39,6 +45,11 @@ public class Minion : MonoBehaviour
     public void SetNavMeshAgentStatus(bool status)
     {
         agent.enabled = status;
+    }
+
+    void GenerateName()
+    {
+
     }
 
     public float GetLoyalty()

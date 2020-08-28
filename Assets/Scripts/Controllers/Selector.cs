@@ -11,6 +11,7 @@ public class Selector : MonoBehaviour
 
     public Transform selectorGraphic;
     public LayerMask field;
+    public LayerMask minions;
     bool allowedToSelect = true;
 
     public PopUp popup;
@@ -22,26 +23,28 @@ public class Selector : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
-
-            if (Physics.Raycast(ray, out hitInfo, 100f, field))
+            if (!Physics.Raycast(ray, 100f, minions))
             {
-                hover = hitInfo.transform.GetComponent<Cell>();
-                selectorGraphic.transform.position = new Vector3(hover.transform.position.x, 0f, hover.transform.position.z);
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (EventSystem.current.IsPointerOverGameObject())
-                    return;
-                if (hover)
+                if (Physics.Raycast(ray, out hitInfo, 100f, field))
                 {
-                    SelectHovered(hover);
+                    hover = hitInfo.transform.GetComponent<Cell>();
+                    selectorGraphic.transform.position = new Vector3(hover.transform.position.x, 0f, hover.transform.position.z);
                 }
-                else
+
+                if (Input.GetMouseButtonDown(0))
                 {
-                    selected = null;
-                    popup.Hide();
-                    basePopUp.Hide();
+                    if (EventSystem.current.IsPointerOverGameObject())
+                        return;
+                    if (hover)
+                    {
+                        SelectHovered(hover);
+                    }
+                    else
+                    {
+                        selected = null;
+                        popup.Hide();
+                        basePopUp.Hide();
+                    }
                 }
             }
         }

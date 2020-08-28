@@ -9,12 +9,13 @@ public class MinionSpawner : MonoBehaviour
     [SerializeField]
     MinionEvent minionRecruited;
 
+
     public void RecruitMinion()
     {
         Minion newMinion = Instantiate(minionPrefab);
         newMinion.transform.SetParent(transform);
         newMinion.transform.localPosition = new Vector3(transform.position.x, 0.5f, transform.position.z);
-        newMinion.name = string.Format("Insert Name Here");
+        newMinion.name = newMinion.GetName();
 
         minionRecruited.Invoke(newMinion);
     }
