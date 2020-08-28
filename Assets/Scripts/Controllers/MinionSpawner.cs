@@ -13,7 +13,7 @@ public class MinionSpawner : MonoBehaviour
     {
         Minion newMinion = Instantiate(minionPrefab);
         newMinion.transform.SetParent(transform);
-        newMinion.transform.localPosition = new Vector3(transform.position.x, 2, transform.position.z);
+        newMinion.transform.localPosition = new Vector3(transform.position.x, 0.5f, transform.position.z);
         newMinion.name = string.Format("Insert Name Here");
 
         minionRecruited.Invoke(newMinion);

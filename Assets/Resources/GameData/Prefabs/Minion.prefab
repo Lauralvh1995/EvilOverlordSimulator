@@ -363,6 +363,9 @@ MonoBehaviour:
   holder: {fileID: 0}
   minion: {fileID: 0}
   rb: {fileID: 0}
+  ground:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!136 &7288252424617322288
 CapsuleCollider:
   m_ObjectHideFlags: 0

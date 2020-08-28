@@ -98,10 +98,12 @@ public class BuildingObject : MonoBehaviour
         }
         if (content == Building.ROAD || content == Building.EMPTY || content == Building.NONE)
         {
+            obstacle.enabled = false;
             obstacle.carving = false;
         }
         else
         {
+            obstacle.enabled = true;
             obstacle.carving = true;
         }
         RemoveGoldFromPlayer.Invoke(buildCost);

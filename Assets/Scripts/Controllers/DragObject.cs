@@ -7,6 +7,7 @@ public class DragObject : MonoBehaviour
     public MouseHolder holder;
     public Minion minion;
     public Rigidbody rb;
+    public LayerMask ground;
     private void Start()
     {
         minion = GetComponent<Minion>();
@@ -14,12 +15,11 @@ public class DragObject : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    //TODO: Check if they hit the floor
     private void Update()
     {
-        if(rb.velocity.y < 0.1f)
-        {
-            minion.SetNavMeshAgentStatus(enabled);
-        }
+        bool IsGrounded = Physics.CheckSphere(transform.position, 0.04f, ground);
+        minion.SetNavMeshAgentStatus(IsGrounded);
     }
 
 
@@ -33,9 +33,5 @@ public class DragObject : MonoBehaviour
     {
         minion.transform.position = holder.transform.position;
         rb.velocity = Vector3.zero;
-    }
-    private void OnMouseUp()
-    {
-        minion.SetNavMeshAgentStatus(true);
     }
 }
