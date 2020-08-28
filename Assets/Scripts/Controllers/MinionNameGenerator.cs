@@ -18,7 +18,7 @@ public class MinionNameGenerator
 
     public string GenerateName()
     {
-        string[] newNameBuilder = new string[UnityEngine.Random.Range(0, 5)];
+        string[] newNameBuilder = new string[UnityEngine.Random.Range(1, 5)];
         for(int i=0; i<newNameBuilder.Length; i++)
         {
             newNameBuilder[i] = nameParts[UnityEngine.Random.Range(0, nameParts.Length)];
@@ -59,14 +59,13 @@ public class MinionNameGenerator
             }
             newName += p;
         }
-
         return FirstCharToUpper(newName);
     }
 
     public string FirstCharToUpper(string input)
     {
         if (string.IsNullOrEmpty(input))
-            throw new ArgumentException("ARGH!");
+            throw new ArgumentException(input);
         return input.First().ToString().ToUpper() + input.Substring(1);
     }
 }
