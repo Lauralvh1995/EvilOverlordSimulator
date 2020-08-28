@@ -28,6 +28,35 @@ public class MinionNameGenerator
 
         foreach(string p in newNameBuilder)
         {
+            if (p.Equals("bart")){
+                newName = "bart";
+                break;
+            }
+            if (p.Equals("luuk"))
+            {
+                newName = "luuk";
+                break;
+            }
+            if (p.Equals("jack"))
+            {
+                newName = "jack";
+                break;
+            }
+            if (p.Equals("michael"))
+            {
+                newName = "michael";
+                break;
+            }
+            if (p.Equals("laura"))
+            {
+                newName = "laura";
+                break;
+            }
+            if (p.Equals("henk"))
+            {
+                newName = "henk";
+                break;
+            }
             newName += p;
         }
 
