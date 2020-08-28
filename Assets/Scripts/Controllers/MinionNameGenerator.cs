@@ -7,10 +7,13 @@ using UnityEngine;
 public class MinionNameGenerator
 {
     private readonly string[] nameParts;
+    
 
     public MinionNameGenerator()
     {
-        nameParts = new string[20];
+        var textFile = Resources.Load<TextAsset>("Strings/nameparts");
+
+        nameParts = textFile.text.ToLower().Split(';');
     }
 
     public string GenerateName()

@@ -34,7 +34,6 @@ public class Minion : MonoBehaviour
     private void Awake()
     {
         generator = new MinionNameGenerator();
-        minionName = generator.GenerateName();
     }
 
     public float GetHappiness()
@@ -47,9 +46,9 @@ public class Minion : MonoBehaviour
         agent.enabled = status;
     }
 
-    void GenerateName()
+    public void GenerateName()
     {
-
+        minionName = generator.GenerateName();
     }
 
     public float GetLoyalty()

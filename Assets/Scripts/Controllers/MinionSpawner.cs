@@ -15,6 +15,7 @@ public class MinionSpawner : MonoBehaviour
         Minion newMinion = Instantiate(minionPrefab);
         newMinion.transform.SetParent(transform);
         newMinion.transform.localPosition = new Vector3(transform.position.x, 0.5f, transform.position.z);
+        newMinion.GenerateName();
         newMinion.name = newMinion.GetName();
 
         minionRecruited.Invoke(newMinion);
