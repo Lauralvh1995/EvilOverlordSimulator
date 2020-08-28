@@ -31,12 +31,15 @@ public class PopUp : MonoBehaviour
         {
             this.status.text = "Status: Inactive";
         }
+
         if (minion != null)
         {
-            minionPortrait.sprite = minion.portrait;
-            minionName.text = minion.GetName();
+            Debug.Log("This building is owned by: " + minion.GetName());
             minionPortrait.enabled = true;
             minionName.enabled = true;
+            minionPortrait.sprite = minion.portrait;
+            minionName.text = minion.GetName();
+
         }
         else
         {

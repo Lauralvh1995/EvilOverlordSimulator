@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2804324481705052575}
   - component: {fileID: 2804324481705052572}
   - component: {fileID: 2804324481705052573}
-  - component: {fileID: 2804324481705052574}
   m_Layer: 0
   m_Name: Other Eye
   m_TagString: Untagged
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2804324481705052574
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2804324481705052568}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2804324482981517760
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +171,6 @@ GameObject:
   - component: {fileID: 2804324483057264008}
   - component: {fileID: 2804324483057264013}
   - component: {fileID: 2804324483057264014}
-  - component: {fileID: 2804324483057264015}
   m_Layer: 0
   m_Name: Eye
   m_TagString: Untagged
@@ -254,19 +239,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2804324483057264015
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2804324483057264009}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2804324483108819269
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minionName: Hank
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 93975978a83a3a54481d9ef5170f1280, type: 3}
   loyalty: 0.5
   happiness: 0.5
   dayTick: {fileID: 11400000, guid: 31cc663ddec8acd469cb8b23c58f1eb4, type: 2}

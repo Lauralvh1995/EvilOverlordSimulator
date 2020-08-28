@@ -8,6 +8,8 @@ public class DragObject : MonoBehaviour
     public Minion minion;
     public Rigidbody rb;
     public LayerMask ground;
+
+    private bool IsGrounded;
     private void Start()
     {
         minion = GetComponent<Minion>();
@@ -18,10 +20,14 @@ public class DragObject : MonoBehaviour
     //TODO: Check if they hit the floor
     private void Update()
     {
-        bool IsGrounded = Physics.CheckSphere(transform.position, 0.04f, ground);
+        IsGrounded = Physics.CheckSphere(transform.position, 0.04f, ground);
         minion.SetNavMeshAgentStatus(IsGrounded);
     }
 
+    public bool IsFalling()
+    {
+        return !IsGrounded;
+    }
 
     void OnMouseDown()
     {

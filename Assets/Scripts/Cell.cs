@@ -14,6 +14,9 @@ public class Cell : MonoBehaviour
     Minion minion;
 
     [SerializeField]
+    Event MinionClaimsBuilding;
+
+    [SerializeField]
     BuildingObject building;
     [SerializeField]
     bool occupied;
@@ -47,6 +50,21 @@ public class Cell : MonoBehaviour
         return occupied;
     }
 
+    public void CheckOwnership()
+    {
+        if(minion != null)
+            Debug.Log(minion.GetName());
+
+        minion = null;
+        foreach(Minion m in Player.instance.GetMinions())
+        {
+            if(m.house == building || m.workplace == building)
+            {
+                minion = m;
+            }
+        }
+    }
+
     public BuildingObject GetContent()
     {
         return building;
@@ -74,6 +92,21 @@ public class Cell : MonoBehaviour
     public void Build(Building type)
     {
         building.SetBuildingType(type);
+        if (minion)
+        {
+            if (building.content == Building.EMPTY)
+            {
+                if (building.content == Building.HOUSE)
+                {
+                    minion.house = null;
+                }
+                else
+                {
+                    minion.workplace = null;
+                }
+                minion = null;
+            }
+        }
     }
 
     public bool IsBase()
@@ -88,24 +121,27 @@ public class Cell : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.ToString());
         if (building.content == Building.BASE || building.content == Building.EMPTY || building.content == Building.ROAD)
         {
             return;
         }
-
-        if (other.GetComponent<Minion>())
+        Debug.Log(other.ToString());
+        if (other.GetComponent<DragObject>().IsFalling())
         {
             Minion newMinion = other.GetComponent<Minion>();
             switch (building.content)
             {
                 case Building.HOUSE:
                     newMinion.house = building;
+                    Debug.Log(newMinion.GetName() + " says: " + Player.instance.character.FullName + " gave me a house!");
                     break;
                 default:
                     newMinion.workplace = building;
+                    Debug.Log(newMinion.GetName() + " says: " + Player.instance.character.FullName + " gave me a place to work!");
                     break;
             }
+            MinionClaimsBuilding.Invoke();
+            //CheckOwnership();
         }
     }
 }

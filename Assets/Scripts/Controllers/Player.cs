@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     int Stability = 1;
     [SerializeField]
-    int Morale = 1;
+    int Morale = 0;
     [SerializeField]
     int Flair = 1;
 
@@ -216,7 +216,6 @@ public class Player : MonoBehaviour
         int tempFood = 1;
         int tempPP = 1;
         int tempStability = 1;
-        int tempMorale = 1;
         int tempFlair = 1;
 
         foreach (Cell c in grid.Cells)
@@ -234,9 +233,6 @@ public class Player : MonoBehaviour
                     case Building.TOWER:
                         tempPP++;
                         break;
-                    case Building.HOUSE:
-                        tempMorale++;
-                        break;
                     case Building.STATUE:
                         tempFlair++;
                         break;
@@ -247,11 +243,23 @@ public class Player : MonoBehaviour
             }
         }
         Wealth = tempWealth;
-        Morale = tempMorale;
         Food = tempFood;
         Flair = tempFlair;
         Stability = tempStability;
         PowerProjection = tempPP;
+
+        //adding average minion Happiness to Morale.
+        if (Minions.Count > 0)
+        {
+            float minionMorale = 0;
+            foreach (Minion m in Minions)
+            {
+                minionMorale += m.GetHappiness();
+            }
+            minionMorale = (minionMorale / Minions.Count) * 100f;
+            Morale = Mathf.FloorToInt(minionMorale);
+        }
+
         HUD.UpdateButtons();
         HUD.UpdateTexts();
     }

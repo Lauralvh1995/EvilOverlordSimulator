@@ -16,6 +16,8 @@ public class Grid : MonoBehaviour
 
     [SerializeField]
     Event buildingAppears;
+    [SerializeField]
+    Event MinionClaimsBuilding;
 
     [SerializeField]
     Event UIUpdate;
@@ -23,12 +25,13 @@ public class Grid : MonoBehaviour
     private void OnEnable()
     {
         buildingAppears.AddListener(CheckCellStatus);
+        MinionClaimsBuilding.AddListener(CheckCellStatus);
     }
     private void OnDisable()
     {
         buildingAppears.RemoveListener(CheckCellStatus);
+        MinionClaimsBuilding.RemoveListener(CheckCellStatus);
     }
-
 
     private void Awake()
     {
@@ -41,21 +44,9 @@ public class Grid : MonoBehaviour
         {
             cell.CheckOccupied();
             CheckIfBuildingInCellShouldBeActive(cell);
-            CheckMinionOwnership(cell);
+            cell.CheckOwnership();
         }
         UIUpdate.Invoke();
-    }
-
-    private void CheckMinionOwnership(Cell cell)
-    {
-        cell.AssignMinion(null);
-        foreach(Minion m in Player.instance.GetMinions())
-        {
-            if(m.workplace == cell.GetBuilding() || m.house == cell.GetBuilding())
-            {
-                cell.AssignMinion(m);
-            }
-        }
     }
 
     public void Initialize()

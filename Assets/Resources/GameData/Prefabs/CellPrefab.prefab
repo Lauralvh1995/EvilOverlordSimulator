@@ -53,6 +53,8 @@ MonoBehaviour:
   buildingPrefab: {fileID: 4316128575773656052, guid: 43be649a4d019c24a9aeb253dc9a7ffd,
     type: 3}
   minion: {fileID: 0}
+  MinionClaimsBuilding: {fileID: 11400000, guid: e66fe177bf8c2564981bf2d212648cac,
+    type: 2}
   building: {fileID: 0}
   occupied: 0
 --- !u!33 &1599880790157784325
