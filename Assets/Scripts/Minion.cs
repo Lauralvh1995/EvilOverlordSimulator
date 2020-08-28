@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Minion : MonoBehaviour
@@ -11,6 +12,8 @@ public class Minion : MonoBehaviour
     string minionName = "Hank";
     private MinionNameGenerator generator;
     public Sprite portrait;
+    public Canvas nametag;
+    public Text nametagText;
 
     [Range(0, 1), SerializeField]
     private float loyalty = 0.5f;
@@ -34,6 +37,7 @@ public class Minion : MonoBehaviour
     private void Awake()
     {
         generator = new MinionNameGenerator();
+        nametag.worldCamera = Camera.main;
     }
 
     public float GetHappiness()
@@ -49,6 +53,7 @@ public class Minion : MonoBehaviour
     public void GenerateName()
     {
         minionName = generator.GenerateName();
+        nametagText.text = minionName;
     }
 
     public float GetLoyalty()

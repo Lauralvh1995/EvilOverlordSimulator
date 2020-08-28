@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
+  m_Name: Round 1 PP Check
+  m_EditorClassIdentifier: 
+  conversationName: Malice checks out
+  lines:
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 1
+    emote: 1
+    text: Hah, that is my specialty!
+  check: {fileID: 11400000, guid: 4bc45c8b9e724e042b2c13bed5754781, type: 2}
+  question: {fileID: 0}
+  storyEvent: {fileID: 0}
+  background: {fileID: 0}
