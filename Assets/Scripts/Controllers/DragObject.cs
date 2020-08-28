@@ -8,8 +8,10 @@ public class DragObject : MonoBehaviour
     public Minion minion;
     public Rigidbody rb;
     public LayerMask ground;
+    //public LayerMask minionLayer;
 
     private bool IsGrounded;
+    //private bool isDragged;
     private void Start()
     {
         minion = GetComponent<Minion>();
@@ -22,6 +24,31 @@ public class DragObject : MonoBehaviour
     {
         IsGrounded = Physics.CheckSphere(transform.position, 0.04f, ground);
         minion.SetNavMeshAgentStatus(IsGrounded);
+        /*
+
+        if (Input.GetMouseButton(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray, out hitInfo, 100f, minionLayer))
+            {
+                if (hitInfo.transform.GetComponent<DragObject>())
+                {
+                    isDragged = true;
+                    minion.SetNavMeshAgentStatus(false);
+                }
+            }
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragged = false;
+        }
+
+        if (isDragged)
+        {
+            minion.transform.position = holder.transform.position;
+        }
+        */
     }
 
     public bool IsFalling()

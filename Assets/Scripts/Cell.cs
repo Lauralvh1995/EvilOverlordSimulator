@@ -10,6 +10,8 @@ public class Cell : MonoBehaviour
 
     public Transform buildingPrefab;
 
+    public BoxCollider box;
+
     [SerializeField]
     Minion minion;
 
@@ -92,6 +94,14 @@ public class Cell : MonoBehaviour
     public void Build(Building type)
     {
         building.SetBuildingType(type);
+        if(building.content == Building.EMPTY || building.content == Building.ROAD)
+        {
+            box.enabled = false;
+        }
+        else
+        {
+            box.enabled = true;
+        }
         if (minion)
         {
             if (building.content == Building.EMPTY)
