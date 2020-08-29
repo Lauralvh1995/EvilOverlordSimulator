@@ -13,7 +13,7 @@ public class ChoiceController : MonoBehaviour
     
     public static ChoiceController AddChoiceButton(Button choiceButtonTemplate, Choice choice, int index)
     {
-        int buttonSpacing = -44;
+        int buttonSpacing = -30;
         Button button = Instantiate(choiceButtonTemplate);
 
         button.transform.SetParent(choiceButtonTemplate.transform.parent);

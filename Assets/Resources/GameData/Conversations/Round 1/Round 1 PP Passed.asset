@@ -10,25 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
-  m_Name: Round 1 PP Failed
+  m_Name: Round 1 PP Passed
   m_EditorClassIdentifier: 
   conversationName: 
   lines:
   - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
     position: 2
-    emote: 6
-    text: You call that an ARMY? They can't even protect themselves against sieges!
+    emote: 1
+    text: Good. Very good. Someone knows the importance of spreading enough towers
+      around their holdings. Your army will thank you for it. How you project your
+      power is more important than having it.
   - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
     position: 1
-    emote: 4
-    text: I'll let you off with a warning this time.
-  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    emote: 1
+    text: If you like, I can give you some more tips on how to strike even more fear
+      into your enemies.
+  - character: {fileID: 0}
     position: 1
-    emote: 3
-    text: TRY ME AGAIN WITH SUCH NONSENSE AND YOU WILL REGRET IT!
+    emote: 1
+    text: Show me your prowess next time, and I might show you my palace.
   check: {fileID: 0}
   question: {fileID: 0}
-  storyEvent: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: fe6da6995a137ef46877b76050600186, type: 2}
   background: {fileID: 0}
-  favor: -2
+  favor: 1
   overlordFavor: {fileID: 11400000, guid: eca32b065e4d0c34e85b3c752f017364, type: 2}

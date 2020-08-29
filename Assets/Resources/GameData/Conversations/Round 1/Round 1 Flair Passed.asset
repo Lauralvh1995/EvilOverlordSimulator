@@ -33,7 +33,7 @@ MonoBehaviour:
     text: I'd love to see you exceed yourself even further.
   check: {fileID: 0}
   question: {fileID: 0}
-  storyEvent: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: fe6da6995a137ef46877b76050600186, type: 2}
   background: {fileID: 0}
   favor: 1
   overlordFavor: {fileID: 11400000, guid: c461ce1dc1b072c44aaea47d0b746988, type: 2}

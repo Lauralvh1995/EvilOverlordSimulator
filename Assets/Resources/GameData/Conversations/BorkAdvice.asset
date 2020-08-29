@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
+  m_Name: BorkAdvice
+  m_EditorClassIdentifier: 
+  conversationName: 
+  lines:
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 2
+    emote: 2
+    text: I guess that could have gone worse
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 5
+    text: What do you mean?
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: The Overlords are a fickle bunch. I'm surprised they let you walk away.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 4
+    text: I guess. I'm new to this whole Overlord business.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 1
+    text: That's why you have me.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: For next time, improve in the area they want you to improve. Yehara is
+      a woman of Flair. Lord Malice is Power Projection incarnate. Von Eckenstein
+      tests your Stability.
+  check: {fileID: 0}
+  question: {fileID: 0}
+  storyEvent: {fileID: 0}
+  background: {fileID: 0}
+  favor: 0
+  overlordFavor: {fileID: 0}

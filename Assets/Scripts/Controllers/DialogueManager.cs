@@ -28,6 +28,11 @@ public class DialogueManager : MonoBehaviour
     IntEvent VonEckensteinFavorEvent;
 
     [SerializeField]
+    Event BorkAdvice;
+    [SerializeField]
+    Event BorkPraise;
+
+    [SerializeField]
     int YeharaFavor = 0;
     [SerializeField]
     int VonEckensteinFavor = 0;
@@ -46,6 +51,10 @@ public class DialogueManager : MonoBehaviour
     Conversation VonEckensteinFavorable;
     [SerializeField]
     Conversation VonEckensteinUnfavorable;
+    [SerializeField]
+    Conversation BorkPraiseConvo;
+    [SerializeField]
+    Conversation BorkAdviceConvo;
 
     [SerializeField]
     Conversation firstMeeting;
@@ -59,6 +68,8 @@ public class DialogueManager : MonoBehaviour
         YeharaFavorEvent.AddListener(UpdateYeharaFavor);
         MaliceFavorEvent.AddListener(UpdateMaliceFavor);
         VonEckensteinFavorEvent.AddListener(UpdateVonEckensteinFavor);
+        BorkPraise.AddListener(BorkPraisesYou);
+        BorkAdvice.AddListener(BorkGivesAdvice);
         MonthTick.AddListener(AdvanceMonth);
     }
     private void OnDisable()
@@ -68,12 +79,21 @@ public class DialogueManager : MonoBehaviour
         YeharaFavorEvent.RemoveListener(UpdateYeharaFavor);
         MaliceFavorEvent.RemoveListener(UpdateMaliceFavor);
         VonEckensteinFavorEvent.RemoveListener(UpdateVonEckensteinFavor);
+        BorkPraise.RemoveListener(BorkPraisesYou);
+        BorkAdvice.RemoveListener(BorkGivesAdvice);
         MonthTick.RemoveListener(AdvanceMonth);
     }
     void Start()
     {
-        dialogueController.conversation = openingConversation;
-        dialogueController.AdvanceLine();
+        dialogueController.ChangeConversation(openingConversation);
+    }
+    void BorkPraisesYou()
+    {
+        dialogueController.ChangeConversation(BorkPraiseConvo);
+    }
+    void BorkGivesAdvice()
+    {
+        dialogueController.ChangeConversation(BorkAdviceConvo);
     }
     void AdvanceMonth()
     {

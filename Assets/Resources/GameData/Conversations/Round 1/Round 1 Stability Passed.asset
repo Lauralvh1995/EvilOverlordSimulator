@@ -33,7 +33,7 @@ MonoBehaviour:
     text: Yes, I challenge you.
   check: {fileID: 0}
   question: {fileID: 0}
-  storyEvent: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: fe6da6995a137ef46877b76050600186, type: 2}
   background: {fileID: 0}
   favor: 1
   overlordFavor: {fileID: 11400000, guid: 2c3aa42b476834d4b952748fbc6c64ad, type: 2}

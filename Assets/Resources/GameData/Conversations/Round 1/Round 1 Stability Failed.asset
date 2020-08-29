@@ -29,7 +29,7 @@ MonoBehaviour:
       fail this early.
   check: {fileID: 0}
   question: {fileID: 0}
-  storyEvent: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: ce23ccb4aa5e68e42b6656fb918887c6, type: 2}
   background: {fileID: 0}
   favor: -2
   overlordFavor: {fileID: 11400000, guid: 2c3aa42b476834d4b952748fbc6c64ad, type: 2}

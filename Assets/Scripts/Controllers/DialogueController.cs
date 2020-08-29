@@ -124,6 +124,10 @@ public class DialogueController : MonoBehaviour
             inQuestion = true;
             questionEvent.Invoke(conversation.question);
         }
+        else if(conversation.storyEvent != null)
+        {
+            conversation.storyEvent.Invoke();
+        }
         else
         {
             EndConversation();
