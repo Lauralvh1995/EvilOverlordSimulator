@@ -22,3 +22,5 @@ MonoBehaviour:
   question: {fileID: 0}
   storyEvent: {fileID: 0}
   background: {fileID: 0}
+  favor: 1
+  overlordFavor: {fileID: 11400000, guid: eca32b065e4d0c34e85b3c752f017364, type: 2}

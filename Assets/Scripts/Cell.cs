@@ -143,11 +143,11 @@ public class Cell : MonoBehaviour
             {
                 case Building.HOUSE:
                     newMinion.house = building;
-                    Debug.Log(newMinion.GetName() + " says: " + Player.instance.character.FullName + " gave me a house!");
+                    Debug.Log(newMinion.GetName() + " says: The Overlord gave me a house!");
                     break;
                 default:
                     newMinion.workplace = building;
-                    Debug.Log(newMinion.GetName() + " says: " + Player.instance.character.FullName + " gave me a place to work!");
+                    Debug.Log(newMinion.GetName() + " says: The Overlord gave me a place to work!");
                     break;
             }
             MinionClaimsBuilding.Invoke();

@@ -28,11 +28,41 @@ public class HUDController : MonoBehaviour
     public Button emptyButton;
     public Button noneButton;
 
-    public void EnableHUD(bool status)
+    [SerializeField]
+    Event UIUpdate;
+    [SerializeField]
+    Event dialogueStarted;
+    [SerializeField]
+    Event dialogueEnded;
+
+    private void OnEnable()
+    {
+        dialogueStarted.AddListener(EnableHUD);
+        dialogueEnded.AddListener(DisableHUD);
+        UIUpdate.AddListener(UpdateTexts);
+        UIUpdate.AddListener(UpdateButtons);
+    }
+    private void OnDisable()
+    {
+        dialogueStarted.RemoveListener(EnableHUD);
+        dialogueEnded.RemoveListener(DisableHUD);
+        UIUpdate.RemoveListener(UpdateTexts);
+        UIUpdate.RemoveListener(UpdateButtons);
+    }
+
+    public void EnableHUD()
     {
         foreach (GameObject o in HUDElements)
         {
-            o.SetActive(status);
+            o.SetActive(true);
+        }
+    }
+
+    public void DisableHUD()
+    {
+        foreach (GameObject o in HUDElements)
+        {
+            o.SetActive(false);
         }
     }
 

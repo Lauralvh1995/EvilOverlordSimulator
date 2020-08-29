@@ -19,9 +19,6 @@ public class Grid : MonoBehaviour
     [SerializeField]
     Event MinionClaimsBuilding;
 
-    [SerializeField]
-    Event UIUpdate;
-
     private void OnEnable()
     {
         buildingAppears.AddListener(CheckCellStatus);
@@ -46,7 +43,7 @@ public class Grid : MonoBehaviour
             CheckIfBuildingInCellShouldBeActive(cell);
             cell.CheckOwnership();
         }
-        UIUpdate.Invoke();
+        Player.instance.UpdateStats();
     }
 
     public void Initialize()

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameClock : MonoBehaviour
 {
+
     [SerializeField]
     int dayLengthRealTime;
     [SerializeField]
@@ -18,6 +19,31 @@ public class GameClock : MonoBehaviour
     private float timer = 0f;
 
     private bool paused;
+
+    [SerializeField]
+    Event dialogueStarted;
+    [SerializeField]
+    Event dialogueEnded;
+
+    private void OnEnable()
+    {
+        dialogueStarted.AddListener(Pause);
+        dialogueEnded.AddListener(UnPause);
+    }
+    private void OnDisable()
+    {
+        dialogueStarted.RemoveListener(Pause);
+        dialogueEnded.RemoveListener(UnPause);
+    }
+
+    private void Pause()
+    {
+        paused = true;
+    }
+    void UnPause()
+    {
+        paused = false;
+    }
     // Start is called before the first frame update
     void Start()
     {

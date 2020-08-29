@@ -14,6 +14,21 @@ public class CameraController : MonoBehaviour
     public int maxZoom = 6;
 
     private bool isAllowedToMove = true;
+    [SerializeField]
+    Event dialogueStarted;
+    [SerializeField]
+    Event dialogueEnded;
+
+    private void OnEnable()
+    {
+        dialogueStarted.AddListener(EnableMovement);
+        dialogueEnded.AddListener(DisableMovement);
+    }
+    private void OnDisable()
+    {
+        dialogueStarted.RemoveListener(EnableMovement);
+        dialogueEnded.RemoveListener(DisableMovement);
+    }
     private void Awake()
     {
         horizontalMargin = margin * 2;
@@ -100,8 +115,12 @@ public class CameraController : MonoBehaviour
         return new Vector2(x, y);
     }
 
-    public void EnableMovement(bool status)
+    public void EnableMovement()
     {
-        isAllowedToMove = status;
+        isAllowedToMove = true;
+    }
+    void DisableMovement()
+    {
+        isAllowedToMove = false;
     }
 }

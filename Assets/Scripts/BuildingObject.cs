@@ -108,5 +108,6 @@ public class BuildingObject : MonoBehaviour
         }
         RemoveGoldFromPlayer.Invoke(buildCost);
         BuildingIsBuilt.Invoke();
+        
     }
 }

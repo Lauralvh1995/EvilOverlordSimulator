@@ -28,25 +28,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     List<Minion> Minions;
 
-    public DialogueController dialogueHolder;
-    public HUDController HUD;
-    public CameraController cameraController;
-    public Selector selector;
-    public GameClock gameClock;
     public Grid grid;
 
-    public Conversation defaultConvo;
-
-    public Character character;
-
-    [SerializeField]
-    Event maleNameEvent;
-    [SerializeField]
-    Event femaleNameEvent;
-    [SerializeField]
-    Event DialogueStarted;
-    [SerializeField]
-    Event DialogueEnded;
     [SerializeField]
     IntEvent SubtractGoldCost;
     [SerializeField]
@@ -76,23 +59,15 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Minions = new List<Minion>();
     }
     private void Start()
     {
-        selector = GetComponent<Selector>();
-        gameClock = GetComponent<GameClock>();
-        Minions = new List<Minion>();
-        dialogueHolder.conversation = defaultConvo;
-        dialogueHolder.AdvanceLine();
+        UIUpdate.Invoke();
     }
 
     private void OnEnable()
     {
-        femaleNameEvent.AddListener(SetFemalePlayerName);
-        maleNameEvent.AddListener(SetMalePlayerName);
-        DialogueStarted.AddListener(OnDialogueStarted);
-        DialogueEnded.AddListener(OnDialogueEnded);
-        UIUpdate.AddListener(UpdateStats);
         SubtractGoldCost.AddListener(RemoveGold);
         MinionRecruited.AddListener(AddMinionToList);
         DayTick.AddListener(AddGold);
@@ -100,29 +75,11 @@ public class Player : MonoBehaviour
     }
     private void OnDisable()
     {
-        femaleNameEvent.RemoveListener(SetFemalePlayerName);
-        maleNameEvent.RemoveListener(SetMalePlayerName);
-        DialogueStarted.RemoveListener(OnDialogueStarted);
-        DialogueEnded.RemoveListener(OnDialogueEnded);
-        UIUpdate.RemoveListener(UpdateStats);
         SubtractGoldCost.RemoveListener(RemoveGold);
         MinionRecruited.RemoveListener(AddMinionToList);
         DayTick.RemoveListener(AddGold);
         WeekTick.RemoveListener(PayMinions);
     }
-
-    void SetMalePlayerName()
-    {
-        character.FullName = "Uther";
-        UnityEngine.Debug.Log("Set player name to: " + character.FullName);
-    }
-
-    void SetFemalePlayerName()
-    {
-        character.FullName = "Bethori";
-        UnityEngine.Debug.Log("Set player name to: " + character.FullName);
-    }
-
     public List<Minion> GetMinions()
     {
         return Minions;
@@ -130,15 +87,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Reset();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
         switch (buildMode)
         {
             case Building.EMPTY:
@@ -173,11 +121,6 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-    private void Reset()
-    {
-        character.FullName = "??????";
-        dialogueHolder.conversation = defaultConvo;
-    }
     void AddGold()
     {
         Gold += Wealth;
@@ -195,22 +138,7 @@ public class Player : MonoBehaviour
         UpdateStats();
     }
 
-    void OnDialogueStarted()
-    {
-        HUD.EnableHUD(false);
-        cameraController.EnableMovement(false);
-        selector.SetAllowed(false);
-        gameClock.Pause(true);
-    }
-    void OnDialogueEnded()
-    {
-        HUD.EnableHUD(true);
-        selector.SetAllowed(true);
-        cameraController.EnableMovement(true);
-        gameClock.Pause(false);
-    }
-
-    void UpdateStats()
+    public void UpdateStats()
     {
         int tempWealth = 1;
         int tempFood = 1;
@@ -259,9 +187,7 @@ public class Player : MonoBehaviour
             minionMorale = (minionMorale / Minions.Count) * 100f;
             Morale = Mathf.FloorToInt(minionMorale);
         }
-
-        HUD.UpdateButtons();
-        HUD.UpdateTexts();
+        UIUpdate.Invoke();
     }
 
     public static int GetWealth()
@@ -300,52 +226,44 @@ public class Player : MonoBehaviour
     public void SetBuildMode(Building mode)
     {
         buildMode = mode;
+        UIUpdate.Invoke();
     }
 
     public void SetBuildModeToEmpty()
     {
         SetBuildMode(Building.EMPTY);
-        HUD.UpdateButtons();
     }
     public void SetBuildModeToHouse()
     {
         SetBuildMode(Building.HOUSE);
-        HUD.UpdateButtons();
     }
     public void SetBuildModeToRoad()
     {
         SetBuildMode(Building.ROAD);
-        HUD.UpdateButtons();
     }
     public void SetBuildModeToFarm()
     {
         SetBuildMode(Building.FARM);
-        HUD.UpdateButtons();
     }
     public void SetBuildModeToTower()
     {
         SetBuildMode(Building.TOWER);
-        HUD.UpdateButtons();
     }
     public void SetBuildModeToStatue()
     {
         SetBuildMode(Building.STATUE);
-        HUD.UpdateButtons();
     }
     public void SetBuildModeToCourtHouse()
     {
         SetBuildMode(Building.COURTHOUSE);
-        HUD.UpdateButtons();
     }
     public void SetBuildModeToMine()
     {
         SetBuildMode(Building.MINE);
-        HUD.UpdateButtons();
     }
     public void SetBuildModeToNone()
     {
         SetBuildMode(Building.NONE);
-        HUD.UpdateButtons();
     }
 
     public bool IsAllowedToBuild()
@@ -371,5 +289,6 @@ public class Player : MonoBehaviour
             Gold = 0;
             paidMinions.Invoke(0);
         }
+        UpdateStats();
     }
 }

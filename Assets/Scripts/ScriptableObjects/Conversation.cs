@@ -38,4 +38,7 @@ public class Conversation : ScriptableObject
     public Question question;
     public Event storyEvent;
     public Sprite background;
+
+    public int favor;
+    public IntEvent overlordFavor;
 }

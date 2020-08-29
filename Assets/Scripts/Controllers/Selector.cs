@@ -16,6 +16,30 @@ public class Selector : MonoBehaviour
 
     public PopUp popup;
     public BasePopUp basePopUp;
+    [SerializeField]
+    Event dialogueStarted;
+    [SerializeField]
+    Event dialogueEnded;
+
+    private void OnEnable()
+    {
+        dialogueStarted.AddListener(EnableSelecting);
+        dialogueEnded.AddListener(DisableSelecting);
+    }
+    private void OnDisable()
+    {
+        dialogueStarted.RemoveListener(EnableSelecting);
+        dialogueEnded.RemoveListener(DisableSelecting);
+    }
+
+    void EnableSelecting()
+    {
+        allowedToSelect = true;
+    }
+    void DisableSelecting()
+    {
+        allowedToSelect = false;
+    }
 
     private void Update()
     {
@@ -99,10 +123,5 @@ public class Selector : MonoBehaviour
             basePopUp.Hide();
         }
 
-    }
-
-    public void SetAllowed(bool status)
-    {
-        allowedToSelect = status;
     }
 }
