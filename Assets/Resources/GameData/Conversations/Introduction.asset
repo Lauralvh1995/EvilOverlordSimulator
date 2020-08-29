@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationName: Intro
   lines:
-  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+  - character: {fileID: 11400000, guid: 8d2e90a594b17ce4291f6ffce7c4e6a0, type: 2}
     position: 2
     emote: 0
     text: Victory at last!
@@ -50,3 +50,7 @@ MonoBehaviour:
       of course.
   check: {fileID: 0}
   question: {fileID: 11400000, guid: 4e2bc55b8d4febb4d90013af8c33c4cf, type: 2}
+  storyEvent: {fileID: 0}
+  background: {fileID: 0}
+  favor: 0
+  overlordFavor: {fileID: 0}

@@ -17,7 +17,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 1
     emote: 0
-    text: Ah, of course, how could I forget your name was Bethori.
+    text: Ah, of course, how could I forget your name was Kaya.
   - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
     position: 0
     emote: 0
@@ -38,5 +38,20 @@ MonoBehaviour:
     position: 1
     emote: 0
     text: So we have to rebuild parts of your realm quickly.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: We have until the 1st of New Moon of Building until the meeting. That is
+      exactly one month from now.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: "And you should know that here in Clich\xE9a, weeks consist of seven days,
+      and months consist of four weeks. Or did your kindergarten teacher tell you
+      otherwise?"
   check: {fileID: 0}
   question: {fileID: 0}
+  storyEvent: {fileID: 0}
+  background: {fileID: 0}
+  favor: 0
+  overlordFavor: {fileID: 0}

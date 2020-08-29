@@ -21,6 +21,7 @@ public class Minion : MonoBehaviour
     private float happiness = 0.5f;
 
     private float happinessFloor = 0f;
+    private float happinessCeiling = 0.5f;
 
     [SerializeField]
     Event dayTick;
@@ -115,15 +116,27 @@ public class Minion : MonoBehaviour
         if (Player.GetPowerProjection() > loyalty * 100)
         {
             loyalty += 0.1f;
+            if (loyalty > 1f)
+            {
+                loyalty = 1f;
+            }
         }
         else
         {
             loyalty -= 0.1f;
+            if (loyalty < 0f)
+            {
+                loyalty = 0f;
+            }
         }
 
         if(Player.GetFood() > Player.GetMinionCount())
         {
             happiness += 0.1f;
+            if(happiness > happinessCeiling)
+            {
+                happiness = happinessCeiling;
+            }
         }
         else
         {
@@ -137,10 +150,12 @@ public class Minion : MonoBehaviour
         if(house != null)
         {
             happinessFloor = 0.3f;
+            happinessCeiling = 1f;
         }
         else
         {
             happinessFloor = 0f;
+            happinessCeiling = 0.5f;
         }
     }
     void ReceivePayment(int amount)
@@ -149,6 +164,14 @@ public class Minion : MonoBehaviour
         {
             happiness += 0.1f;
             loyalty += 0.1f;
+            if (happiness > happinessCeiling)
+            {
+                happiness = happinessCeiling;
+            }
+            if (loyalty > 1f)
+            {
+                loyalty = 1f;
+            }
         }
         else
         {
@@ -157,6 +180,10 @@ public class Minion : MonoBehaviour
             if (happiness < happinessFloor)
             {
                 happiness = happinessFloor;
+            }
+            if (loyalty < 0f)
+            {
+                loyalty = 0f;
             }
         }
     }

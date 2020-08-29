@@ -23,13 +23,13 @@ public class Selector : MonoBehaviour
 
     private void OnEnable()
     {
-        dialogueStarted.AddListener(EnableSelecting);
-        dialogueEnded.AddListener(DisableSelecting);
+        dialogueStarted.AddListener(DisableSelecting);
+        dialogueEnded.AddListener(EnableSelecting);
     }
     private void OnDisable()
     {
-        dialogueStarted.RemoveListener(EnableSelecting);
-        dialogueEnded.RemoveListener(DisableSelecting);
+        dialogueStarted.RemoveListener(DisableSelecting);
+        dialogueEnded.RemoveListener(EnableSelecting);
     }
 
     void EnableSelecting()

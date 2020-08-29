@@ -21,13 +21,13 @@ public class CameraController : MonoBehaviour
 
     private void OnEnable()
     {
-        dialogueStarted.AddListener(EnableMovement);
-        dialogueEnded.AddListener(DisableMovement);
+        dialogueStarted.AddListener(DisableMovement);
+        dialogueEnded.AddListener(EnableMovement);
     }
     private void OnDisable()
     {
-        dialogueStarted.RemoveListener(EnableMovement);
-        dialogueEnded.RemoveListener(DisableMovement);
+        dialogueStarted.RemoveListener(DisableMovement);
+        dialogueEnded.RemoveListener(EnableMovement);
     }
     private void Awake()
     {

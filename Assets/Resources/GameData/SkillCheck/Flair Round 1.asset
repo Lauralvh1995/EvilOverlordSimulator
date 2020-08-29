@@ -15,5 +15,5 @@ MonoBehaviour:
   checkName: 
   skill: 5
   target: 3
-  passConvo: {fileID: 0}
-  failConvo: {fileID: 0}
+  passConvo: {fileID: 11400000, guid: 4d6ed11c21d06514f9672d28ec36e8c5, type: 2}
+  failConvo: {fileID: 11400000, guid: ff352349cf61f854db85abcdacfd3c71, type: 2}

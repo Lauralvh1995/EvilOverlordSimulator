@@ -37,7 +37,8 @@ public class ChoiceController : MonoBehaviour
 
     public void MakeChoice()
     {
-        choice.storyEvent.Invoke();
+        if(choice.storyEvent != null)
+            choice.storyEvent.Invoke();
         conversationChangeEvent.Invoke(choice.conversation);
     }
 }

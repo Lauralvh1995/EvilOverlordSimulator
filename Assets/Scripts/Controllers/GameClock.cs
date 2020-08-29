@@ -2,9 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameClock : MonoBehaviour
 {
+    [SerializeField]
+    Text DayBox;
+    [SerializeField]
+    Text MonthBox;
+    [SerializeField]
+    Text WeekBox;
 
     [SerializeField]
     int dayLengthRealTime;
@@ -15,7 +22,10 @@ public class GameClock : MonoBehaviour
     [SerializeField]
     Event monthTick;
 
-    private int day;
+    private static int day = 0;
+    private static int month = 0;
+    private static int week = 0;
+
     private float timer = 0f;
 
     private bool paused;
@@ -67,20 +77,83 @@ public class GameClock : MonoBehaviour
     {
         day++;
         dayTick.Invoke();
-        if (day % 7 == 0 && day != 0)
+        if (day == 7)
         {
+            week++;
+            day = 0;
             weekTick.Invoke();
         }
 
-        if (day % 28 == 0 && day != 0)
+        if (week == 4)
         {
+            month++;
+            week = 0;
             monthTick.Invoke();
-            day = 0;
         }
+        UpdateDateTexts();
+    }
+    void UpdateDateTexts()
+    {
+        int finalDay = day + 1;
+        switch (finalDay)
+        {
+            case 1:
+                DayBox.text = finalDay.ToString() + "st";
+                break;
+            case 2:
+                DayBox.text = finalDay.ToString() + "nd";
+                break;
+            case 3:
+                DayBox.text = finalDay.ToString() + "rd";
+                break;
+            default:
+                DayBox.text = finalDay.ToString() + "th";
+                break;
+        }
+        int finalWeek = week + 1;
+        switch (finalWeek)
+        {
+            case 1:
+                WeekBox.text = "of New Moon";
+                break;
+            case 2:
+                WeekBox.text = "of Waxing Moon";
+                break;
+            case 3:
+                WeekBox.text = "of Full Moon";
+                break;
+            case 4:
+                WeekBox.text = "of Waning Moon";
+                break;
+        }
+        int finalMonth = month + 1;
+        switch(finalMonth)
+        {
+            case 1:
+                MonthBox.text = "of Growing";
+                break;
+            case 2:
+                MonthBox.text = "of Building";
+                break;
+        }
+
     }
 
     public void Pause(bool status)
     {
         paused = status;
+    }
+
+    public static int GetCurrentMonth()
+    {
+        return month;
+    }
+    public static int GetCurrentWeek()
+    {
+        return week;
+    }
+    public static int GetCurrentDay()
+    {
+        return day + 1;
     }
 }

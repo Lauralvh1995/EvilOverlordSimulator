@@ -105,6 +105,8 @@ public class DialogueController : MonoBehaviour
                 //play pass convo
                 if (conversation.check.passConvo != null)
                     conversation = conversation.check.passConvo;
+
+                AdvanceLine();
             }
             else
             {
@@ -112,6 +114,8 @@ public class DialogueController : MonoBehaviour
                 //play fail convo
                 if (conversation.check.failConvo != null)
                     conversation = conversation.check.failConvo;
+
+                AdvanceLine();
             }
         }
         //do check if there is a question and NO skill check
@@ -135,7 +139,11 @@ public class DialogueController : MonoBehaviour
     private void DisplayLine()
     {
         Line line = conversation.lines[activeLineIndex];
-        Character character = line.character;
+        Character character = null;
+        if (line.character != null)
+        {
+             character = line.character;
+        }
         SetDialogue(speakerUI, character, line.text, line.position, line.emote);
         activeLineIndex++;
     }

@@ -10,17 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
-  m_Name: Round 1 Flair Check
+  m_Name: Round 1 Flair Failed
   m_EditorClassIdentifier: 
-  conversationName: Yehara likes to see your style
+  conversationName: 
   lines:
   - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
     position: 2
+    emote: 2
+    text: Aww, poor little thing.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
     emote: 0
-    text: You think you have what it takes to impress me?
-  check: {fileID: 11400000, guid: ae6d9aeaa28977d44ab55bf0590f4700, type: 2}
+    text: Your costume, your architecture, your everything needs work.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 2
+    text: If you think you can beat me in style, you need to do better.
+  check: {fileID: 0}
   question: {fileID: 0}
   storyEvent: {fileID: 0}
   background: {fileID: 0}
-  favor: 1
+  favor: -2
   overlordFavor: {fileID: 11400000, guid: c461ce1dc1b072c44aaea47d0b746988, type: 2}

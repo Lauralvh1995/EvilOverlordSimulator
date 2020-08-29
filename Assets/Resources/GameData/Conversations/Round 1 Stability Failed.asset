@@ -10,17 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
-  m_Name: Round 1 Stability Check
+  m_Name: Round 1 Stability Failed
   m_EditorClassIdentifier: 
-  conversationName: Von Eckenstein challenges you
+  conversationName: 
   lines:
   - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
     position: 2
+    emote: 6
+    text: I see that my spies are already underway with destabilisation.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
     emote: 0
-    text: You want to show the master of stable nations how you do it?
-  check: {fileID: 11400000, guid: e05ca2a0ff524634c9745c915f742490, type: 2}
+    text: I give you one month to correct course.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 4
+    text: I wish you the best of luck. I hate to see such a young and talented Overlord
+      fail this early.
+  check: {fileID: 0}
   question: {fileID: 0}
   storyEvent: {fileID: 0}
   background: {fileID: 0}
-  favor: 1
+  favor: -2
   overlordFavor: {fileID: 11400000, guid: 2c3aa42b476834d4b952748fbc6c64ad, type: 2}

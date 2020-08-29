@@ -17,6 +17,6 @@ MonoBehaviour:
   - text: Uther (Male)
     conversation: {fileID: 11400000, guid: be52b6eb781643f4c96ac5f875ced94b, type: 2}
     storyEvent: {fileID: 11400000, guid: ea7756199205a53419dbf419c021aed3, type: 2}
-  - text: Bethori (Female)
+  - text: Kaya (Female)
     conversation: {fileID: 11400000, guid: f10554e50e5f2bc4bbee213cd7590519, type: 2}
     storyEvent: {fileID: 11400000, guid: 42ff05dbda2076445a48132a4494391c, type: 2}

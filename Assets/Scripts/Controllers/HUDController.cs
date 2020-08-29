@@ -37,15 +37,15 @@ public class HUDController : MonoBehaviour
 
     private void OnEnable()
     {
-        dialogueStarted.AddListener(EnableHUD);
-        dialogueEnded.AddListener(DisableHUD);
+        dialogueStarted.AddListener(DisableHUD);
+        dialogueEnded.AddListener(EnableHUD);
         UIUpdate.AddListener(UpdateTexts);
         UIUpdate.AddListener(UpdateButtons);
     }
     private void OnDisable()
     {
-        dialogueStarted.RemoveListener(EnableHUD);
-        dialogueEnded.RemoveListener(DisableHUD);
+        dialogueStarted.RemoveListener(DisableHUD);
+        dialogueEnded.RemoveListener(EnableHUD);
         UIUpdate.RemoveListener(UpdateTexts);
         UIUpdate.RemoveListener(UpdateButtons);
     }

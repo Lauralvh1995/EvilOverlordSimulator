@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e255d40a0e55c84f8db29951502ff4f, type: 3}
-  m_Name: VonEckenstein
+  m_Name: blank
   m_EditorClassIdentifier: 
-  FullName: Von Eckenstein
+  FullName: ??????
   portrait: {fileID: 0}
   angryPortrait: {fileID: 0}
   happyPortrait: {fileID: 0}
