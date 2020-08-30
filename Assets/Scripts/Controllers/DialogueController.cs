@@ -104,18 +104,14 @@ public class DialogueController : MonoBehaviour
                 Debug.Log("Passed");
                 //play pass convo
                 if (conversation.check.passConvo != null)
-                    conversation = conversation.check.passConvo;
-
-                AdvanceLine();
+                    ChangeConversation(conversation.check.passConvo);
             }
             else
             {
                 Debug.Log("Failed");
                 //play fail convo
                 if (conversation.check.failConvo != null)
-                    conversation = conversation.check.failConvo;
-
-                AdvanceLine();
+                    ChangeConversation(conversation.check.failConvo);
             }
         }
         //do check if there is a question and NO skill check
@@ -124,9 +120,15 @@ public class DialogueController : MonoBehaviour
             inQuestion = true;
             questionEvent.Invoke(conversation.question);
         }
-        else if(conversation.storyEvent != null)
+        else if (conversation.storyEvent != null)
         {
+            if (conversation.overlordFavor != null)
+                conversation.overlordFavor.Invoke(conversation.favor);
             conversation.storyEvent.Invoke();
+        }
+        else if (conversation.overlordFavor != null)
+        {
+            conversation.overlordFavor.Invoke(conversation.favor);
         }
         else
         {

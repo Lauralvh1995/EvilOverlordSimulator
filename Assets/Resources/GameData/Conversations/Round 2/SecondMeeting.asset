@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
+  m_Name: SecondMeeting
+  m_EditorClassIdentifier: 
+  conversationName: 
+  lines:
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Thank you for your warm welcome.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Over the past month I have worked hard to prove myself as an Overlord.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Of course, this is why I overthrew Daresh.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 0
+    emote: 1
+    text: (Keep it up)
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: But we all know why I am here.
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 1
+    emote: 0
+    text: You want to talk business.
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 1
+    emote: 0
+    text: You want to talk business.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 2
+    emote: 0
+    text: We like your enthusiasm,
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: and your ability to get to the point.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: But, we haven't even told you what happened in our realms last month.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: Lord Malice, why do your agents insist on loudly announcing their presence.
+      It's called subterfuge, not submission.
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 2
+    emote: 0
+    text: Subterfuge, submission, why not both? You're always so stuck up Schmeckenstein.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 2
+    text: It's Von Eckenstein.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 2
+    emote: 0
+    text: Alright, you two children. Cut it out.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 0
+    text: Besides, Mally, you haven't even noticed some of my latest clutch have
+      turned your carrion fields into new nesting grounds.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Uh...
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 0
+    text: Don't look at me like that, Overlord. I know. I'm a mother of many children.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 0
+    text: And my many consorts and concubines eagerly await my return.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 6
+    text: As for me, I can't wait to return there myself.
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 2
+    emote: 6
+    text: Hm hm. Why return to them... if you can have me- I mean us?
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 6
+    text: I see.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 1
+    text: Hah, don't worry Overlord, I'll tell you all about it when the time is
+      right.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 2
+    emote: 3
+    text: Yehara, the last time you and Lord Malice shared a room, the whole palace
+      could enjoy it. You even asked me to join you.
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 1
+    emote: 1
+    text: You missed something there, Ziggy. It was glorious!
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 2
+    emote: 4
+    text: Why do these conversations always end up being about sex...
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Because sex, and by extension, love is another tool in your arsenal to
+      manipulate people?
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 6
+    text: '*blows kiss* Or I am close to going in heat. Or us dragons enjoy it just
+      too much. Demons too.'
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 2
+    emote: 1
+    text: Or all of the above.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 1
+    text: I think we should change subject.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 1
+    text: Agreed.
+  check: {fileID: 0}
+  question: {fileID: 11400000, guid: 60da2c15b1cf08e4fb60dba3e45510fe, type: 2}
+  storyEvent: {fileID: 0}
+  background: {fileID: 0}
+  favor: 0
+  overlordFavor: {fileID: 0}

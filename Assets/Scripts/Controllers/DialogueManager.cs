@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     Event MaleNameChosen;
     [SerializeField]
     Event FemaleNameChosen;
+    [SerializeField]
+    Event Round2Proper;
 
     [SerializeField]
     IntEvent YeharaFavorEvent;
@@ -58,6 +60,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField]
     Conversation firstMeeting;
+    [SerializeField]
+    Conversation secondMeeting;
 
     Conversation nextConversation;
 
@@ -70,6 +74,7 @@ public class DialogueManager : MonoBehaviour
         VonEckensteinFavorEvent.AddListener(UpdateVonEckensteinFavor);
         BorkPraise.AddListener(BorkPraisesYou);
         BorkAdvice.AddListener(BorkGivesAdvice);
+        Round2Proper.AddListener(OnSecondMeeting);
         MonthTick.AddListener(AdvanceMonth);
     }
     private void OnDisable()
@@ -81,6 +86,7 @@ public class DialogueManager : MonoBehaviour
         VonEckensteinFavorEvent.RemoveListener(UpdateVonEckensteinFavor);
         BorkPraise.RemoveListener(BorkPraisesYou);
         BorkAdvice.RemoveListener(BorkGivesAdvice);
+        Round2Proper.RemoveListener(OnSecondMeeting);
         MonthTick.RemoveListener(AdvanceMonth);
     }
     void Start()
@@ -136,13 +142,11 @@ public class DialogueManager : MonoBehaviour
 
         if (month == 2)
         {
-            dialogueController.conversation = nextConversation;
-            dialogueController.AdvanceLine();
+            dialogueController.ChangeConversation(nextConversation);
         }
         else
         {
-            dialogueController.conversation = firstMeeting;
-            dialogueController.AdvanceLine();
+            dialogueController.ChangeConversation(firstMeeting);
         }
     }
 
@@ -196,5 +200,10 @@ public class DialogueManager : MonoBehaviour
     void UpdateVonEckensteinFavor(int amount)
     {
         VonEckensteinFavor += amount;
+    }
+
+    void OnSecondMeeting()
+    {
+        dialogueController.ChangeConversation(secondMeeting);
     }
 }

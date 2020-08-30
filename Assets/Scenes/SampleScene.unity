@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 131.13168, g: 162.57239, b: 215.29922, a: 1}
+  m_IndirectSpecularColor: {r: 131.16855, g: 162.52502, b: 215.10977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   DayBox: {fileID: 766884283}
   MonthBox: {fileID: 977479332}
   WeekBox: {fileID: 1639625857}
-  dayLengthRealTime: 1
+  dayLengthRealTime: 5
   dayTick: {fileID: 11400000, guid: 31cc663ddec8acd469cb8b23c58f1eb4, type: 2}
   weekTick: {fileID: 11400000, guid: a8a81ea1d9b231c47bfba5934b6acaf8, type: 2}
   monthTick: {fileID: 11400000, guid: 596cc6526dc3dda488a50aad5c7a64b5, type: 2}
@@ -1406,107 +1406,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184945309}
   m_CullTransparentMesh: 0
---- !u!114 &283368529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  rotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
-  exposure:
-    m_OverrideState: 0
-    m_Value: 10
-  multiplier:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxValue:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-  upperHemisphereLuxColor:
-    m_OverrideState: 0
-    m_Value: {x: 0, y: 0, z: 0}
-  desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
-  updateMode:
-    m_OverrideState: 0
-    m_Value: 0
-  updatePeriod:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-  includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
-  hdriSky:
-    m_OverrideState: 0
-    m_Value: {fileID: 8900000, guid: 54a3a0570aebe8949bec4966f1376581, type: 3}
-  enableBackplate:
-    m_OverrideState: 0
-    m_Value: 0
-  backplateType:
-    m_OverrideState: 0
-    m_Value: 0
-  groundLevel:
-    m_OverrideState: 0
-    m_Value: 0
-  scale:
-    m_OverrideState: 0
-    m_Value: {x: 32, y: 32}
-  projectionDistance:
-    m_OverrideState: 0
-    m_Value: 16
-    min: 0.0000001
-  plateRotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  plateTexRotation:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 360
-  plateTexOffset:
-    m_OverrideState: 0
-    m_Value: {x: 0, y: 0}
-  blendAmount:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 100
-  shadowTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
-  pointLightShadow:
-    m_OverrideState: 0
-    m_Value: 0
-  dirLightShadow:
-    m_OverrideState: 0
-    m_Value: 0
-  rectLightShadow:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!1 &305175757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,7 +1567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: a123fc0ac58cb774e8592c925f167e7c, type: 2}
   m_StaticLightingSkyUniqueID: 1
-  m_SkySettings: {fileID: 283368529}
+  m_SkySettings: {fileID: 1818406269}
   m_SkySettingsFromProfile: {fileID: -1658960478407648048, guid: a123fc0ac58cb774e8592c925f167e7c,
     type: 2}
 --- !u!4 &313761475
@@ -1933,6 +1832,7 @@ MonoBehaviour:
   MonthTick: {fileID: 11400000, guid: 596cc6526dc3dda488a50aad5c7a64b5, type: 2}
   MaleNameChosen: {fileID: 11400000, guid: ea7756199205a53419dbf419c021aed3, type: 2}
   FemaleNameChosen: {fileID: 11400000, guid: 42ff05dbda2076445a48132a4494391c, type: 2}
+  Round2Proper: {fileID: 11400000, guid: 9cea6472dc7fcc3418eec328f15b3e5e, type: 2}
   YeharaFavorEvent: {fileID: 11400000, guid: c461ce1dc1b072c44aaea47d0b746988, type: 2}
   MaliceFavorEvent: {fileID: 11400000, guid: eca32b065e4d0c34e85b3c752f017364, type: 2}
   VonEckensteinFavorEvent: {fileID: 11400000, guid: 2c3aa42b476834d4b952748fbc6c64ad,
@@ -1942,15 +1842,18 @@ MonoBehaviour:
   YeharaFavor: 0
   VonEckensteinFavor: 0
   MaliceFavor: 0
-  YeharaFavorable: {fileID: 0}
-  YeharaUnfavorable: {fileID: 0}
-  MaliceFavorable: {fileID: 0}
-  MaliceUnfavorable: {fileID: 0}
-  VonEckensteinFavorable: {fileID: 0}
-  VonEckensteinUnfavorable: {fileID: 0}
+  YeharaFavorable: {fileID: 11400000, guid: 651d4ce04a71a5148bdbd0660965399c, type: 2}
+  YeharaUnfavorable: {fileID: 11400000, guid: be8a9cd0867c06d4e94d3cd479cc9b5a, type: 2}
+  MaliceFavorable: {fileID: 11400000, guid: 3664ea79786dcd845bce0bb7cf9185d0, type: 2}
+  MaliceUnfavorable: {fileID: 11400000, guid: 2cc8cd51570d4d2489f15ee49839b170, type: 2}
+  VonEckensteinFavorable: {fileID: 11400000, guid: 25b8c9673029fb849a865eb9af42dfc0,
+    type: 2}
+  VonEckensteinUnfavorable: {fileID: 11400000, guid: 445766ce472faeb41bbb3d2c6a12920c,
+    type: 2}
   BorkPraiseConvo: {fileID: 11400000, guid: 2e9ec32b976085c418d89f6bf127c08b, type: 2}
   BorkAdviceConvo: {fileID: 11400000, guid: a61b63c84997b1c4d82c7d92530dbb26, type: 2}
   firstMeeting: {fileID: 11400000, guid: 7c3f59e61eeaa1f4a893f124ccfd4712, type: 2}
+  secondMeeting: {fileID: 11400000, guid: 07738d05c9ef4c741b1cf4952fb33aad, type: 2}
 --- !u!1 &382092898
 GameObject:
   m_ObjectHideFlags: 0
@@ -8669,6 +8572,107 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1818406269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b6606ef2548734bb6d11b9d160bc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  rotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  skyIntensityMode:
+    m_OverrideState: 0
+    m_Value: 0
+  exposure:
+    m_OverrideState: 0
+    m_Value: 10
+  multiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxValue:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+  upperHemisphereLuxColor:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0, z: 0}
+  desiredLuxValue:
+    m_OverrideState: 0
+    m_Value: 20000
+  updateMode:
+    m_OverrideState: 0
+    m_Value: 0
+  updatePeriod:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  includeSunInBaking:
+    m_OverrideState: 0
+    m_Value: 0
+  hdriSky:
+    m_OverrideState: 0
+    m_Value: {fileID: 8900000, guid: 54a3a0570aebe8949bec4966f1376581, type: 3}
+  enableBackplate:
+    m_OverrideState: 0
+    m_Value: 0
+  backplateType:
+    m_OverrideState: 0
+    m_Value: 0
+  groundLevel:
+    m_OverrideState: 0
+    m_Value: 0
+  scale:
+    m_OverrideState: 0
+    m_Value: {x: 32, y: 32}
+  projectionDistance:
+    m_OverrideState: 0
+    m_Value: 16
+    min: 0.0000001
+  plateRotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  plateTexRotation:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 360
+  plateTexOffset:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0}
+  blendAmount:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 100
+  shadowTint:
+    m_OverrideState: 0
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  pointLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  dirLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
+  rectLightShadow:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!1 &1837168910
 GameObject:
   m_ObjectHideFlags: 0
