@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
+  m_Name: YeharaPositive
+  m_EditorClassIdentifier: 
+  conversationName: 
+  lines:
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 2
+    emote: 0
+    text: Hello Overlord. Good to see you.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: 'Hello Yehara- '
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 5
+    text: WHOAH
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 0
+    text: Oh, don't be shy. I won't bite... hard...
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 1
+    text: Come here. I prepared this place just for us.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 1
+    text: I did not expect "the right time" to be this soon.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 0
+    text: '*Kisses you, passionately* See? Not scary at all. Now to something about
+      all that armor.'
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 5
+    text: Uhm, alright... *takes armor off*
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 0
+    text: There, you're a natural beauty. And strong too. Now, let's show each other
+      what we've got.
+  - character: {fileID: 11400000, guid: 9f789c0275ae51844bc4974cd28e2c9f, type: 2}
+    position: 2
+    emote: 0
+    text: Ten minutes later.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 2
+    emote: 1
+    text: '*Pants* That was -good-'
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 0
+    text: Of course.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 6
+    text: Don't say it outside this room, but you're better than Mally. It's not
+      about the size, it's about how you use it.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 0
+    text: Say... how about we we spruce it up, and get someone else to join in on
+      the fun.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: I know someone.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: I know someone.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: BORK! GET IN HERE
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 2
+    emote: 0
+    text: Yes, my Overlo- WHAT
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: We thought you would want a bit of fun too.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 1
+    emote: 0
+    text: I've heard your exploits, Bork. Otherwise you wouldn't last in Orc country.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 2
+    emote: 0
+    text: Alright then. *takes rags off*
+  - character: {fileID: 11400000, guid: 9f789c0275ae51844bc4974cd28e2c9f, type: 2}
+    position: 2
+    emote: 0
+    text: Two hours later.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: '*gasps* Oh yes...'
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 5
+    text: Wait... I thought you weren't into orcs, milady...
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 2
+    emote: 0
+    text: If you were one, I'd never let you in here.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Thought so... An orc would be more muscle than grace, wit, and brains.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: And... you took it surprisingly well.
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 2
+    emote: 0
+    text: Intended both ways of course, Overlord.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: How else would I have lasted six chieftains and an Overlord in orc country...
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 2
+    emote: 0
+    text: I still have enough for another round. How about you, Overlord.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Of course!
+  - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
+    position: 2
+    emote: 0
+    text: These times are always the best.
+  check: {fileID: 0}
+  question: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: 23eecefc3256b22479e50a09dd1c8c78, type: 2}
+  background: {fileID: 0}
+  favor: 0
+  overlordFavor: {fileID: 0}

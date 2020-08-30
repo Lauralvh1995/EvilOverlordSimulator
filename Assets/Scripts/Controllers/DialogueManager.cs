@@ -8,6 +8,10 @@ public class DialogueManager : MonoBehaviour
     private Character playerCharacter;
     [SerializeField]
     private DialogueController dialogueController;
+    [SerializeField]
+    private Canvas VictoryScreen;
+    [SerializeField]
+    private Canvas GameOverScreen;
 
     [SerializeField]
     Conversation openingConversation;
@@ -35,11 +39,26 @@ public class DialogueManager : MonoBehaviour
     Event BorkPraise;
 
     [SerializeField]
+    Event EckensteinEnding;
+    [SerializeField]
+    Event MaliceEnding;
+    [SerializeField]
+    Event YeharaEnding;
+
+    [SerializeField]
+    Event Victory;
+    [SerializeField]
+    Event Defeat;
+
+    [SerializeField]
     int YeharaFavor = 0;
     [SerializeField]
     int VonEckensteinFavor = 0;
     [SerializeField]
     int MaliceFavor = 0;
+
+    [SerializeField]
+    int EndingThreshold = 3;
 
     [SerializeField]
     Conversation YeharaFavorable;
@@ -57,6 +76,18 @@ public class DialogueManager : MonoBehaviour
     Conversation BorkPraiseConvo;
     [SerializeField]
     Conversation BorkAdviceConvo;
+    [SerializeField]
+    Conversation YeharaGood;
+    [SerializeField]
+    Conversation YeharaBad;
+    [SerializeField]
+    Conversation EckensteinGood;
+    [SerializeField]
+    Conversation EckensteinBad;
+    [SerializeField]
+    Conversation MaliceGood;
+    [SerializeField]
+    Conversation MaliceBad;
 
     [SerializeField]
     Conversation firstMeeting;
@@ -75,6 +106,11 @@ public class DialogueManager : MonoBehaviour
         BorkPraise.AddListener(BorkPraisesYou);
         BorkAdvice.AddListener(BorkGivesAdvice);
         Round2Proper.AddListener(OnSecondMeeting);
+        YeharaEnding.AddListener(OnYeharaEnding);
+        EckensteinEnding.AddListener(OnEckensteinEnding);
+        MaliceEnding.AddListener(OnMaliceEnding);
+        Victory.AddListener(OnVictory);
+        Defeat.AddListener(OnDefeat);
         MonthTick.AddListener(AdvanceMonth);
     }
     private void OnDisable()
@@ -87,6 +123,11 @@ public class DialogueManager : MonoBehaviour
         BorkPraise.RemoveListener(BorkPraisesYou);
         BorkAdvice.RemoveListener(BorkGivesAdvice);
         Round2Proper.RemoveListener(OnSecondMeeting);
+        YeharaEnding.RemoveListener(OnYeharaEnding);
+        EckensteinEnding.RemoveListener(OnEckensteinEnding);
+        MaliceEnding.RemoveListener(OnMaliceEnding);
+        Victory.RemoveListener(OnVictory);
+        Defeat.RemoveListener(OnDefeat);
         MonthTick.RemoveListener(AdvanceMonth);
     }
     void Start()
@@ -162,15 +203,15 @@ public class DialogueManager : MonoBehaviour
 
         absoluteFavors.Sort();
 
-        if (absoluteFavors[0].Equals(absoluteYFavor))
+        if (absoluteFavors[2].Equals(absoluteYFavor))
         {
             return "yehara";
         }
-        if (absoluteFavors[0].Equals(absoluteMFavor))
+        if (absoluteFavors[2].Equals(absoluteMFavor))
         {
             return "malice";
         }
-        if (absoluteFavors[0].Equals(absoluteEFavor))
+        if (absoluteFavors[2].Equals(absoluteEFavor))
         {
             return "eckenstein";
         }
@@ -205,5 +246,53 @@ public class DialogueManager : MonoBehaviour
     void OnSecondMeeting()
     {
         dialogueController.ChangeConversation(secondMeeting);
+    }
+
+    void OnYeharaEnding()
+    {
+        if(YeharaFavor >= EndingThreshold)
+        {
+            dialogueController.ChangeConversation(YeharaGood);
+        }
+        else
+        {
+            dialogueController.ChangeConversation(YeharaBad);
+        }
+    }
+    void OnMaliceEnding()
+    {
+        if (MaliceFavor >= EndingThreshold)
+        {
+            dialogueController.ChangeConversation(MaliceGood);
+        }
+        else
+        {
+            dialogueController.ChangeConversation(MaliceBad);
+        }
+    }
+    void OnEckensteinEnding()
+    {
+        if (VonEckensteinFavor >= EndingThreshold)
+        {
+            dialogueController.ChangeConversation(EckensteinGood);
+        }
+        else
+        {
+            dialogueController.ChangeConversation(EckensteinBad);
+        }
+    }
+
+    void OnVictory()
+    {
+        VictoryScreen.gameObject.SetActive(true);
+    }
+    void OnDefeat()
+    {
+        GameOverScreen.gameObject.SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

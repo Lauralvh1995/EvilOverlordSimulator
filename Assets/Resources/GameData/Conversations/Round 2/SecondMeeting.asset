@@ -109,11 +109,12 @@ MonoBehaviour:
     position: 2
     emote: 3
     text: Yehara, the last time you and Lord Malice shared a room, the whole palace
-      could enjoy it. You even asked me to join you.
+      could enjoy it. You even asked me to join you. Nothing to say about Daresh.
   - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
     position: 1
     emote: 1
-    text: You missed something there, Ziggy. It was glorious!
+    text: "You missed something there, Ziggy. It was glorious! I was even surprised
+      by how long Daresh lasted, in both giving \xE1nd taking."
   - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
     position: 2
     emote: 4

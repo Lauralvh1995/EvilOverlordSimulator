@@ -10,37 +10,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
-  m_Name: BorkPraise
+  m_Name: MalicePrelude
   m_EditorClassIdentifier: 
   conversationName: 
   lines:
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 2
-    emote: 1
-    text: Hah. You're a natural.
+    emote: 0
+    text: Overlord, wait.
   - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
     position: 0
-    emote: 1
-    text: Of course I am, else you wouldn't have helped me come this far.
-  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
-    position: 1
-    emote: 5
-    text: Don't give me all of the credit. You did most of the work yourself.
+    emote: 0
+    text: Yes, Bork?
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 1
     emote: 0
-    text: You showed them when it counts
+    text: Lord Malice will not be kind.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: I am very aware of that. But have I ever showed fear in his presence?
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 1
-    emote: 6
-    text: I do my work best behind the curtains. You are the star of the show.
+    emote: 0
+    text: No, you did not. Or at least I could not see your face through your helmet.
+      But I'm sure Lord Malice could smell it if you were.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: You're suggesting I should wear brown pants then?
   - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
     position: 1
-    emote: 1
-    text: Now give them the encore!
+    emote: 0
+    text: Not at all.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Then I'm just going in and show that Demon Lord what I'm made of.
   check: {fileID: 0}
   question: {fileID: 0}
-  storyEvent: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: ed8cb0830f4f9dd459431f03d88ae5ba, type: 2}
   background: {fileID: 0}
   favor: 0
   overlordFavor: {fileID: 0}

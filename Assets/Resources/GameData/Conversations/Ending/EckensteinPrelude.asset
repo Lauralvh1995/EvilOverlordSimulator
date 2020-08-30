@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
+  m_Name: EckensteinPrelude
+  m_EditorClassIdentifier: 
+  conversationName: 
+  lines:
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 2
+    emote: 0
+    text: Alright Overlord. I've gotten you so far. Once you step through that door,
+      you're on your own.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Bork, are you alright?
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: Yes, in fact, I'm feeling better than ever.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: However, be wary of Von Eckenstein. He is the nicest of these three.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: Underneath that veneer of honey and silk, there is a cold heart and a thick
+      layer of steel.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: He will lure you in with promises, make you feel safe, and will discard
+      you when he has what he wants.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: You talk like you have experience with him.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 2
+    text: Maybe I do, maybe I don't. Give a shout when you need me. Good luck.
+  check: {fileID: 0}
+  question: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: 9b9d78403ba1a1741846796c9955f955, type: 2}
+  background: {fileID: 0}
+  favor: 1
+  overlordFavor: {fileID: 11400000, guid: 2c3aa42b476834d4b952748fbc6c64ad, type: 2}

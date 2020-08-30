@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
+  m_Name: YeharaPrelude
+  m_EditorClassIdentifier: 
+  conversationName: 
+  lines:
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Silver spikes, black armor..., no gold spikes and red armor! Or should
+      I go for purple...
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: Are you... paying attention to what you're wearing?
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Yes! If I'm going to talk to the Queen of STYLE I for sure want to look
+      good.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: She really hasn't commented on what you are wearing since you first met
+      her, so I don't think she minds what you are wearing.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: To my tastes, you are way overdressed, and there aren't really enough skulls
+      on you, but that's my opinion.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: But you need to wear what you find yourself most comfortable in.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: So... how is this?
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: That's what you started with.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: I know.
+  - character: {fileID: 11400000, guid: c6ae7cf4b954a7f4dbc3f2a688328897, type: 2}
+    position: 1
+    emote: 0
+    text: Let's go.
+  check: {fileID: 0}
+  question: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: 213ea3c01ce846846b4dd2d07ca24916, type: 2}
+  background: {fileID: 0}
+  favor: 0
+  overlordFavor: {fileID: 0}

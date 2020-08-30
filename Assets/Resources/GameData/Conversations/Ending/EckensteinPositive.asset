@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
+  m_Name: EckensteinPositive
+  m_EditorClassIdentifier: 
+  conversationName: 
+  lines:
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: Welcome, Overlord. Sit down. Can I get you some tea?
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Delicious tea, or poison... I'll pass.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: Correct answer. Even though I would not poison you at this hour. Not subtle
+      enough.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: However, Overlord, we have much to discuss.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Yes, Herr Von Eckenstein. We do.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: You're a natural. You've seen through my multiple attempts to destabilise
+      your holdings, you were able to keep yourself standing in front of both Lord
+      Malice and Yehara.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: What are you getting at?
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: And you're to the point. Which I admire most. Then, let us get to the point.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: I offer you an alliance. A proper, equal one. The two of us will show those
+      buffoons the true power behind a throne.
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 0
+    text: Let's see the terms...
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 1
+    text: These ARE equal. Even the small print of the small print!
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: Of course. I am a man of my word. You have it there right in front of you.
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
+    position: 1
+    emote: 0
+    text: Do I have yours?
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 1
+    text: Yes.
+  check: {fileID: 0}
+  question: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: 23eecefc3256b22479e50a09dd1c8c78, type: 2}
+  background: {fileID: 0}
+  favor: 0
+  overlordFavor: {fileID: 0}

@@ -15,11 +15,11 @@ MonoBehaviour:
   questionText: Who do you want to talk to?
   choices:
   - text: Von Eckenstein
-    conversation: {fileID: 0}
+    conversation: {fileID: 11400000, guid: bf146a9f9858d2b49af64d21ecbb90ee, type: 2}
     storyEvent: {fileID: 0}
   - text: Yehara
-    conversation: {fileID: 0}
+    conversation: {fileID: 11400000, guid: 3a62b8f9bc9367d4e9851323955f2ce5, type: 2}
     storyEvent: {fileID: 0}
   - text: Lord Malice
-    conversation: {fileID: 0}
+    conversation: {fileID: 11400000, guid: 9d0e33d239b36ae45817fff9c6ee4d48, type: 2}
     storyEvent: {fileID: 0}

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca35d7adb6ff6944beb015b2a5ef8a1, type: 3}
+  m_Name: MaliceNegative
+  m_EditorClassIdentifier: 
+  conversationName: 
+  lines:
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 2
+    emote: 3
+    text: GET IN HERE, MAGGOT!
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 1
+    emote: 0
+    text: Your pathetic display of power insults the ancestors of your ancestors.
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 1
+    emote: 0
+    text: I will see to it that you will remember your failures for the rest of eternity!
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 2
+    emote: 3
+    text: '*Shoves his hand in your chest and rips out your soul*'
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 3
+    text: AARGH! *body slumps*
+  - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
+    position: 0
+    emote: 5
+    text: Hey! Did I always look this... spikey?
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 1
+    emote: 3
+    text: Lay your gaze on your holdings one last time as my armies are razing it,
+      and helping themselves to your people. You. Are. Mine.
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+    position: 2
+    emote: 3
+    text: '*Eats your soul*'
+  check: {fileID: 0}
+  question: {fileID: 0}
+  storyEvent: {fileID: 11400000, guid: 78bfca5662271fc40add5dcdd80c4523, type: 2}
+  background: {fileID: 0}
+  favor: 0
+  overlordFavor: {fileID: 0}
