@@ -25,7 +25,7 @@ MonoBehaviour:
     emote: 1
     text: If you like, I can give you some more tips on how to strike even more fear
       into your enemies.
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
     position: 1
     emote: 1
     text: Show me your prowess next time, and I might show you my palace.

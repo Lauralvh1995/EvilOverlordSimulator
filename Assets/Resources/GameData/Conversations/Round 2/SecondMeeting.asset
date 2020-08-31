@@ -38,10 +38,10 @@ MonoBehaviour:
     position: 1
     emote: 0
     text: You want to talk business.
-  - character: {fileID: 11400000, guid: 5a9c5ad9303eefc4db5851679cf5cdc7, type: 2}
+  - character: {fileID: 11400000, guid: b7e68f1a21c1805419374da62b93ce43, type: 2}
     position: 1
     emote: 0
-    text: You want to talk business.
+    text: As we already have expected of you.
   - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
     position: 2
     emote: 0
