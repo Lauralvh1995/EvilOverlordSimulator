@@ -41,8 +41,8 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
     position: 1
     emote: 0
-    text: '*Kisses you, passionately* See? Not scary at all. Now to something about
-      all that armor.'
+    text: '*Kisses you, passionately* See? Not scary at all. Now to do something
+      about all that armor.'
   - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
     position: 0
     emote: 5
@@ -81,7 +81,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
     position: 0
     emote: 0
-    text: I know someone.
+    text: Uh... you're fine with an orc, right?
   - character: {fileID: 11400000, guid: 024d20ff6fa4fbc4ea0b07f3ec3b90cd, type: 2}
     position: 0
     emote: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
     emote: 0
     text: Of course!
   - character: {fileID: 11400000, guid: 92c3367a99784304ab511febb9fbf9f6, type: 2}
-    position: 2
+    position: 1
     emote: 0
     text: These times are always the best.
   check: {fileID: 0}

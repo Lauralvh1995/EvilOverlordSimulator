@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -44,6 +45,8 @@ public class DialogueController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !inQuestion)
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
             if (conversation != null)
                 AdvanceLine();
         }
